@@ -34,3 +34,8 @@
   font-family: "SFProDisplayUltralight";
   src: url("../assets/fonts/SFPro/SFProDisplayUltralight.otf");
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

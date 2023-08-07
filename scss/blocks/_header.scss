@@ -4,13 +4,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background: var(--background);
+}
+
 .header {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid var(--clr-border);
 
     &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: var(--background);
     }
 
     &__nav-container {
@@ -24,15 +29,20 @@
             align-items: center;
             position: fixed;
             right: -100%;
-            top: 80px;
+            top: 95px;
             width: 80%;
-            max-width: 300px;
+            max-width: 250px;
             border-radius: 10px;
             transition: 0.3s;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 10px rgba(var(--clr-shadow-rgb), 0.05);
+            background: var(--nav-container-clr);
 
             &.active {
-                right: 4%;
+                right: 35px;
+
+                @include esm {
+                    right: 10%;
+                }
             }
         }
     }
@@ -69,7 +79,7 @@
     &__text {
         font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
         font-size: 25px;
-        color: black;
+        color: var(--text-color);
     }
 }
 .menu {
@@ -105,14 +115,14 @@
         font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
         font-size: 17px;
         font-weight: 500;
-        color: black;
+        color: var(--text-color);
 
         &:hover {
-            background-color: rgb(158, 125, 91, 0.2);
+            background-color: rgb(var(--clr-accent-rgb), 0.2);
 
             @include md-d {
                 background-color: transparent;
-                color: #9e7d5b;
+                color: var(--clr-accent);
             }
         }
     }
@@ -141,7 +151,7 @@
         }
 
         &:hover {
-            background-color: rgb(158, 125, 91, 0.2);
+            background-color: rgb(var(--clr-accent-rgb), 0.2);
 
             @include md-d {
                 background-color: transparent;
@@ -171,7 +181,7 @@
         font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
         font-size: 17px;
         font-weight: 500;
-        color: black;
+        color: var(--text-color);
         opacity: 1;
         -webkit-transition: opacity 0.2s ease;
         transition: opacity 0.2s ease;
@@ -207,6 +217,6 @@
         border-radius: 15%;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
-        background-color: #9e7d5b;
+        background-color: var(--clr-accent);
     }
 }

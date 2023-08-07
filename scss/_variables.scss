@@ -1,3 +1,29 @@
+:root {
+    --clr-primary: black;
+    --clr-secondary: white;
+    --clr-accent: #9e7d5b;
+    --clr-border: lightgrey;
+    --clr-shadow-rgb: 0, 0, 0;
+    --clr-accent-rgb: 158, 125, 91;
+
+    --background: var(--clr-secondary);
+    --text-color: var(--clr-primary);
+    --nav-container-clr: var(--clr-secondary);
+}
+
+.darkMode {
+    --clr-primary: white;
+    --clr-secondary: #0D0E0F;
+    --clr-accent: #9e7d5b;
+    --clr-border: #9e7d5b1f;
+    --clr-shadow-rgb: 0, 0, 0;
+    --clr-accent-rgb: 158, 125, 91;
+
+    --background: var(--clr-secondary);
+    --text-color: var(--clr-primary);
+    --nav-container-clr: #141617;
+}
+
 $breakpoints: (
     esm: 320px,
     sm: 640px,

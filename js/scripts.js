@@ -24,13 +24,17 @@ function itemHoveredIn(event) {
 
 function itemHoveredOut(event) {
     let image = event.target.querySelector("img");
+    let themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    let ending = themeMediaQuery.matches ? "Light" : "Dark";
 
     if (image.alt == "stackOverflow") {
-        image.src = "./assets/images/header/stackOverflowDark.svg";
+        image.src = `./assets/images/header/stackOverflow${ending}.svg`;
     } else if (image.alt == "telegram") {
-        image.src = "./assets/images/header/telegramDark.svg";
+        image.src = `./assets/images/header/telegram${ending}.svg`;
     } else if (image.alt == "envelope") {
-        image.src = "./assets/images/header/envelopeDark.svg";
+        image.src = `./assets/images/header/envelope${ending}.svg`;
+    } else {
+        image.src = `./assets/images/header/github${ending}.svg`;
     }
     isHovered = false;
 }

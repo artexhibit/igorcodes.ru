@@ -169,13 +169,12 @@ body {
   }
 }
 .menu__link {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  color: var(--text-color);
   text-decoration: none;
   padding: 14px 16px;
   border-radius: 12px;
-  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text-color);
 }
 .menu__link:hover {
   background-color: rgb(var(--clr-accent-rgb), 0.2);
@@ -233,13 +232,12 @@ body {
   cursor: pointer;
 }
 .hamburger__title {
-  padding-right: 10px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: 17px;
-  font-weight: 500;
   color: var(--text-color);
+  padding-right: 10px;
   opacity: 1;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.1s ease;
 }
 .hamburger__title.fade-out {
   opacity: 0;

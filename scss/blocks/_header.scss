@@ -77,9 +77,7 @@ body {
     }
 
     &__text {
-        font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
-        font-size: 25px;
-        color: var(--text-color);
+        @include fontConfig("SFProDisplayBold", 25px, var(--text-color));
     }
 }
 .menu {
@@ -109,13 +107,10 @@ body {
     }
 
     &__link {
+        @include fontConfig("SFProDisplayRegular", 17px, var(--text-color));
         text-decoration: none;
         padding: 14px 16px;
         border-radius: 12px;
-        font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        color: var(--text-color);
 
         &:hover {
             background-color: rgb(var(--clr-accent-rgb), 0.2);
@@ -177,14 +172,11 @@ body {
     cursor: pointer;
 
     &__title {
+        @include fontConfig("SFProDisplayRegular", 17px, var(--text-color));
         padding-right: 10px;
-        font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        color: var(--text-color);
         opacity: 1;
-        -webkit-transition: opacity 0.2s ease;
-        transition: opacity 0.2s ease;
+        -webkit-transition: opacity 0.1s ease;
+        transition: opacity 0.1s ease;
 
         &.fade-out {
             opacity: 0;

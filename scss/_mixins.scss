@@ -1,0 +1,5 @@
+@mixin fontConfig($family, $size, $color) {
+    font-family: $family, Helvetica, Arial, sans-serif;
+    font-size: $size;
+    color: $color;
+}

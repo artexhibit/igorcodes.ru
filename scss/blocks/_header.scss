@@ -9,13 +9,20 @@ body {
 }
 
 .header {
+    position: sticky;
+    top: 0;
     border-bottom: 1px solid var(--clr-border);
+    background: var(--background);
 
     &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background: var(--background);
+
+        @include esm {
+            margin: 0 -32px;
+        }
     }
 
     &__nav-container {
@@ -58,12 +65,9 @@ body {
 }
 .container {
     max-width: 1264px;
+    height: 100%;
     padding: 20px 32px;
     margin: 0 auto;
-
-    @include esm {
-        padding: 20px 5px;
-    }
 }
 .logo {
     display: flex;
@@ -166,6 +170,7 @@ body {
 }
 .hamburger {
     display: flex;
+    height: 48px;
     align-items: center;
     border: none;
     background: transparent;

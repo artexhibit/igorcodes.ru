@@ -69,13 +69,21 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid var(--clr-border);
+  background: var(--background);
 }
 .header__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--background);
+}
+@media (max-width: 319.8px) {
+  .header__body {
+    margin: 0 -32px;
+  }
 }
 .header__nav-container {
   display: flex;
@@ -118,13 +126,9 @@ body {
 
 .container {
   max-width: 1264px;
+  height: 100%;
   padding: 20px 32px;
   margin: 0 auto;
-}
-@media (max-width: 319.8px) {
-  .container {
-    padding: 20px 5px;
-  }
 }
 
 .logo {
@@ -226,6 +230,7 @@ body {
 
 .hamburger {
   display: flex;
+  height: 48px;
   align-items: center;
   border: none;
   background: transparent;
@@ -264,4 +269,60 @@ body {
   border-radius: 15%;
   transition: all 0.3s ease-in-out;
   background-color: var(--clr-accent);
+}
+
+.name {
+  height: 100svh;
+}
+.name__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 8% 0;
+  align-self: center;
+}
+.name__image {
+  padding: 3px;
+  width: 70%;
+  max-width: 300px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
+.name__title {
+  font-family: "SFProDisplayBlack", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.25rem, -0.2rem + 10.67vw, 4.1rem);
+  color: var(--text-color);
+  margin-top: max(15px, 2.5%);
+  background: linear-gradient(to right, #9e7d5b, #c3a41a, #8eac50, #94715f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.name__subtitle {
+  margin-top: max(15px, 1.25%);
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem);
+  color: #d0d7e1;
+}
+@media (max-width: 319.8px) {
+  .name__subtitle {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+@media (min-width: 640px) {
+  .name__subtitle {
+    max-width: 600px;
+  }
 }

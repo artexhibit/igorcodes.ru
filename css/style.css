@@ -36,7 +36,7 @@
 }
 :root {
   --clr-primary: black;
-  --clr-secondary: white;
+  --clr-secondary: #d0d7e1;
   --clr-accent: #9e7d5b;
   --clr-border: lightgrey;
   --clr-shadow-rgb: 0, 0, 0;
@@ -47,7 +47,7 @@
 }
 
 .darkMode {
-  --clr-primary: white;
+  --clr-primary: #d0d7e1;
   --clr-secondary: #0D0E0F;
   --clr-accent: #9e7d5b;
   --clr-border: #9e7d5b1f;
@@ -272,19 +272,17 @@ body {
 }
 
 .name {
-  height: 100svh;
+  height: calc(100svh - 89px);
 }
 .name__body {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 8% 0;
-  align-self: center;
 }
 .name__image {
   padding: 3px;
-  width: 70%;
+  width: 85%;
   max-width: 300px;
   border-radius: 50%;
   border: 1px solid var(--text-color);
@@ -293,7 +291,7 @@ body {
   font-family: "SFProDisplayBlack", Helvetica, Arial, sans-serif;
   font-size: clamp(1.25rem, -0.2rem + 10.67vw, 4.1rem);
   color: var(--text-color);
-  margin-top: max(15px, 2.5%);
+  margin-top: max(15px, 2.3%);
   background: linear-gradient(to right, #9e7d5b, #c3a41a, #8eac50, #94715f);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -310,10 +308,10 @@ body {
   }
 }
 .name__subtitle {
-  margin-top: max(15px, 1.25%);
+  margin-top: max(10px, 1.15%);
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem);
-  color: #d0d7e1;
+  color: var(--clr-primary);
 }
 @media (max-width: 319.8px) {
   .name__subtitle {
@@ -325,4 +323,50 @@ body {
   .name__subtitle {
     max-width: 600px;
   }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.double-chevron {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  min-height: 100px;
+  animation: move 2s infinite ease-in-out;
+}
+@keyframes move {
+  0% {
+    padding-bottom: 0px;
+  }
+  50% {
+    padding-bottom: 25px;
+  }
+  100% {
+    padding-bottom: 0px;
+  }
+}
+
+.arrow {
+  display: flex;
+  justify-content: space-between;
+  width: 20px;
+}
+.arrow:nth-child(2) {
+  margin-top: -40%;
+}
+.arrow__half {
+  width: 5px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: var(--clr-primary);
+}
+.arrow__half:nth-of-type(odd) {
+  transform: rotate(-45deg);
+}
+.arrow__half:nth-of-type(even) {
+  transform: rotate(45deg);
 }

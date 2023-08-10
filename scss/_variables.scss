@@ -1,6 +1,6 @@
 :root {
     --clr-primary: black;
-    --clr-secondary: white;
+    --clr-secondary: #d0d7e1;
     --clr-accent: #9e7d5b;
     --clr-border: lightgrey;
     --clr-shadow-rgb: 0, 0, 0;
@@ -12,7 +12,7 @@
 }
 
 .darkMode {
-    --clr-primary: white;
+    --clr-primary: #d0d7e1;
     --clr-secondary: #0D0E0F;
     --clr-accent: #9e7d5b;
     --clr-border: #9e7d5b1f;

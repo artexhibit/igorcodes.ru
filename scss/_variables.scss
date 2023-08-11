@@ -1,8 +1,9 @@
 :root {
     --clr-primary: black;
-    --clr-secondary: #d0d7e1;
+    --clr-secondary: #ffffff;
     --clr-accent: #9e7d5b;
     --clr-border: lightgrey;
+    --clr-background: white;
     --clr-shadow-rgb: 0, 0, 0;
     --clr-accent-rgb: 158, 125, 91;
 
@@ -12,10 +13,11 @@
 }
 
 .darkMode {
-    --clr-primary: #d0d7e1;
+    --clr-primary: #ffffff;
     --clr-secondary: #0D0E0F;
     --clr-accent: #9e7d5b;
     --clr-border: #9e7d5b1f;
+    --clr-background: #0D0E0F;
     --clr-shadow-rgb: 0, 0, 0;
     --clr-accent-rgb: 158, 125, 91;
 

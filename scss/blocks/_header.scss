@@ -131,6 +131,10 @@ body {
         display: flex;
         align-items: center;
         list-style: none;
+
+        @include md-d {
+            margin-bottom: 8px;
+        }
     }
 
     &__item {

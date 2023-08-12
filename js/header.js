@@ -46,8 +46,6 @@ let hamburgerBarsContainer = document.querySelector(".hamburger__bars-container"
 let navMenu = document.querySelector(".header__nav-container");
 let menuLinks = document.querySelectorAll(".menu__link");
 
-hamburger.addEventListener("click", showMenu);
-
 menuLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
 });
@@ -69,6 +67,23 @@ function showMenu() {
 
 function closeMenu() {
     hamburgerBarsContainer.classList.toggle("active");
-    navMenu.classList.toggle("active");
+    navMenu.classList.remove("active");
     changeHamburgerTitle();
+}
+
+//close menu when clicking somewhere outside
+window.addEventListener("click", clickOutsideMenu);
+
+function clickOutsideMenu(event) {
+    if (!humburgerClicked(event)) {
+        if (navMenu.classList.contains("active")) {
+            closeMenu();
+        }
+    } else {
+        showMenu();
+    }
+}
+
+function humburgerClicked(event) {
+    return [...event.target.classList].shift().includes("hamburger");
 }

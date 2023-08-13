@@ -3,3 +3,12 @@
     font-size: $size;
     color: $color;
 }
+
+@mixin flexConfig($display: flex, $dir: initial, $alignItems: initial, $alignText: initial, $justify: initial, $grow: initial) {
+    display: $display;
+    flex-direction: $dir;
+    align-items: $alignItems;
+    text-align: $alignText;
+    justify-content: $justify;
+    flex-grow: $grow;
+}

@@ -15,9 +15,7 @@ body {
     background: var(--background);
 
     &__body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: space-between);
         background: var(--background);
 
         @include esm {
@@ -138,9 +136,7 @@ body {
     }
 
     &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         width: 48px;
         height: 48px;
         border-radius: 12px;
@@ -174,8 +170,8 @@ body {
 }
 .hamburger {
     display: flex;
-    height: 48px;
     align-items: center;
+    height: 48px;
     border: none;
     background: transparent;
     cursor: pointer;

@@ -2,12 +2,8 @@
     height: calc(100svh - 89px);
 
     &__body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        @include flexConfig($display: flex, $dir: column, $alignItems: center, $alignText: center, $justify: space-between);
         height: 100%;
-        justify-content: space-between;
     }
 
     &__image {
@@ -55,16 +51,10 @@
 .container {
 }
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    @include flexConfig($display: flex, $dir: column, $alignItems: center, $alignText: center, $justify: center, $grow: 1);
 }
 .double-chevron {
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
+    @include flexConfig($display: flex, $dir: column, $justify: end);
     min-height: 70px;
     animation: move 2.5s infinite;
     animation-delay: 0s;

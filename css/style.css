@@ -78,8 +78,11 @@ body {
 }
 .header__body {
   display: flex;
-  justify-content: space-between;
+  flex-direction: initial;
   align-items: center;
+  text-align: initial;
+  justify-content: space-between;
+  flex-grow: initial;
   background: var(--background);
 }
 @media (max-width: 319.8px) {
@@ -204,8 +207,11 @@ body {
 }
 .socials__item {
   display: flex;
+  flex-direction: initial;
   align-items: center;
+  text-align: initial;
   justify-content: center;
+  flex-grow: initial;
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -237,8 +243,8 @@ body {
 
 .hamburger {
   display: flex;
-  height: 48px;
   align-items: center;
+  height: 48px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -286,8 +292,9 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100%;
   justify-content: space-between;
+  flex-grow: initial;
+  height: 100%;
 }
 .name__image {
   padding: 3px;
@@ -337,15 +344,19 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   flex-grow: 1;
 }
 
 .double-chevron {
   display: flex;
-  justify-content: end;
   flex-direction: column;
+  align-items: initial;
+  text-align: initial;
+  justify-content: end;
+  flex-grow: initial;
   min-height: 70px;
   animation: move 2.5s infinite;
   animation-delay: 0s;

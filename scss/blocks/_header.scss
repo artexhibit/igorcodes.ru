@@ -11,12 +11,13 @@ body {
 .header {
     position: sticky;
     top: 0;
+    z-index: 1;
     border-bottom: 1px solid var(--clr-border);
-    background: var(--background);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
 
     &__body {
         @include flexConfig($display: flex, $alignItems: center, $justify: space-between);
-        background: var(--background);
 
         @include esm {
             margin: 0 -32px;

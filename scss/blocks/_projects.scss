@@ -1,9 +1,34 @@
 .projects {
-
     &__body {
     }
 
-    &__menu {
+    &__topic {
+        display: flex;
+        margin: 40px 0;
+
+        @include sm-d {
+            justify-content: center;
+        }
+    }
+
+    &__tabs {
+        position: relative;
+        display: flex;
+        margin-bottom: 40px;
+    }
+
+    &__tabs-container {
+        display: flex;
+    }
+
+    &__tabs-slider {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 121px;
+        height: 5px;
+        background-color: white;
+        border-radius: 5px;
     }
 
     &__cards {
@@ -11,25 +36,37 @@
 }
 .container {
 }
-.tabs {
+.headline {
+    @include fontConfig("SFProDisplayMedium", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color));
+}
+.tab {
+    display: flex;
 
-    &__tab {
+    &:not(:last-child) {
+        margin-right: 20px;
     }
 
     &__item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     &__image {
+        width: 30px;
+        margin-right: 7px;
+
+        @include esm {
+            width: 20px;
+        }
     }
 
     &__title {
-    }
-
-    &__slider {
+        @include fontConfig("SFProDisplaySemiBold", clamp(0.9375rem, 0.6155rem + 2.3636vw, 1.75rem), var(--text-color));
+        white-space: nowrap;
     }
 }
 .card {
-
     &__content {
     }
 
@@ -52,12 +89,10 @@
     }
 }
 .tag {
-
     &__title {
     }
 }
 .link {
-
     &__icon {
     }
 

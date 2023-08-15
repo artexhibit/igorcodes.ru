@@ -16,12 +16,12 @@ function handleOrientation() {
         image.style.width = 218.5 + "px";
         title.style.fontSize = 1.93 + "rem";
         subtitle.style.fontSize = 1.16 + "rem";
-        section.style.height = 'calc(100svh + 89px)';
+       // section.style.height = 110 + '%';
     } else {
         wrapper.style.maxWidth = "";
         image.style.width = "";
         title.style.fontSize = "";
         subtitle.style.fontSize = "";
-        section.style.height = 'calc(100svh - 89px)';
+       // section.style.height = 100 + '%';
     }
 }

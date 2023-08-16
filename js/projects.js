@@ -12,8 +12,14 @@ function tabClicked(event) {
     });
     event.currentTarget.classList.add("active");
 
-    //scroll tab to center if it's not fully visible on esm screen width;
-    if (window.innerWidth <= 320) {
-        event.currentTarget.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    //scroll tab to center if it's not fully visible on sm screen width;
+    if (window.innerWidth <= 640) {
+        let scrollOptions = { behavior: "smooth", inline: "center" };
+        let container = document.querySelector(".projects__tabs-container");
+        let containerRect = container.getBoundingClientRect();
+        let tabRect = event.currentTarget.getBoundingClientRect();
+
+        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left - 15;
+        container.scrollTo({ left: scrollLeft, ...scrollOptions });
     }
 }

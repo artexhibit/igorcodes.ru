@@ -1,6 +1,12 @@
 .name {
     height: calc(100svh - 89px);
 
+    @media (max-height: 568px) {
+        @include landscape {
+            height: calc(100svh + 89px);
+        }
+    }
+
     &__body {
         @include flexConfig($display: flex, $dir: column, $alignItems: center, $alignText: center, $justify: space-between);
         height: 100%;
@@ -12,6 +18,10 @@
         max-width: 300px;
         border-radius: 50%;
         border: 1px solid var(--clr-accent);
+
+        @include landscape {
+            width: 65%;
+        }
     }
 
     &__title {
@@ -32,6 +42,10 @@
                 background-position: 100% 50%;
             }
         }
+
+        @include landscape {
+            @include fontConfig("SFProDisplayBlack", clamp(0.75rem, -0.7rem + 7.71vw, 4.12rem), var(--text-color));
+        }
     }
 
     &__subtitle {
@@ -43,8 +57,16 @@
             margin-right: -15px;
         }
 
-        @include sm-u {
+        @include md-u {
             max-width: 600px;
+        }
+
+        @include sm-d {
+            max-width: 400px;
+        }
+
+        @include landscape {
+            @include fontConfig("SFProDisplayRegular", clamp(0.87rem, 0.45rem + 2.29vw, 1.87rem), var(--clr-primary));
         }
     }
 }

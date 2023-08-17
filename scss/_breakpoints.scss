@@ -63,3 +63,9 @@
         @content;
     }
 }
+
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}

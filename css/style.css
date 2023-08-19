@@ -42,6 +42,8 @@
   --clr-background: white;
   --clr-shadow-rgb: 0, 0, 0;
   --clr-accent-rgb: 158, 125, 91;
+  --clr-card-accent: #F5F7FA;
+  --clr-card-border: #DCE1E5;
   --background: var(--clr-background);
   --text-color: var(--clr-primary);
   --nav-container-clr: var(--clr-secondary);
@@ -55,6 +57,8 @@
   --clr-background: #0D0E0F;
   --clr-shadow-rgb: 0, 0, 0;
   --clr-accent-rgb: 158, 125, 91;
+  --clr-card-accent: #141617;
+  --clr-card-border: #292B2E;
   --background: var(--clr-background);
   --text-color: var(--clr-primary);
   --nav-container-clr: #141617;
@@ -345,7 +349,7 @@ body {
   margin-top: max(10px, 1.15%);
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem);
-  color: var(--clr-primary);
+  color: var(--text-color);
 }
 @media (max-width: 319.8px) {
   .name__subtitle {
@@ -367,7 +371,7 @@ body {
   .name__subtitle {
     font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
     font-size: clamp(0.87rem, 0.45rem + 2.29vw, 1.87rem);
-    color: var(--clr-primary);
+    color: var(--text-color);
   }
 }
 
@@ -503,6 +507,11 @@ body {
     display: none;
   }
 }
+.projects__cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .headline {
   font-family: "SFProDisplayMedium", Helvetica, Arial, sans-serif;
   font-size: clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem);
@@ -547,9 +556,52 @@ body {
   white-space: nowrap;
 }
 
-.card__image {
-  width: 30px;
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 12px;
+  width: 100%;
+  max-width: 342px;
+  border-radius: 12px;
+  border: 1px solid var(--clr-card-border);
+  background-color: var(--background);
 }
+.card__cover {
+  display: flex;
+  justify-content: center;
+  height: 192px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: var(--clr-card-accent);
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+.card__title {
+  margin-bottom: 8px;
+  font-family: "SFProDisplayMedium", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.94rem, 0.55rem + 2.06vw, 1.37rem);
+  color: var(--text-color);
+}
+.card__subtitle {
+  margin-bottom: 20px;
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem);
+  color: var(--text-color);
+}
+.short {
+  width: 60%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-self: center;
+}
+
 .link__icon {
   width: 30px;
 }

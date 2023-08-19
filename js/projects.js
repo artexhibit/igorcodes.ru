@@ -19,7 +19,7 @@ function tabClicked(event) {
         let containerRect = container.getBoundingClientRect();
         let tabRect = event.currentTarget.getBoundingClientRect();
 
-        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left - 15;
+        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left;
         container.scrollTo({ left: scrollLeft, ...scrollOptions });
     }
 }

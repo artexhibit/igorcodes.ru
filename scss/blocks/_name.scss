@@ -50,7 +50,7 @@
 
     &__subtitle {
         margin-top: max(10px, 1.15%);
-        @include fontConfig("SFProDisplayRegular", clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem), var(--clr-primary));
+        @include fontConfig("SFProDisplayRegular", clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem), var(--text-color));
 
         @include esm {
             margin-left: -15px;
@@ -66,7 +66,7 @@
         }
 
         @include landscape {
-            @include fontConfig("SFProDisplayRegular", clamp(0.87rem, 0.45rem + 2.29vw, 1.87rem), var(--clr-primary));
+            @include fontConfig("SFProDisplayRegular", clamp(0.87rem, 0.45rem + 2.29vw, 1.87rem), var(--text-color));
         }
     }
 }

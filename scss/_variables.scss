@@ -8,11 +8,15 @@
     --clr-accent-rgb: 158, 125, 91;
 
     --clr-card-accent: #F5F7FA;
-    --clr-card-border: #DCE1E5;
+    --clr-card-secondary: #686e73;
+    --clr-card-link: #1E5CF0;
+    --clr-card-border: #e5e7eb;
+    --clr-card-shadow: rgba(0, 0, 0, .16);
+    --clr-card-shadow-hover: rgba(0, 0, 0, .16);
 
     --background: var(--clr-background);
     --text-color: var(--clr-primary);
-    --nav-container-clr: var(--clr-secondary);
+    --nav-container-clr: var(--clr-secondary); 
 }
 
 .darkMode {
@@ -25,7 +29,11 @@
     --clr-accent-rgb: 158, 125, 91;
 
     --clr-card-accent: #141617;
+    --clr-card-secondary: #888E94;
+    --clr-card-link: #1E5CF0;
     --clr-card-border: #292B2E;
+    --clr-card-shadow: rgb(99 102 241 / .2);
+    --clr-card-shadow-hover: rgb(99 102 241 / .2);
 
     --background: var(--clr-background);
     --text-color: var(--clr-primary);

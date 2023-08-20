@@ -10,8 +10,14 @@
 
     &__topic {
         display: flex;
+        margin-left: 2.3%;
+        transition: margin-left 0.4s ease;
 
-        @include sm-d {
+        @include lg {
+            margin-left: 1%;
+        }
+
+        @include md-d {
             justify-content: center;
             margin: 0 0 20px 0;
         }
@@ -20,7 +26,18 @@
     &__tabs {
         position: relative;
         display: flex;
+        margin-top: 20px;
         margin-bottom: 40px;
+        margin-left: 2.3%;
+        transition: margin-left 0.4s ease;
+
+        @include lg {
+            margin-left: 1%;
+        }
+
+        @include md-d {
+            justify-content: center;
+        }
     }
 
     &__tabs-container {
@@ -59,7 +76,7 @@
 
     &__tabs-slider {
         position: absolute;
-        bottom: 0;
+        top: 45px;
         left: 0;
         width: 75px;
         height: 5px;
@@ -77,6 +94,11 @@
     }
 }
 .container {
+    @at-root .projects & {
+        @include sm-d {
+            padding: 20px 5px;
+        }
+    }
 }
 .headline {
     @include fontConfig("SFProDisplayMedium", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color));
@@ -121,16 +143,42 @@
 }
 .card {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin: 12px;
-    width: 100%;
-    max-width: 342px;
-    border-radius: 12px;
-    border: 1px solid var(--clr-card-border);
-    background-color: var(--background);
+    justify-content: center;
+    width: 33.3%;
+
+    @include md {
+        width: 50%;
+    }
+
+    @include sm-d {
+        width: 100%;
+    }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 20px;
+        margin: 12px;
+        width: 100%;
+        max-width: 342px;
+        border-radius: 12px;
+        border: 1px solid var(--clr-card-border);
+        background-color: var(--background);
+        box-shadow: 0 2px 4px 0 var(--clr-card-shadow);
+        transition: box-shadow 0.5s ease, transform 0.4s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        @include md {
+            max-width: 80%;
+        }
+
+        @include esm {
+            text-align: center;
+        }
     }
 
     &__cover {
@@ -144,22 +192,30 @@
 
     &__image {
         width: 100%;
-        height: 100%; 
+        height: 100%;
         object-fit: cover;
         border-radius: inherit;
     }
 
     &__title {
         margin-bottom: 8px;
-        @include fontConfig("SFProDisplayMedium", clamp(0.94rem, 0.55rem + 2.06vw, 1.37rem), var(--text-color));
+        @include fontConfig("SFProDisplaySemiBold", clamp(1.12rem, 0.9rem + 1.18vw, 1.38rem), var(--text-color));
     }
 
     &__subtitle {
-        margin-bottom: 20px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--text-color)); 
+        height: 36px;
+        margin-bottom: 25px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem), var(--clr-card-secondary));
     }
 
     &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+
+        @include esm {
+            justify-content: center;
+        }
     }
 
     &__link {
@@ -170,20 +226,57 @@
     height: 80%;
     object-fit: contain;
     align-self: center;
-    
 }
 .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    border-radius: 10px;
+    margin-right: 5px;
+
     &__title {
+        padding: 3px 11px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--text-color));
     }
 }
 .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    @include esm {
+        justify-content: center;
+    }
+
+    &:hover {
+        opacity: .7;
+        .link__arrow {
+            transform: translateX(7px);
+        }
+    }
+
     &__icon {
-        width: 30px;
+        width: 18px;
+        margin-right: 10px;
+
+        @include esm {
+            width: 14px;
+            margin-right: 5px;
+        }
     }
 
     &__title {
+        margin-right: 7px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-card-link));
     }
 
     &__arrow {
+        width: 20px;
+        transition: transform 0.4s ease-in-out;
+
+        @include esm {
+            width: 14px;
+        }
     }
 }

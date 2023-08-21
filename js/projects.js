@@ -4,9 +4,7 @@ tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
 });
 let slider = document.querySelector(".projects__tabs-slider");
-let pickedTab = document.querySelector(".active").querySelector("a");
 let container = document.querySelector(".projects__tabs-container");
-configureSlider(pickedTab);
 
 function tabClicked(event) {
     event.preventDefault();
@@ -40,5 +38,16 @@ window.addEventListener("resize", function () {
     if (window.innerWidth >= 1024) {
         let pickedTab = document.querySelector(".active").querySelector("a");
         configureSlider(pickedTab);
+        slider.style.transition = "none";
+
+        setTimeout(function () {
+            slider.style.transition = "transform 0.35s ease, width 0.3s ease";
+        }, 10);
     }
-})
+});
+
+// set default slider width and position on page load
+window.addEventListener("load", function () {
+    let pickedTab = document.querySelector(".active").querySelector("a");
+    configureSlider(pickedTab);
+});

@@ -170,7 +170,7 @@
         padding: 15px 20px;
         margin: 12px;
         width: 100%;
-        max-width: 342px;
+        max-width: 400px;
         border-radius: 12px;
         border: 1px solid var(--clr-card-border);
         background-color: var(--background);
@@ -179,7 +179,7 @@
 
         &:hover {
             box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
 
         @include md {
@@ -188,13 +188,15 @@
 
         @include esm {
             text-align: center;
+            padding: 12px 10px;
         }
     }
 
     &__cover {
         display: flex;
         justify-content: center;
-        height: 192px;
+        height: auto;
+        max-height: 192px;
         border-radius: 8px;
         margin-bottom: 20px;
         background-color: var(--clr-card-accent);
@@ -213,10 +215,28 @@
     }
 
     &__subtitle {
-        height: 36px;
-        margin-bottom: 25px;
         @include fontConfig("SFProDisplayRegular", clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem), var(--clr-card-secondary));
+        line-height: 21px;
     }
+
+    // &__button-container {
+    //     position: absolute;
+    //     bottom: 25%;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     width: auto;
+    // }
+
+    // &__button {
+    //     width: 80px;
+    //     height: 20px;
+    // }
+
+    // &__button-title {
+    // }
+
+    // &__button-icon {
+    // }
 
     &__tags {
         display: flex;
@@ -230,6 +250,17 @@
 
     &__link {
     }
+
+    &__subtitle-container {
+        height: 60px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        mask-image: linear-gradient(180deg, #000 60%, transparent);
+
+        &.active {
+            height: auto;
+        }
+    }
 }
 .short {
     width: 60%;
@@ -241,13 +272,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    background-color: var(--clr-tag-primary);
     border-radius: 10px;
     margin-right: 5px;
 
     &__title {
-        padding: 3px 11px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--text-color));
+        padding: 3.5px 13px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-tag-secondary));
     }
 }
 .link {
@@ -260,7 +291,7 @@
     }
 
     &:hover {
-        opacity: .7;
+        opacity: 0.7;
         .link__arrow {
             transform: translateX(7px);
         }

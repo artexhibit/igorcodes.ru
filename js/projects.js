@@ -1,10 +1,16 @@
 //make clicked tab active
 let tabs = [...document.querySelectorAll(".tab")];
+let slider = document.querySelector(".projects__tabs-slider");
+let container = document.querySelector(".projects__tabs-container");
+let expandButtons = document.querySelectorAll(".card__button");
+
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
 });
-let slider = document.querySelector(".projects__tabs-slider");
-let container = document.querySelector(".projects__tabs-container");
+
+expandButtons.forEach((button) => {
+    button.addEventListener("click", expandButtonClicked);
+});
 
 function tabClicked(event) {
     event.preventDefault();
@@ -19,8 +25,9 @@ function tabClicked(event) {
         let scrollOptions = { behavior: "smooth", inline: "center" };
         let containerRect = container.getBoundingClientRect();
         let tabRect = event.currentTarget.getBoundingClientRect();
+        let margin = 15;
 
-        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left - 15;
+        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left - margin;
         container.scrollTo({ left: scrollLeft, ...scrollOptions });
     }
 
@@ -51,3 +58,22 @@ window.addEventListener("load", function () {
     let pickedTab = document.querySelector(".active").querySelector("a");
     configureSlider(pickedTab);
 });
+
+function expandButtonClicked(event) {
+    let subtitleContainer = event.currentTarget.parentElement.parentElement.firstElementChild;
+    let buttonContainer = event.currentTarget.parentElement.parentElement.firstElementChild.parentElement;
+    let buttonWrapper = event.currentTarget.parentElement;
+    let pressedButton = event.currentTarget;
+    let pressedButtonChevron = pressedButton.querySelector("img");
+
+    buttonWrapper.classList.toggle("opened");
+    pressedButtonChevron.classList.toggle("opened");
+    subtitleContainer.classList.toggle("active");
+    buttonContainer.classList.toggle("active");
+
+    if (buttonWrapper.classList.contains("opened")) {
+        pressedButton.querySelector("p").textContent = "Свернуть";
+    } else {
+        pressedButton.querySelector("p").textContent = "Раскрыть";
+    }
+}

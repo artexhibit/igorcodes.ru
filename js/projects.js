@@ -60,20 +60,28 @@ window.addEventListener("load", function () {
 });
 
 function expandButtonClicked(event) {
-    let subtitleContainer = event.currentTarget.parentElement.parentElement.firstElementChild;
-    let buttonContainer = event.currentTarget.parentElement.parentElement.firstElementChild.parentElement;
-    let buttonWrapper = event.currentTarget.parentElement;
     let pressedButton = event.currentTarget;
+    let subtitleContainer = pressedButton.parentElement.parentElement.firstElementChild;
+    let buttonContainer = pressedButton.parentElement.parentElement.firstElementChild.parentElement;
+    let buttonWrapper = pressedButton.parentElement;
     let pressedButtonChevron = pressedButton.querySelector("img");
+    let textContent = pressedButton.parentElement.parentElement.firstElementChild.querySelector("p");
 
     buttonWrapper.classList.toggle("opened");
     pressedButtonChevron.classList.toggle("opened");
-    subtitleContainer.classList.toggle("active");
-    buttonContainer.classList.toggle("active");
 
     if (buttonWrapper.classList.contains("opened")) {
+        subtitleContainer.style.height = `${textContent.offsetHeight}px`;
+        buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
         pressedButton.querySelector("p").textContent = "Свернуть";
+
+        setTimeout(() => {
+            subtitleContainer.style.maskImage = "none";
+        }, 600);
     } else {
         pressedButton.querySelector("p").textContent = "Раскрыть";
+        subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
+        subtitleContainer.style.height = "60px";
+        buttonContainer.style.height = "70px";
     }
 }

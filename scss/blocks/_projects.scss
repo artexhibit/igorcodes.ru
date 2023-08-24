@@ -223,12 +223,8 @@
     &__button-container {
         position: relative;
         margin-bottom: 40px;
-        max-height: 70px;
-        transition: max-height 4s ease;
-
-        &.active {
-            max-height: 1000px;
-        }
+        height: 70px;
+        transition: height 0.6s ease-in-out;
     }
 
     &__button-wrapper {
@@ -239,7 +235,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: auto;
-        //transition: bottom 0.2s ease;
+        transition: bottom 0.6s ease;
 
         &.visible {
             display: initial;
@@ -293,14 +289,10 @@
     }
 
     &__subtitle-container {
-        max-height: 60px;
+        height: 60px;
         overflow: hidden;
         mask-image: linear-gradient(180deg, #000 60%, transparent);
-        transition: max-height 2.5s ease;
-
-        &.active {
-            max-height: 1000px;
-        }
+        transition: height 0.6s ease-in-out;
     }
 }
 .short {

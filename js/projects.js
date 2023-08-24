@@ -77,7 +77,7 @@ function expandButtonClicked(event) {
 
         setTimeout(() => {
             subtitleContainer.style.maskImage = "none";
-        }, 600);
+        }, 500);
     } else {
         pressedButton.querySelector("p").textContent = "Раскрыть";
         subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";

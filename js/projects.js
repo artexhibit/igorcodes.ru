@@ -73,6 +73,7 @@ function expandButtonClicked(event) {
     if (buttonWrapper.classList.contains("opened")) {
         subtitleContainer.style.height = `${textContent.offsetHeight}px`;
         buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
+        buttonContainer.style.marginBottom = "60px";
         pressedButton.querySelector("p").textContent = "Свернуть";
 
         setTimeout(() => {
@@ -83,5 +84,6 @@ function expandButtonClicked(event) {
         subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
         subtitleContainer.style.height = "60px";
         buttonContainer.style.height = "70px";
+        buttonContainer.style.marginBottom = "40px";
     }
 }

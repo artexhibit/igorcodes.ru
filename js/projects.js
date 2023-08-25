@@ -3,6 +3,7 @@ let tabs = [...document.querySelectorAll(".tab")];
 let slider = document.querySelector(".projects__tabs-slider");
 let container = document.querySelector(".projects__tabs-container");
 let expandButtons = document.querySelectorAll(".card__button");
+let defaultTab = tabs[0];
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
@@ -33,6 +34,7 @@ function tabClicked(event) {
 
     //set slider width according to a picked tab width and move it underneath it
     configureSlider(event.currentTarget.querySelector("a"));
+    showCards(event.currentTarget);
 }
 
 function configureSlider(pickedTab) {
@@ -59,6 +61,8 @@ window.addEventListener("load", function () {
     configureSlider(pickedTab);
 });
 
+//when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
+
 function expandButtonClicked(event) {
     let pressedButton = event.currentTarget;
     let subtitleContainer = pressedButton.parentElement.parentElement.firstElementChild;
@@ -78,7 +82,7 @@ function expandButtonClicked(event) {
 
         setTimeout(() => {
             subtitleContainer.style.maskImage = "none";
-        }, 500);
+        }, 450);
     } else {
         pressedButton.querySelector("p").textContent = "Раскрыть";
         subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
@@ -87,3 +91,40 @@ function expandButtonClicked(event) {
         buttonContainer.style.marginBottom = "40px";
     }
 }
+
+//if js disabled, then show full cards subtitle text without expand button and a shadow, otherwise user won't expand subtitle text
+
+function setupCard() {
+    let cardSubtitleContainers = document.querySelectorAll(".card__subtitle-container");
+
+    cardSubtitleContainers.forEach((subtitleContainer) => {
+        let buttonContainer = subtitleContainer.parentElement;
+        let subtitle = subtitleContainer.firstElementChild;
+        let expandButtonContainer = subtitleContainer.parentElement.querySelector(".card__button-wrapper");
+
+        if (subtitle.offsetHeight >= 60) {
+            subtitleContainer.style.height = "60px";
+            subtitleContainer.style.transition = "none";
+            subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
+            buttonContainer.style.height = "70px";
+            buttonContainer.style.transition = "none";
+            expandButtonContainer.classList.add("visible");
+
+            setTimeout(() => {
+                buttonContainer.style.transition = "height 0.8s ease, margin-bottom 0.8s ease";
+                subtitleContainer.style.transition = "height 0.6s ease-in-out";
+            }, 10);
+        }
+    });
+}
+
+function showCards(event) {
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+        card.style.display = card.classList.contains(`${event.id}`) ? "flex" : "none";
+    });
+}
+
+setupCard();
+showCards(defaultTab);

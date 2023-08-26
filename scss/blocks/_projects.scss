@@ -157,6 +157,14 @@
     justify-content: center;
     width: 33.3%;
 
+    &.animateOut {
+        animation: animateOut 0s forwards;
+    }
+
+    &.animateIn {
+        animation: animateIn 0s forwards;
+    }
+
     @include md {
         width: 50%;
     }

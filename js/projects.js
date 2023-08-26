@@ -3,6 +3,7 @@ let tabs = [...document.querySelectorAll(".tab")];
 let slider = document.querySelector(".projects__tabs-slider");
 let container = document.querySelector(".projects__tabs-container");
 let expandButtons = document.querySelectorAll(".card__button");
+let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
 
 tabs.forEach((tab) => {
@@ -35,6 +36,7 @@ function tabClicked(event) {
     //set slider width according to a picked tab width and move it underneath it
     configureSlider(event.currentTarget.querySelector("a"));
     showCards(event.currentTarget);
+    setCardsSwitchAnimation();
 }
 
 function configureSlider(pickedTab) {
@@ -59,10 +61,10 @@ window.addEventListener("resize", function () {
 window.addEventListener("load", function () {
     let pickedTab = document.querySelector(".active").querySelector("a");
     configureSlider(pickedTab);
+    setupCard();
 });
 
 //when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
-
 function expandButtonClicked(event) {
     let pressedButton = event.currentTarget;
     let subtitleContainer = pressedButton.parentElement.parentElement.firstElementChild;
@@ -92,8 +94,14 @@ function expandButtonClicked(event) {
     }
 }
 
-//if js disabled, then show full cards subtitle text without expand button and a shadow, otherwise user won't expand subtitle text
+//Om page initial loading no need to trigger switch animation, just when tab clicked
+function setCardsSwitchAnimation() {
+    cards.forEach((card) => {
+        card.style.animationDuration = "1.5s";
+    });
+}
 
+//if js disabled, then show full cards subtitle text without expand button and a shadow, otherwise user won't expand subtitle text
 function setupCard() {
     let cardSubtitleContainers = document.querySelectorAll(".card__subtitle-container");
 
@@ -119,12 +127,23 @@ function setupCard() {
 }
 
 function showCards(event) {
-    let cards = document.querySelectorAll(".card");
-
     cards.forEach((card) => {
-        card.style.display = card.classList.contains(`${event.id}`) ? "flex" : "none";
+        if (!card.classList.contains(`${event.id}`)) {
+            card.classList.add("animateOut");
+        } else {
+            card.classList.remove("animateOut");
+        }
     });
-}
 
-setupCard();
+    setTimeout(() => {
+        cards.forEach((card) => {
+            if (card.classList.contains("animateOut")) {
+                card.style.display = "none";
+            } else {
+                card.style.display = "flex";
+                card.classList.add("animateIn");
+            }
+        });
+    }, 50);
+}
 showCards(defaultTab);

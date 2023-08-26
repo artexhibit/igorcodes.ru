@@ -612,6 +612,12 @@ body {
   justify-content: center;
   width: 33.3%;
 }
+.card.animateOut {
+  animation: animateOut 0s forwards;
+}
+.card.animateIn {
+  animation: animateIn 0s forwards;
+}
 @media (max-width: 1023.8px) and (min-width: 768px) {
   .card {
     width: 50%;
@@ -815,5 +821,22 @@ body {
 @media (max-width: 319.8px) {
   .link__arrow {
     width: 14px;
+  }
+}
+
+@keyframes animateOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

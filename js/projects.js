@@ -2,6 +2,7 @@
 let tabs = [...document.querySelectorAll(".tab")];
 let slider = document.querySelector(".projects__tabs-slider");
 let container = document.querySelector(".projects__tabs-container");
+let cardsContainer = document.querySelector(".projects__cards");
 let expandButtons = document.querySelectorAll(".card__button");
 let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
@@ -35,8 +36,13 @@ function tabClicked(event) {
 
     //set slider width according to a picked tab width and move it underneath it
     configureSlider(event.currentTarget.querySelector("a"));
+    setupCard();
     showCards(event.currentTarget);
     setCardsSwitchAnimation();
+
+    setTimeout(() => {
+        addMarginToCardsContainer();
+    }, 50);
 }
 
 function configureSlider(pickedTab) {
@@ -62,6 +68,7 @@ window.addEventListener("load", function () {
     let pickedTab = document.querySelector(".active").querySelector("a");
     configureSlider(pickedTab);
     setupCard();
+    addMarginToCardsContainer();
 });
 
 //when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
@@ -94,14 +101,20 @@ function expandButtonClicked(event) {
     }
 }
 
-//Om page initial loading no need to trigger switch animation, just when tab clicked
+//On page initial loading no need to trigger switch animation, just when tab is clicked
 function setCardsSwitchAnimation() {
     cards.forEach((card) => {
         card.style.animationDuration = "1.5s";
     });
 }
 
-//if js disabled, then show full cards subtitle text without expand button and a shadow, otherwise user won't expand subtitle text
+//Add margin to container to avoid cases with a different heights because of difference in rows between categories. If there is a switch from 2 rows into 1 - then there was a layout jump
+function addMarginToCardsContainer() {
+    let shownCards = Array.from(cards).filter((card) => !card.classList.contains("animateOut"));
+    cardsContainer.style.marginBottom = shownCards.length <= 3 ? "472px" : "";
+}
+
+//if js disabled, then show full cards subtitle text without expand button and a shadow, otherwise user can't expand and see subtitle text
 function setupCard() {
     let cardSubtitleContainers = document.querySelectorAll(".card__subtitle-container");
 

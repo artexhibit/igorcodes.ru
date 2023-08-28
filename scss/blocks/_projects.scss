@@ -6,6 +6,15 @@
     }
 
     &__body {
+        // &.hidden {
+        //     opacity: 0;
+        //     transition: opacity 3s ease;
+        // }
+
+        // &.shown {
+        //     opacity: 1;
+        //     transition: opacity 3s ease;
+        // }
     }
 
     &__topic {
@@ -184,7 +193,7 @@
         border: 1px solid var(--clr-card-border);
         background-color: var(--background);
         box-shadow: 0 2px 4px 0 var(--clr-card-shadow);
-        transition: box-shadow 0.5s ease, transform 0.4s ease-in-out;
+        transition: box-shadow 0.5s ease, transform 0.4s ease;
 
         &:hover {
             box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
@@ -232,7 +241,7 @@
         position: relative;
         margin-bottom: 40px;
         height: 100%;
-        transition: height 0.8s ease, margin-bottom 0.8s ease;
+        transition: height 0s ease, margin-bottom 0s ease;
     }
 
     &__button-wrapper {

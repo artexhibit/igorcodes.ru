@@ -1,11 +1,14 @@
 //make clicked tab active
 let tabs = [...document.querySelectorAll(".tab")];
 let slider = document.querySelector(".projects__tabs-slider");
-let container = document.querySelector(".projects__tabs-container");
+//let projectsBody = document.querySelector(".projects__body");
+let tabsContainer = document.querySelector(".projects__tabs-container");
 let cardsContainer = document.querySelector(".projects__cards");
 let expandButtons = document.querySelectorAll(".card__button");
 let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
+
+//projectsBody.classList.add("hidden");
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
@@ -13,6 +16,24 @@ tabs.forEach((tab) => {
 
 expandButtons.forEach((button) => {
     button.addEventListener("click", expandButtonClicked);
+});
+
+// let observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add("shown");
+//             entry.target.classList.remove("hidden");
+//         }
+//     });
+// });
+// observer.observe(projectsBody);
+
+// set default slider width and position on page load
+window.addEventListener("load", function () {
+    let pickedTab = document.querySelector(".active").querySelector("a");
+    configureSlider(pickedTab);
+    setupCard();
+    addMarginToCardsContainer();
 });
 
 function tabClicked(event) {
@@ -26,12 +47,12 @@ function tabClicked(event) {
     //scroll tab to center if it's not fully visible on sm screen width;
     if (window.innerWidth <= 640) {
         let scrollOptions = { behavior: "smooth", inline: "center" };
-        let containerRect = container.getBoundingClientRect();
+        let containerRect = tabsContainer.getBoundingClientRect();
         let tabRect = event.currentTarget.getBoundingClientRect();
         let margin = 15;
 
-        let scrollLeft = container.scrollLeft + tabRect.left - containerRect.left - margin;
-        container.scrollTo({ left: scrollLeft, ...scrollOptions });
+        let scrollLeft = tabsContainer.scrollLeft + tabRect.left - containerRect.left - margin;
+        tabsContainer.scrollTo({ left: scrollLeft, ...scrollOptions });
     }
 
     //set slider width according to a picked tab width and move it underneath it
@@ -63,14 +84,6 @@ window.addEventListener("resize", function () {
     }
 });
 
-// set default slider width and position on page load
-window.addEventListener("load", function () {
-    let pickedTab = document.querySelector(".active").querySelector("a");
-    configureSlider(pickedTab);
-    setupCard();
-    addMarginToCardsContainer();
-});
-
 //when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
 function expandButtonClicked(event) {
     let pressedButton = event.currentTarget;
@@ -79,6 +92,8 @@ function expandButtonClicked(event) {
     let buttonWrapper = pressedButton.parentElement;
     let pressedButtonChevron = pressedButton.querySelector("img");
     let textContent = pressedButton.parentElement.parentElement.firstElementChild.querySelector("p");
+    let cardContainer = buttonContainer.parentElement;
+    let card = cardContainer.parentElement;
 
     buttonWrapper.classList.toggle("opened");
     pressedButtonChevron.classList.toggle("opened");
@@ -88,17 +103,56 @@ function expandButtonClicked(event) {
         buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
         buttonContainer.style.marginBottom = "60px";
         pressedButton.querySelector("p").textContent = "Свернуть";
+        card.classList.add("expanded");
+
+        animateIn([cardContainer, card], cardContainer, textContent, buttonContainer);
+
+        setTimeout(() => {
+            cardContainer.style.height = cardContainer.offsetHeight + "px";
+            card.style.height = card.offsetHeight + 24 + "px";
+        }, 750);
 
         setTimeout(() => {
             subtitleContainer.style.maskImage = "none";
         }, 450);
+
+        cards.forEach((card) => {
+            if (!card.classList.contains("animateOut")) {
+                if (card.classList.contains("expanded")) {
+                } else {
+                    card.style.height = card.offsetHeight + "px";
+                }
+            }
+        });
     } else {
         pressedButton.querySelector("p").textContent = "Раскрыть";
         subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
         subtitleContainer.style.height = "60px";
         buttonContainer.style.height = "70px";
         buttonContainer.style.marginBottom = "40px";
+        card.classList.remove("expanded");
+
+        animateOut([cardContainer, card], cardContainer, subtitleContainer);
+
+        setTimeout(() => {
+            cardContainer.style.height = cardContainer.offsetHeight + "px";
+            card.style.height = card.offsetHeight + 24 + "px";
+        }, 790);
     }
+}
+
+//animate card new height when expand button pressed
+function animateIn(items, cardC, textC, buttonC) {
+    items.forEach((item) => {
+        item.animate([{ height: item.offsetHeight + "px" }, { height: cardC.offsetHeight + textC.offsetHeight + buttonC.offsetHeight - 100 + "px" }], { duration: 800, easing: "ease" });
+    });
+}
+
+//animate card collapce of height when expand button pressed again
+function animateOut(items, cardC, subC) {
+    items.forEach((item) => {
+        item.animate([{ height: item.offsetHeight + "px" }, { height: cardC.offsetHeight - subC.offsetHeight + 30 + "px" }], { duration: 800, easing: "ease" });
+    });
 }
 
 //On page initial loading no need to trigger switch animation, just when tab is clicked

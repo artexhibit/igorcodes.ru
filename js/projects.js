@@ -57,7 +57,7 @@ function tabClicked(event) {
 
     //set slider width according to a picked tab width and move it underneath it
     configureSlider(event.currentTarget.querySelector("a"));
-    setupCard();
+    //setupCard();
     showCards(event.currentTarget);
     setCardsSwitchAnimation();
 
@@ -106,6 +106,7 @@ function expandButtonClicked(event) {
         card.classList.add("expanded");
 
         animateIn([cardContainer, card], cardContainer, textContent, buttonContainer);
+        animateMarginFor(card);
 
         setTimeout(() => {
             cardContainer.style.height = cardContainer.offsetHeight + "px";
@@ -117,11 +118,8 @@ function expandButtonClicked(event) {
         }, 450);
 
         cards.forEach((card) => {
-            if (!card.classList.contains("animateOut")) {
-                if (card.classList.contains("expanded")) {
-                } else {
-                    card.style.height = card.offsetHeight + "px";
-                }
+            if (!card.classList.contains("animateOut") && !card.classList.contains("expanded")) {
+                card.style.height = card.offsetHeight + "px";
             }
         });
     } else {
@@ -133,6 +131,7 @@ function expandButtonClicked(event) {
         card.classList.remove("expanded");
 
         animateOut([cardContainer, card], cardContainer, subtitleContainer);
+        animateMarginFor(card);
 
         setTimeout(() => {
             cardContainer.style.height = cardContainer.offsetHeight + "px";
@@ -153,6 +152,11 @@ function animateOut(items, cardC, subC) {
     items.forEach((item) => {
         item.animate([{ height: item.offsetHeight + "px" }, { height: cardC.offsetHeight - subC.offsetHeight + 30 + "px" }], { duration: 800, easing: "ease" });
     });
+}
+
+//simulate margin addition to card so when card is expanded and there is more than 1 row cards in column be separated from each other
+function animateMarginFor(card) {
+    card.animate([{ marginBottom: "0px" }, { marginBottom: "24px" }], { duration: 800, easing: "ease" });
 }
 
 //On page initial loading no need to trigger switch animation, just when tab is clicked
@@ -193,6 +197,7 @@ function setupCard() {
     });
 }
 
+// card animation when switching between tabs
 function showCards(event) {
     cards.forEach((card) => {
         if (!card.classList.contains(`${event.id}`)) {

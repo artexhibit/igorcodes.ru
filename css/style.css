@@ -824,6 +824,32 @@ body {
   }
 }
 
+.hiddenNavigation {
+  opacity: 0;
+  filter: blur(3px);
+  transition: all 2s ease;
+}
+
+.shownNavigation {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 2s ease;
+}
+
+.hiddenCard {
+  opacity: 0;
+  transform: translateY(100%);
+  filter: blur(3px);
+  transition: all 1s ease-in-out;
+}
+
+.shownCard {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: all 1s ease-in-out;
+}
+
 @keyframes animateOut {
   0% {
     opacity: 1;

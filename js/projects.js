@@ -1,14 +1,11 @@
 //make clicked tab active
 let tabs = [...document.querySelectorAll(".tab")];
 let slider = document.querySelector(".projects__tabs-slider");
-//let projectsBody = document.querySelector(".projects__body");
 let tabsContainer = document.querySelector(".projects__tabs-container");
 let cardsContainer = document.querySelector(".projects__cards");
 let expandButtons = document.querySelectorAll(".card__button");
 let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
-
-//projectsBody.classList.add("hidden");
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
@@ -17,16 +14,6 @@ tabs.forEach((tab) => {
 expandButtons.forEach((button) => {
     button.addEventListener("click", expandButtonClicked);
 });
-
-// let observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add("shown");
-//             entry.target.classList.remove("hidden");
-//         }
-//     });
-// });
-// observer.observe(projectsBody);
 
 // set default slider width and position on page load
 window.addEventListener("load", function () {
@@ -57,11 +44,10 @@ function tabClicked(event) {
 
     //set slider width according to a picked tab width and move it underneath it
     configureSlider(event.currentTarget.querySelector("a"));
-    //setupCard();
     showCards(event.currentTarget);
     setCardsSwitchAnimation();
 
-    setTimeout(() => {
+    setTimeout(function () {
         addMarginToCardsContainer();
     }, 50);
 }
@@ -196,6 +182,45 @@ function setupCard() {
         }
     });
 }
+
+//animations for title, tabs and cards when page loads and they became visible on the screen
+function animateSection() {
+    let projectsTitle = document.querySelector(".projects__topic");
+    let projectsTabs = document.querySelector(".projects__tabs");
+    let projectsCards = document.querySelector(".projects__cards");
+    let itemsToAnimate = [projectsTitle, projectsTabs].concat([...projectsCards.children]);
+
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains("projects__cards")) {
+                    [...projectsCards.children].forEach((card) => {
+                        card.classList.add("shownCard");
+                        card.classList.remove("hiddenCard");
+                    });
+                } else {
+                    entry.target.classList.add("shownNavigation");
+                    entry.target.classList.remove("hiddenNavigation");
+                }
+            }
+        });
+    });
+
+    itemsToAnimate.forEach((item, index) => {
+        let itemType = item.classList.contains("card") ? "Card" : "Navigation";
+
+        if (!item.classList.contains("card")) {
+            observer.observe(item);
+        }
+
+        if (index != 2) {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        }
+        item.classList.add(`hidden${itemType}`);
+    });
+    observer.observe(projectsCards);
+}
+animateSection();
 
 // card animation when switching between tabs
 function showCards(event) {

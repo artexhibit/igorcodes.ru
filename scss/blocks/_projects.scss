@@ -10,7 +10,7 @@
 
     &__topic {
         display: flex;
-        margin-left: 2.3%;
+        margin-left: 0.8%;
         transition: margin-left 0.4s ease;
 
         @include lg {
@@ -26,9 +26,9 @@
     &__tabs {
         position: relative;
         display: flex;
-        margin-top: 20px;
+        margin-top: 10px;
         margin-bottom: 20px;
-        margin-left: 2.3%;
+        margin-left: 0.8%;
         transition: margin-left 0.4s ease;
 
         @include lg {
@@ -107,7 +107,7 @@
     }
 }
 .headline {
-    @include fontConfig("SFProDisplayMedium", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color));
+    @include fontConfig("SFProDisplaySemiBold", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color));
 }
 .tab {
     display: flex;

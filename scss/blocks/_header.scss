@@ -160,13 +160,16 @@ body {
     }
 
     &__link {
-        width: 24px;
-        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
 
     &__image {
-        width: 100%;
-        height: 100%;
+        width: 24px;
+        height: 24px;
     }
 }
 .hamburger {

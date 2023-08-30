@@ -8,7 +8,7 @@ socialItems.forEach((item) => {
 });
 
 function itemHoveredIn(event) {
-    if (event.target.tagName == "LI" && !isHovered) {
+    if (event.target.tagName == "A" && !isHovered) {
         let image = event.target.querySelector("img");
 
         if (image.alt == "stackOverflow") {

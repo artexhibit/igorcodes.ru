@@ -1,42 +1,87 @@
 .footer {
+    border-top: 1px solid var(--clr-border);
+
     &__body {
+        @include flexConfig($display: flex, $alignItems: center, $justify: space-between);
     }
 
     &__quote {
     }
 
     &__switches {
+        display: flex;
+        background-color: rgb(var(--clr-accent-rgb), 0.2);
+        border-radius: 10px;
     }
 
     &__switch-theme {
+        display: flex;
+        flex-direction: column;
+        margin: 13px 15px;
     }
 
     &__switch-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
     }
 
     &__switch-icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
     }
 
     &__switch-title {
+        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--text-color));
     }
 
     &__switch-lang {
+        display: flex;
+        flex-direction: column;
+        margin: 13px 15px;
     }
 }
 .container {
 }
 .quote {
+    @include fontConfig("SFProDisplayRegular", clamp(0.9375rem, 0.6618rem + 1.4706vw, 1.25rem), var(--text-color));
 }
 .switch {
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+
     &__button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 65px;
+        border: none;
+        background-color: var(--clr-card-accent);
     }
 
     &__icon {
+        width: 15px;
+        height: 15px;
+        margin: 8px 0 5px 0;
     }
 
     &__title {
+        margin: 0 18px 8px 18px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
     }
 
     &__slider {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 65px;
+        height: 90%;
+        background-color: aqua;
+        border-radius: 10px;
     }
 }

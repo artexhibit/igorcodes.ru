@@ -851,19 +851,87 @@ body {
   transition: all 1s ease-in-out;
 }
 
-@keyframes animateOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.footer {
+  border-top: 1px solid var(--clr-border);
 }
-@keyframes animateIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.footer__body {
+  display: flex;
+  flex-direction: initial;
+  align-items: center;
+  text-align: initial;
+  justify-content: space-between;
+  flex-grow: initial;
+}
+.footer__switches {
+  display: flex;
+  background-color: rgb(var(--clr-accent-rgb), 0.2);
+  border-radius: 10px;
+}
+.footer__switch-theme {
+  display: flex;
+  flex-direction: column;
+  margin: 13px 15px;
+}
+.footer__switch-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.footer__switch-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.footer__switch-title {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem);
+  color: var(--text-color);
+}
+.footer__switch-lang {
+  display: flex;
+  flex-direction: column;
+  margin: 13px 15px;
+}
+
+.quote {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.9375rem, 0.6618rem + 1.4706vw, 1.25rem);
+  color: var(--text-color);
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.switch__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 65px;
+  border: none;
+  background-color: var(--clr-card-accent);
+}
+.switch__icon {
+  width: 15px;
+  height: 15px;
+  margin: 8px 0 5px 0;
+}
+.switch__title {
+  margin: 0 18px 8px 18px;
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
+  color: var(--text-color);
+}
+.switch__slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 65px;
+  height: 90%;
+  background-color: aqua;
+  border-radius: 10px;
 }

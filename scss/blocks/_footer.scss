@@ -23,7 +23,7 @@
             position: fixed;
             right: -100%;
             bottom: 65px;
-            width: 80%;
+            width: 95%;
             max-width: 250px;
             border-radius: 10px;
             transition: 0.3s;
@@ -32,6 +32,10 @@
 
             &.active {
                 right: 30px;
+
+                @include esm {
+                    right: 2.5%;
+                }
             }
         }
     }
@@ -44,6 +48,17 @@
         }
     }
 
+    &__switch-title {
+        @include fontConfig("SFProDisplaySemiBold", clamp(0.87rem, 0.8rem + 0.35vw, 0.94rem), var(--text-color));
+        display: none;
+
+        @include sm-d {
+            display: flex;
+            margin-bottom: 8px;
+            align-self: center;
+        }
+    }
+
     &__switch-theme {
         display: flex;
         flex-direction: column;
@@ -51,6 +66,10 @@
 
         :last-child div {
             left: 130px;
+        }
+
+        @include sm-d {
+            margin: 10px 0;
         }
     }
 
@@ -60,6 +79,14 @@
 
         :last-child div {
             left: 142.8px;
+
+            @include esm {
+                left: 137.8px;
+            }
+        }
+
+        @include sm-d {
+            margin-bottom: 10px;
         }
     }
 }
@@ -71,7 +98,7 @@
     }
 }
 .quote {
-    @include fontConfig("SFProDisplayRegular", clamp(0.91rem, 0.6rem + 1.62vw, 1.25rem), var(--text-color));
+    @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color));
 }
 .switch {
     position: relative;
@@ -97,7 +124,7 @@
         z-index: 1;
     }
 
-    &__title {
+    &__option {
         margin: 0 10px 8px 10px;
         @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
         z-index: 1;
@@ -116,17 +143,38 @@
 
 .settings {
     &__button {
+        position: relative;
         display: flex;
         height: 35px;
         border-radius: 10px;
-        border: 1px solid var(--clr-accent);
+        border: none;
         justify-content: center;
         align-items: center;
-        background-color: rgb(var(--clr-accent-rgb), 0.2);
+        background-color: rgb(var(--clr-accent-rgb), 0.3);
+        overflow: hidden;
         cursor: pointer;
 
+        &::after {
+            position: absolute;
+            @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
+            content: "Закрыть";
+            left: 35px; 
+            bottom: -17px;
+            transition: all .5s;
+        }
+
         &:hover {
-            animation: pulse 0.45s 1;
+            outline: 1px solid var(--clr-accent);
+        }
+
+        &.clicked {
+            &::after {
+                bottom: 10px;
+            }
+
+            .settings__button-title {
+                transform: translateX(130%);
+            }
         }
     }
 
@@ -139,5 +187,6 @@
     &__button-title {
         @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
         margin-right: 8px;
+        transition: transform .4s;
     }
 }

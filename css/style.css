@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "SFProDisplayBlack";
   src: url("../assets/fonts/SFPro/SFProDisplayBlack.otf");
@@ -879,7 +880,7 @@ body {
     position: fixed;
     right: -100%;
     bottom: 65px;
-    width: 80%;
+    width: 95%;
     max-width: 250px;
     border-radius: 10px;
     transition: 0.3s;
@@ -890,12 +891,30 @@ body {
     right: 30px;
   }
 }
+@media (max-width: 767.8px) and (max-width: 319.8px) {
+  .footer__switches.active {
+    right: 2.5%;
+  }
+}
 .footer__settings {
   display: none;
 }
 @media (max-width: 767.8px) {
   .footer__settings {
     display: flex;
+  }
+}
+.footer__switch-title {
+  font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.87rem, 0.8rem + 0.35vw, 0.94rem);
+  color: var(--text-color);
+  display: none;
+}
+@media (max-width: 767.8px) {
+  .footer__switch-title {
+    display: flex;
+    margin-bottom: 8px;
+    align-self: center;
   }
 }
 .footer__switch-theme {
@@ -906,12 +925,27 @@ body {
 .footer__switch-theme :last-child div {
   left: 130px;
 }
+@media (max-width: 767.8px) {
+  .footer__switch-theme {
+    margin: 10px 0;
+  }
+}
 .footer__switch-lang {
   display: flex;
   flex-direction: column;
 }
 .footer__switch-lang :last-child div {
   left: 142.8px;
+}
+@media (max-width: 319.8px) {
+  .footer__switch-lang :last-child div {
+    left: 137.8px;
+  }
+}
+@media (max-width: 767.8px) {
+  .footer__switch-lang {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 319.8px) {
@@ -922,7 +956,7 @@ body {
 
 .quote {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.91rem, 0.6rem + 1.62vw, 1.25rem);
+  font-size: clamp(0.75rem, 0.13rem + 2.8vw, 1.25rem);
   color: var(--text-color);
 }
 
@@ -948,7 +982,7 @@ body {
   margin: 8px 0 5px 0;
   z-index: 1;
 }
-.switch__title {
+.switch__option {
   margin: 0 10px 8px 10px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
@@ -966,17 +1000,35 @@ body {
 }
 
 .settings__button {
+  position: relative;
   display: flex;
   height: 35px;
   border-radius: 10px;
-  border: 1px solid var(--clr-accent);
+  border: none;
   justify-content: center;
   align-items: center;
-  background-color: rgb(var(--clr-accent-rgb), 0.2);
+  background-color: rgb(var(--clr-accent-rgb), 0.3);
+  overflow: hidden;
   cursor: pointer;
 }
+.settings__button::after {
+  position: absolute;
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
+  color: var(--text-color);
+  content: "Закрыть";
+  left: 35px;
+  bottom: -17px;
+  transition: all 0.5s;
+}
 .settings__button:hover {
-  animation: pulse 0.45s 1;
+  outline: 1px solid var(--clr-accent);
+}
+.settings__button.clicked::after {
+  bottom: 10px;
+}
+.settings__button.clicked .settings__button-title {
+  transform: translateX(130%);
 }
 .settings__button-icon {
   width: 15px;
@@ -988,6 +1040,7 @@ body {
   font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
   color: var(--text-color);
   margin-right: 8px;
+  transition: transform 0.4s;
 }
 
 @keyframes animateOut {
@@ -1004,16 +1057,5 @@ body {
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
   }
 }

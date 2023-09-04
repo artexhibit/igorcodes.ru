@@ -71,7 +71,7 @@ function closeMenu() {
     changeHamburgerTitle();
 }
 
-//close menu when clicking somewhere outside
+//close menu when clicking somewhere outside and show it when clicking in its borders
 window.addEventListener("click", clickOutsideMenu);
 
 function clickOutsideMenu(event) {

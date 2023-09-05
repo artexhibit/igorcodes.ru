@@ -158,9 +158,9 @@
             position: absolute;
             @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
             content: "Закрыть";
-            left: 35px; 
+            left: 35px;
             bottom: -17px;
-            transition: all .5s;
+            transition: all 0.5s;
         }
 
         &:hover {
@@ -169,7 +169,7 @@
 
         &.clicked {
             &::after {
-                bottom: 10px;
+                bottom: 11px;
             }
 
             .settings__button-title {
@@ -184,9 +184,17 @@
         margin: 0 8px;
     }
 
+    &__button-icon--close {
+        position: absolute;
+        left: 10px;
+        width: 12px;
+        height: 12px;
+        opacity: 0;
+    }
+
     &__button-title {
         @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
         margin-right: 8px;
-        transition: transform .4s;
+        transition: transform 0.4s;
     }
 }

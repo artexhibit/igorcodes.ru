@@ -48,6 +48,7 @@ function setupPickedButtons() {
 function performActionsWithClickedButton(event) {
     moveSlider(event.currentTarget);
     savePickedButtonState(event.currentTarget);
+    setupTheme(themeMediaQuery);
 }
 
 //save picked option to local storage

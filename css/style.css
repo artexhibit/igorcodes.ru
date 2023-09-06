@@ -997,6 +997,7 @@ body {
   border-radius: 10px;
   background-color: rgb(var(--clr-accent-rgb), 0.2);
   cursor: pointer;
+  transition: left 0.35s ease, width 0.3s ease;
 }
 
 .settings__button {

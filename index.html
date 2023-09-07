@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Игорь Волков - iOS-разработчик</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="./js/languageContent.js"></script>
+        <script src="./js/language.js"></script>
         <script defer src="./js/darkmode.js"></script>
         <script defer src="./js/header.js"></script>
         <script defer src="./js/projects.js"></script>
@@ -16,23 +18,23 @@
                 <div class="header__body">
                     <a href="https://igorcodes.ru" class="logo">
                         <img class="logo__image" src="./assets/images/header/laurelLeafLeft.png" alt="laurelLeafLeft" />
-                        <span class="logo__text">ИВ</span>
+                        <span class="logo__text" id="logo__text">ИВ</span>
                         <img class="logo__image" src="./assets/images/header/laurelLeafRight.png" alt="laurelLeafRight" />
                     </a>
                     <div class="header__nav-container">
                         <nav class="menu">
                             <ul class="menu__list">
                                 <li class="menu__item">
-                                    <a class="menu__link" href="#">Проекты</a>
+                                    <a class="menu__link" id="link1" href="#">Проекты</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a class="menu__link" href="#">Обо мне</a>
+                                    <a class="menu__link" id="link2" href="#">Обо мне</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a class="menu__link" href="#">Резюме</a>
+                                    <a class="menu__link" id="link3" href="#">Резюме</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a class="menu__link" href="#">Связаться</a>
+                                    <a class="menu__link" id="link4" href="#">Связаться</a>
                                 </li>
                             </ul>
                         </nav>
@@ -63,7 +65,7 @@
                     </div>
                     <div class="header__hamburger">
                         <button class="hamburger">
-                            <p class="hamburger__title">Меню</p>
+                            <p class="hamburger__title" id="hamb__title">Меню</p>
                             <div class="hamburger__bars-container">
                                 <span class="hamburger__bar"></span>
                                 <span class="hamburger__bar"></span>
@@ -79,8 +81,8 @@
                 <div class="name__body">
                     <div class="wrapper">
                         <img class="name__image" src="./assets/images/name/portrait.png" alt="portrait" />
-                        <p class="name__title">Игорь Волков</p>
-                        <p class="name__subtitle">Расширяя горизонты: мой путь в мире мобильной и веб-разработки</p>
+                        <p class="name__title" id="name__title">Игорь Волков</p>
+                        <p class="name__subtitle" id="name__subtitle">Расширяя горизонты: мой путь в мире мобильной и веб-разработки</p>
                     </div>
                     <div class="double-chevron">
                         <div class="arrow">
@@ -99,20 +101,20 @@
             <div class="container">
                 <div class="projects__body">
                     <div class="projects__topic">
-                        <h2 class="headline">Проекты</h2>
+                        <h2 class="headline" id="headline">Проекты</h2>
                     </div>
                     <div class="projects__tabs">
                         <div class="projects__tabs-container">
                             <div class="tab active" id="swift">
                                 <a href="" class="tab__item">
                                     <img class="tab__image" src="./assets/images/projects/swift.svg" alt="Swift" />
-                                    <p class="tab__title">Свифт</p>
+                                    <p class="tab__title" id="tab1">Свифт</p>
                                 </a>
                             </div>
                             <div class="tab" id="web">
                                 <a href="" class="tab__item">
                                     <img class="tab__image" src="./assets/images/projects/html5.svg" alt="html5" />
-                                    <p class="tab__title">Веб-разработка</p>
+                                    <p class="tab__title" id="tab2">Веб-разработка</p>
                                 </a>
                             </div>
                         </div>
@@ -124,10 +126,10 @@
                                 <div class="card__cover">
                                     <img class="card__image short" src="./assets/images/projects/kursvalut.png" alt="kursvalut" />
                                 </div>
-                                <p class="card__title">Kursvalut</p>
+                                <p class="card__title" id="card__title1">Kursvalut</p>
                                 <div class="card__button-container">
                                     <div class="card__subtitle-container">
-                                        <p class="card__subtitle">
+                                        <p class="card__subtitle" id="card__subtitle1">
                                             Удобный конвертер валют по курсу ЦБ РФ и Форекс. Приложение написано с нуля на UIKit на Storyboard и без использования сторонних библиотек.
                                             <br />
                                             <br />
@@ -136,7 +138,7 @@
                                     </div>
                                     <div class="card__button-wrapper">
                                         <button class="card__button">
-                                            <p class="card__button-title">Раскрыть</p>
+                                            <p class="card__button-title" id="card__button1">Раскрыть</p>
                                             <img class="card__button-icon" src="./assets/images/projects/chevron.svg" alt="chevron" />
                                         </button>
                                     </div>
@@ -153,7 +155,7 @@
                                     <div class="card__link">
                                         <a href="" class="link">
                                             <img class="link__icon" src="./assets/images/projects/globe.svg" alt="globe" />
-                                            <p class="link__title">Открыть сайт</p>
+                                            <p class="link__title" id="link__title1">Открыть сайт</p>
                                             <img class="link__arrow" src="./assets/images/projects/arrowRightBlue.svg" alt="arrow" />
                                         </a>
                                     </div>
@@ -165,14 +167,14 @@
                                 <div class="card__cover">
                                     <img class="card__image" src="./assets/images/projects/NFT.png" alt="NFT" />
                                 </div>
-                                <p class="card__title">Проект &#171;NFT&#187;</p>
+                                <p class="card__title" id="card__title2">Проект &#171;NFT&#187;</p>
                                 <div class="card__button-container">
                                     <div class="card__subtitle-container">
-                                        <p class="card__subtitle">Вёрстка лендинга сайта про NFT. Это моё первое знакомство с веб-версткой как таковой. Здесь я познакомился с основами верстки, отработал и освоил основные концепции, приёмы.</p>
+                                        <p class="card__subtitle" id="card__subtitle2">Вёрстка лендинга сайта про NFT. Это моё первое знакомство с веб-версткой как таковой. Здесь я познакомился с основами верстки, отработал и освоил основные концепции, приёмы.</p>
                                     </div>
                                     <div class="card__button-wrapper">
                                         <button class="card__button">
-                                            <p class="card__button-title">Раскрыть</p>
+                                            <p class="card__button-title" id="card__button2">Раскрыть</p>
                                             <img class="card__button-icon" src="./assets/images/projects/chevron.svg" alt="chevron" />
                                         </button>
                                     </div>
@@ -189,7 +191,7 @@
                                     <div class="card__link">
                                         <a href="" class="link">
                                             <img class="link__icon" src="./assets/images/projects/githubBlue.svg" alt="github" />
-                                            <p class="link__title">Открыть на GitHub</p>
+                                            <p class="link__title" id="link__title2">Открыть на GitHub</p>
                                             <img class="link__arrow" src="./assets/images/projects/arrowRightBlue.svg" alt="arrow" />
                                         </a>
                                     </div>
@@ -201,10 +203,10 @@
                                 <div class="card__cover">
                                     <img class="card__image" src="./assets/images/projects/liveTV.png" alt="liveTV" />
                                 </div>
-                                <p class="card__title">Онлайн-кинотеатр &#171;LiveTV&#187;</p>
+                                <p class="card__title" id="card__title3">Онлайн-кинотеатр &#171;LiveTV&#187;</p>
                                 <div class="card__button-container">
                                     <div class="card__subtitle-container">
-                                        <p class="card__subtitle">
+                                        <p class="card__subtitle" id="card__subtitle3">
                                             Вёрстка лендинга сайта на фреймворке Bootstrap. В процессе работы с ним я изучил различные компоненты и стили, такие как навигация, кнопки, формы и модальные окна.
                                             <br />
                                             <br />
@@ -213,7 +215,7 @@
                                     </div>
                                     <div class="card__button-wrapper">
                                         <button class="card__button">
-                                            <p class="card__button-title">Раскрыть</p>
+                                            <p class="card__button-title" id="card__button3">Раскрыть</p>
                                             <img class="card__button-icon" src="./assets/images/projects/chevron.svg" alt="chevron" />
                                         </button>
                                     </div>
@@ -227,7 +229,7 @@
                                     <div class="card__link">
                                         <a href="" class="link">
                                             <img class="link__icon" src="./assets/images/projects/githubBlue.svg" alt="github" />
-                                            <p class="link__title">Открыть на GitHub</p>
+                                            <p class="link__title" id="link__title3">Открыть на GitHub</p>
                                             <img class="link__arrow" src="./assets/images/projects/arrowRightBlue.svg" alt="arrow" />
                                         </a>
                                     </div>
@@ -239,10 +241,10 @@
                                 <div class="card__cover">
                                     <img class="card__image" src="./assets/images/projects/riksha.png" alt="riksha" />
                                 </div>
-                                <p class="card__title">Магазин суши &#171;Riksha&#187;</p>
+                                <p class="card__title" id="card__title4">Магазин суши &#171;Riksha&#187;</p>
                                 <div class="card__button-container">
                                     <div class="card__subtitle-container">
-                                        <p class="card__subtitle">
+                                        <p class="card__subtitle" id="card__subtitle4">
                                             Вёрстка лендинга на препроцессоре SASS/SCSS. Здесь я научился использовать мощные функции, такие как переменные для упрощения управления значениями, миксины для создания переиспользуемых стилей с параметрами, и вложенность для структурирования кода.
                                             <br />
                                             <br />
@@ -251,7 +253,7 @@
                                     </div>
                                     <div class="card__button-wrapper">
                                         <button class="card__button">
-                                            <p class="card__button-title">Раскрыть</p>
+                                            <p class="card__button-title" id="card__button4">Раскрыть</p>
                                             <img class="card__button-icon" src="./assets/images/projects/chevron.svg" alt="chevron" />
                                         </button>
                                     </div>
@@ -265,7 +267,7 @@
                                     <div class="card__link">
                                         <a href="" class="link">
                                             <img class="link__icon" src="./assets/images/projects/githubBlue.svg" alt="github" />
-                                            <p class="link__title">Открыть на GitHub</p>
+                                            <p class="link__title" id="link__title4">Открыть на GitHub</p>
                                             <img class="link__arrow" src="./assets/images/projects/arrowRightBlue.svg" alt="arrow" />
                                         </a>
                                     </div>
@@ -277,10 +279,10 @@
                                 <div class="card__cover">
                                     <img class="card__image" src="./assets/images/projects/pages.png" alt="pages" />
                                 </div>
-                                <p class="card__title">Книжный магазин &#171;Pages&#187;</p>
+                                <p class="card__title" id="card__title5">Книжный магазин &#171;Pages&#187;</p>
                                 <div class="card__button-container">
                                     <div class="card__subtitle-container">
-                                        <p class="card__subtitle">
+                                        <p class="card__subtitle" id="card__subtitle5">
                                             Вёрстка лендинга на фреймворке Tailwind. Работа с данным фреймворком позволила мне использовать класс-центричную методологию и быстро применять стили через добавление классов в HTML. Это обеспечило последовательный и единообразный дизайн веб-сайта.
                                             <br />
                                             <br />
@@ -292,7 +294,7 @@
                                     </div>
                                     <div class="card__button-wrapper">
                                         <button class="card__button">
-                                            <p class="card__button-title">Раскрыть</p>
+                                            <p class="card__button-title" id="card__button5">Раскрыть</p>
                                             <img class="card__button-icon" src="./assets/images/projects/chevron.svg" alt="chevron" />
                                         </button>
                                     </div>
@@ -306,7 +308,7 @@
                                     <div class="card__link">
                                         <a href="" class="link">
                                             <img class="link__icon" src="./assets/images/projects/githubBlue.svg" alt="github" />
-                                            <p class="link__title">Открыть на GitHub</p>
+                                            <p class="link__title" id="link__title5">Открыть на GitHub</p>
                                             <img class="link__arrow" src="./assets/images/projects/arrowRightBlue.svg" alt="arrow" />
                                         </a>
                                     </div>
@@ -321,41 +323,41 @@
             <div class="container">
                 <div class="footer__body">
                     <div class="footer__quote">
-                        <q class="quote">Путешествие - это награда</q>
+                        <q class="quote" id="quote">Путешествие - это награда</q>
                     </div>
                     <div class="footer__switches">
                         <div class="footer__switch-theme">
-                            <p class="footer__switch-title">Тема</p>
+                            <p class="footer__switch-title" id="switch__title1">Тема</p>
                             <div class="switch" id="theme">
                                 <button class="switch__button" id="light">
                                     <img class="switch__icon" src="./assets/images/footer/sun.svg" alt="sun" />
-                                    <p class="switch__option">Светлая</p>
+                                    <p class="switch__option" id="switch__option1">Светлая</p>
                                 </button>
                                 <button class="switch__button" id="dark">
                                     <img class="switch__icon" src="./assets/images/footer/moon.svg" alt="moon" />
-                                    <p class="switch__option">Тёмная</p>
+                                    <p class="switch__option" id="switch__option2">Тёмная</p>
                                 </button>
                                 <button class="switch__button" id="autoTheme">
                                     <img class="switch__icon" src="./assets/images/footer/pc.svg" alt="pc" />
-                                    <p class="switch__option">Авто</p>
+                                    <p class="switch__option" id="switch__option3">Авто</p>
                                 </button>
                                 <div class="switch__slider"></div>
                             </div>
                         </div>
                         <div class="footer__switch-lang">
-                            <p class="footer__switch-title">Язык</p>
+                            <p class="footer__switch-title" id="switch__title2">Язык</p>
                             <div class="switch" id="lang">
-                                <button class="switch__button" id="rus">
+                                <button class="switch__button" id="ru">
                                     <img class="switch__icon" src="./assets/images/footer/rus.svg" alt="rus" />
-                                    <p class="switch__option">Русский</p>
+                                    <p class="switch__option" id="switch__option4">Русский</p>
                                 </button>
-                                <button class="switch__button" id="eng">
+                                <button class="switch__button" id="en">
                                     <img class="switch__icon" src="./assets/images/footer/usa.svg" alt="usa" />
-                                    <p class="switch__option">Английский</p>
+                                    <p class="switch__option" id="switch__option5">Английский</p>
                                 </button>
                                 <button class="switch__button" id="autoLang">
                                     <img class="switch__icon" src="./assets/images/footer/pc.svg" alt="pc" />
-                                    <p class="switch__option">Авто</p>
+                                    <p class="switch__option" id="switch__option6">Авто</p>
                                 </button>
                                 <div class="switch__slider"></div>
                             </div>
@@ -365,7 +367,7 @@
                         <button class="settings__button">
                             <img class="settings__button-icon" src="./assets/images/footer/gear.svg" alt="gear" />
                             <img class="settings__button-icon--close" src="./assets/images/footer/close.svg" alt="close" />
-                            <p class="settings__button-title">Настройки</p>
+                            <p class="settings__button-title" id="settings">Настройки</p>
                         </button>
                     </div>
                 </div>

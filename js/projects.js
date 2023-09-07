@@ -6,6 +6,7 @@ let cardsContainer = document.querySelector(".projects__cards");
 let expandButtons = document.querySelectorAll(".card__button");
 let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
+let pickedTab = document.querySelector(".active").querySelector("a");
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
@@ -17,7 +18,6 @@ expandButtons.forEach((button) => {
 
 // set default slider width and position on page load
 window.addEventListener("load", function () {
-    let pickedTab = document.querySelector(".active").querySelector("a");
     configureSlider(pickedTab);
     setupCard();
     addMarginToCardsContainer();

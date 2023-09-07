@@ -16,10 +16,11 @@ allSwitchButtons.forEach((button) => {
 });
 
 window.addEventListener("load", function () {
+    setupLanguage();
+    configureSlider(pickedTab);
     setInitialSwitchValues();
     setupPickedButtons();
 });
-
 
 //on a first page load if there is no saved options set the default ones
 function setInitialSwitchValues() {
@@ -46,9 +47,14 @@ function setupPickedButtons() {
 }
 
 function performActionsWithClickedButton(event) {
-    moveSlider(event.currentTarget);
     savePickedButtonState(event.currentTarget);
-    setupTheme(themeMediaQuery);
+    if (event.currentTarget.parentNode.id === "theme") {
+        setupTheme(themeMediaQuery);
+    } else {
+        setupLanguage();
+        configureSlider(pickedTab);
+    }
+    moveSlider(event.currentTarget);
 }
 
 //save picked option to local storage

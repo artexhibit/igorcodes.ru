@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "SFProDisplayBlack";
   src: url("../assets/fonts/SFPro/SFProDisplayBlack.otf");
@@ -1015,9 +1014,9 @@ body {
 .settings__button::after {
   position: absolute;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
+  font-size: 0.7rem;
   color: var(--text-color);
-  content: "Закрыть";
+  content: attr(data-content);
   left: 35px;
   bottom: -17px;
   transition: all 0.5s;
@@ -1045,7 +1044,7 @@ body {
 }
 .settings__button-title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
+  font-size: 0.7rem;
   color: var(--text-color);
   margin-right: 8px;
   transition: transform 0.4s;

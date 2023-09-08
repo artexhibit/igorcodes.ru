@@ -157,8 +157,8 @@
 
         &::after {
             position: absolute;
-            @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
-            content: "Закрыть";
+            @include fontConfig("SFProDisplayRegular", 0.7rem, var(--text-color));
+            content: attr(data-content);
             left: 35px;
             bottom: -17px;
             transition: all 0.5s;
@@ -194,7 +194,7 @@
     }
 
     &__button-title {
-        @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
+        @include fontConfig("SFProDisplayRegular", 0.7rem, var(--text-color));
         margin-right: 8px;
         transition: transform 0.4s;
     }

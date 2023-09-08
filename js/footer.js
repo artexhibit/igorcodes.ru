@@ -53,11 +53,14 @@ function performActionsWithClickedButton(event) {
         setupTheme(themeMediaQuery);
     } else {
         setupLanguage();
+        setTextForPseudoElement(settingsButton, ["Close"], ["Закрыть"]);
         configureSlider(pickedTab);
         //if language was changed when some projects cards were expanded - recalculate card heights because text height can be different for languages
         setTimeout(() => {
             expandButtons.forEach((button) => {
-                expandButtonClicked(button);
+                if (button.classList.contains("expanded")) {
+                    expandButtonClicked(button);
+                }
             });
         }, 50);
     }
@@ -111,6 +114,7 @@ function closeSettings() {
 //perform icons animation and title changing on button click
 function configureSettingsButton() {
     settingsButton.classList.toggle("clicked");
+    setTextForPseudoElement(settingsButton, ["Close"], ["Закрыть"]);
 
     if (settingsButton.classList.contains("clicked")) {
         settingsButtonMainIcon.style.animation = "hideIcon 0.3s ease-in-out forwards";

@@ -36,3 +36,12 @@ function setTextFor(button, container, className, engWords, rusWords) {
 
     button.innerHTML = container.classList.contains(className) ? firstOption : secondOption;
 }
+
+function setTextForPseudoElement(element, engWords, rusWords) {
+    let language = localStorage.getItem("lang");
+    let activeLang = defineLanguageIfAutoPicked();
+    
+    let title = language === "en" || activeLang === "en" ? engWords[0] : rusWords[0];
+
+    element.setAttribute("data-content", title);
+}

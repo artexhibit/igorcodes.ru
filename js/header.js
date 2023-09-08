@@ -54,7 +54,7 @@ function changeHamburgerTitle() {
     hamburgerTitle.classList.toggle("fade-out");
 
     setTimeout(() => {
-        hamburgerTitle.textContent = navMenu.classList.contains("active") ? "Закрыть" : "Меню";
+        setTextFor(hamburgerTitle, navMenu, "active", ["Close", "Menu"], ["Закрыть", "Меню"]);
         hamburgerTitle.classList.toggle("fade-out");
     }, 150);
 }

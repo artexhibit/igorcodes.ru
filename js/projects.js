@@ -83,12 +83,12 @@ function expandButtonClicked(event) {
 
     buttonWrapper.classList.toggle("opened");
     pressedButtonChevron.classList.toggle("opened");
+    setTextFor(pressedButton.querySelector("p"), buttonWrapper, "opened", ["Hide", "Expand"], ["Свернуть", "Раскрыть"]);
 
     if (buttonWrapper.classList.contains("opened")) {
         subtitleContainer.style.height = `${textContent.offsetHeight}px`;
         buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
         buttonContainer.style.marginBottom = "60px";
-        pressedButton.querySelector("p").textContent = "Свернуть";
         card.classList.add("expanded");
 
         animateIn([cardContainer, card], cardContainer, textContent, buttonContainer);
@@ -109,7 +109,6 @@ function expandButtonClicked(event) {
             }
         });
     } else {
-        pressedButton.querySelector("p").textContent = "Раскрыть";
         subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
         subtitleContainer.style.height = "60px";
         buttonContainer.style.height = "70px";

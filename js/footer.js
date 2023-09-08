@@ -48,11 +48,18 @@ function setupPickedButtons() {
 
 function performActionsWithClickedButton(event) {
     savePickedButtonState(event.currentTarget);
+
     if (event.currentTarget.parentNode.id === "theme") {
         setupTheme(themeMediaQuery);
     } else {
         setupLanguage();
         configureSlider(pickedTab);
+        //if language was changed when some projects cards were expanded - recalculate card heights because text height can be different for languages
+        setTimeout(() => {
+            expandButtons.forEach((button) => {
+                expandButtonClicked(button);
+            });
+        }, 50);
     }
     moveSlider(event.currentTarget);
 }

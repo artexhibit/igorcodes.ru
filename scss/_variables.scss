@@ -15,12 +15,14 @@
     --clr-card-shadow-hover: rgba(0, 0, 0, .16);
     --clr-button-primary: #F1F1F5;
     --clr-button-secondary: #525255;
-    --clr-tag-primary: rgba(56,139,253, 0.1);
-    --clr-tag-secondary: #2f81f7;
 
     --background: var(--clr-background);
     --text-color: var(--clr-primary);
     --nav-container-clr: var(--clr-secondary); 
+
+    --clr-tag-primary: rgba(56,139,253, 0.1);
+    --clr-tag-secondary: #2f81f7;
+    --clr-footer-sun: #FF8C00;
 }
 
 .darkMode {

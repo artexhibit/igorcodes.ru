@@ -6,7 +6,7 @@ let languageContent = {
         link3: "Resume",
         link4: "Contact",
         hamb__title: "Menu",
-        name__title: "Игорь Волков",
+        name__title: "Igor Volkov",
         name__subtitle: "Expanding Horizons: My Path in the World of Mobile and Web Development",
         headline: "Projects",
         tab1: "Swift",

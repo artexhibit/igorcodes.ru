@@ -105,15 +105,18 @@
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+    background-color: var(--clr-card-accent);
 
     &__button {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         min-width: 65px;
         border: none;
-        background-color: var(--clr-card-accent);
+        background-color: transparent;
+        z-index: 1;
         cursor: pointer;
     }
 
@@ -121,13 +124,32 @@
         width: 15px;
         height: 15px;
         margin: 8px 0 5px 0;
-        z-index: 1;
+        transform: rotate(-360deg);
+
+        &.rotate {
+            animation: rotation .8s linear 1;
+        }
+    }
+
+    &__icon-wave {
+        position: absolute;
+        top: 11px;
+        left: 28px;
+        width: 9px;
+        height: 9px;
+        opacity: 0;
+        border-radius: 50%;
+        transition: opacity 0.5s, transform 0.5s;
+        background-color: var(--clr-footer-sun);
+
+        &.animate {
+            animation: animateWave .8s linear 1;
+        }
     }
 
     &__option {
         margin: 0 10px 8px 10px;
         @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
-        z-index: 1;
     }
 
     &__slider {

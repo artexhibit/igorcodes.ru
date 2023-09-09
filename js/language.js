@@ -19,12 +19,14 @@ function switchLang(lang) {
 function defineLanguageIfAutoPicked() {
     let availableLanguages = ["ru", "en"];
     let language = localStorage.getItem("lang");
+    let targetLang;
 
     if (language === "autoLang") {
         availableLanguages.forEach((item) => {
-            return (activeLang = navigator.language.includes(item) ? item : "en");
+            targetLang = navigator.language.includes(item) ? item : "en";
         });
     }
+    return targetLang;
 }
 
 function setTextFor(button, container, className, engWords, rusWords) {
@@ -40,7 +42,6 @@ function setTextFor(button, container, className, engWords, rusWords) {
 function setTextForPseudoElement(element, engWords, rusWords) {
     let language = localStorage.getItem("lang");
     let activeLang = defineLanguageIfAutoPicked();
-    
     let title = language === "en" || activeLang === "en" ? engWords[0] : rusWords[0];
 
     element.setAttribute("data-content", title);

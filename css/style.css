@@ -50,11 +50,12 @@
   --clr-card-shadow-hover: rgba(0, 0, 0, .16);
   --clr-button-primary: #F1F1F5;
   --clr-button-secondary: #525255;
-  --clr-tag-primary: rgba(56,139,253, 0.1);
-  --clr-tag-secondary: #2f81f7;
   --background: var(--clr-background);
   --text-color: var(--clr-primary);
   --nav-container-clr: var(--clr-secondary);
+  --clr-tag-primary: rgba(56,139,253, 0.1);
+  --clr-tag-secondary: #2f81f7;
+  --clr-footer-sun: #FF8C00;
 }
 
 .darkMode {
@@ -964,29 +965,48 @@ body {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
+  background-color: var(--clr-card-accent);
 }
 .switch__button {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 65px;
   border: none;
-  background-color: var(--clr-card-accent);
+  background-color: transparent;
+  z-index: 1;
   cursor: pointer;
 }
 .switch__icon {
   width: 15px;
   height: 15px;
   margin: 8px 0 5px 0;
-  z-index: 1;
+  transform: rotate(-360deg);
+}
+.switch__icon.rotate {
+  animation: rotation 0.8s linear 1;
+}
+.switch__icon-wave {
+  position: absolute;
+  top: 11px;
+  left: 28px;
+  width: 9px;
+  height: 9px;
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0.5s, transform 0.5s;
+  background-color: var(--clr-footer-sun);
+}
+.switch__icon-wave.animate {
+  animation: animateWave 0.8s linear 1;
 }
 .switch__option {
   margin: 0 10px 8px 10px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
   color: var(--text-color);
-  z-index: 1;
 }
 .switch__slider {
   position: absolute;
@@ -1104,5 +1124,22 @@ body {
   100% {
     transform: rotate(-720deg);
     opacity: 1;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes animateWave {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }

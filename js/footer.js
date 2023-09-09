@@ -6,6 +6,7 @@ let switchContainers = document.querySelectorAll(".switch");
 let settingsButtonMainIcon = document.querySelector(".settings__button-icon");
 let settingsButtonCloseIcon = document.querySelector(".settings__button-icon--close");
 let allSwitchButtons = [...switchesView.querySelectorAll(".switch__button")];
+let isAnimationRunning = false;
 
 settingsButton.addEventListener("click", showSettingsSetup);
 window.addEventListener("scroll", closeSettings);
@@ -64,6 +65,7 @@ function performActionsWithClickedButton(event) {
             });
         }, 50);
     }
+    runButtonAnimation(event.currentTarget);
     moveSlider(event.currentTarget);
 }
 
@@ -122,5 +124,21 @@ function configureSettingsButton() {
     } else {
         settingsButtonCloseIcon.style.animation = "hideIconReverse 0.3s ease-in-out forwards";
         settingsButtonMainIcon.style.animation = "showIconReverse 0.4s ease-in-out forwards";
+    }
+}
+
+function runButtonAnimation(button) {
+    if (button.id === "light") {
+        if (!isAnimationRunning) {
+            isAnimationRunning = true;
+            button.querySelector("span").classList.add("animate");
+            button.firstElementChild.classList.add("rotate");
+
+            setTimeout(() => {
+                isAnimationRunning = false;
+                button.firstElementChild.classList.remove("rotate");
+                button.querySelector("span").classList.remove("animate");
+            }, 800);
+        }
     }
 }

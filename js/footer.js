@@ -6,7 +6,15 @@ let switchContainers = document.querySelectorAll(".switch");
 let settingsButtonMainIcon = document.querySelector(".settings__button-icon");
 let settingsButtonCloseIcon = document.querySelector(".settings__button-icon--close");
 let allSwitchButtons = [...switchesView.querySelectorAll(".switch__button")];
-let isAnimationRunning = false;
+
+let buttonAnimationFlags = {
+    light: false,
+    dark: false,
+    autoTheme: false,
+    ru: false,
+    en: false,
+    autoLang: false,
+};
 
 settingsButton.addEventListener("click", showSettingsSetup);
 window.addEventListener("scroll", closeSettings);
@@ -127,18 +135,33 @@ function configureSettingsButton() {
     }
 }
 
+//trigger icon animation when button pressed
 function runButtonAnimation(button) {
     if (button.id === "light") {
-        if (!isAnimationRunning) {
-            isAnimationRunning = true;
-            button.querySelector("span").classList.add("animate");
-            button.firstElementChild.classList.add("rotate");
+        setupAnimationFor(button, button.id, "rotate", true, "animate");
+    } else if (button.id === "dark") {
+        setupAnimationFor(button, button.id, "swing");
+    } else if (button.id === "autoTheme" || button.id === "autoLang") {
+        setupAnimationFor(button, button.id, "flip");
+    } else {
+        setupAnimationFor(button, button.id, "pulse");
+    }
+}
 
-            setTimeout(() => {
-                isAnimationRunning = false;
-                button.firstElementChild.classList.remove("rotate");
-                button.querySelector("span").classList.remove("animate");
-            }, 800);
+function setupAnimationFor(button, id, animation, multiple = false, multipleAnimation = "") {
+    if (!buttonAnimationFlags[id]) {
+        buttonAnimationFlags[id] = true;
+        if (multiple) {
+            button.querySelector("span").classList.add(multipleAnimation);
         }
+        button.firstElementChild.classList.add(animation);
+
+        setTimeout(() => {
+            buttonAnimationFlags[id] = false;
+            if (multiple) {
+                button.querySelector("span").classList.remove(multipleAnimation);
+            }
+            button.firstElementChild.classList.remove(animation);
+        }, 800);
     }
 }

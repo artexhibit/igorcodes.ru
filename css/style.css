@@ -983,10 +983,19 @@ body {
   width: 15px;
   height: 15px;
   margin: 8px 0 5px 0;
-  transform: rotate(-360deg);
 }
 .switch__icon.rotate {
-  animation: rotation 0.8s linear 1;
+  animation: rotation 0.8s linear;
+}
+.switch__icon.swing {
+  animation: swing 0.8s ease-in-out;
+  transform-origin: top;
+}
+.switch__icon.flip {
+  animation: flip 0.8s ease-in-out;
+}
+.switch__icon.pulse {
+  animation: pulse 0.8s linear;
 }
 .switch__icon-wave {
   position: absolute;
@@ -1141,5 +1150,35 @@ body {
   to {
     transform: scale(4);
     opacity: 0;
+  }
+}
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25%, 75% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
   }
 }

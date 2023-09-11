@@ -50,6 +50,7 @@
   --clr-card-shadow-hover: rgba(0, 0, 0, .16);
   --clr-button-primary: #F1F1F5;
   --clr-button-secondary: #525255;
+  --clr-switch-background: #F5F7FA;
   --background: var(--clr-background);
   --text-color: var(--clr-primary);
   --nav-container-clr: var(--clr-secondary);
@@ -74,6 +75,7 @@
   --clr-card-shadow-hover: rgb(99 102 241 / .2);
   --clr-button-primary: #1C1C1D;
   --clr-button-secondary: #99989F;
+  --clr-switch-background: #281f01;
   --background: var(--clr-background);
   --text-color: var(--clr-primary);
   --nav-container-clr: #141617;
@@ -956,7 +958,7 @@ body {
 
 .quote {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 0.13rem + 2.8vw, 1.25rem);
+  font-size: clamp(0.9rem, 0.13rem + 2.8vw, 1.25rem);
   color: var(--text-color);
 }
 
@@ -965,7 +967,7 @@ body {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  background-color: var(--clr-card-accent);
+  background-color: var(--clr-switch-background);
 }
 .switch__button {
   position: relative;
@@ -1043,7 +1045,7 @@ body {
 .settings__button::after {
   position: absolute;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--text-color);
   content: attr(data-content);
   left: 35px;
@@ -1054,7 +1056,7 @@ body {
   outline: 1px solid var(--clr-accent);
 }
 .settings__button.clicked::after {
-  bottom: 11px;
+  bottom: 10px;
 }
 .settings__button.clicked .settings__button-title {
   transform: translateX(130%);
@@ -1073,7 +1075,7 @@ body {
 }
 .settings__button-title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--text-color);
   margin-right: 8px;
   transition: transform 0.4s;

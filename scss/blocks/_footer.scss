@@ -98,14 +98,14 @@
     }
 }
 .quote {
-    @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color));
+    @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color));
 }
 .switch {
     position: relative;
     display: flex;
     border-radius: 10px;
     overflow: hidden;
-    background-color: var(--clr-card-accent);
+    background-color: var(--clr-switch-background);
 
     &__button {
         position: relative;
@@ -191,7 +191,7 @@
 
         &::after {
             position: absolute;
-            @include fontConfig("SFProDisplayRegular", 0.7rem, var(--text-color));
+            @include fontConfig("SFProDisplayRegular", 0.8rem, var(--text-color));
             content: attr(data-content);
             left: 35px;
             bottom: -17px;
@@ -204,7 +204,7 @@
 
         &.clicked {
             &::after {
-                bottom: 11px;
+                bottom: 10px;
             }
 
             .settings__button-title {
@@ -228,7 +228,7 @@
     }
 
     &__button-title {
-        @include fontConfig("SFProDisplayRegular", 0.7rem, var(--text-color));
+        @include fontConfig("SFProDisplayRegular", 0.8rem, var(--text-color));
         margin-right: 8px;
         transition: transform 0.4s;
     }

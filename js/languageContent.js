@@ -1,5 +1,6 @@
 let languageContent = {
     en: {
+        title: "Igor Volkov - iOS Developer",
         logo__text: "IV",
         link1: "Projects",
         link2: "About me",
@@ -43,6 +44,7 @@ let languageContent = {
         settings: "Settings",
     },
     ru: {
+        title: "Игорь Волков - iOS-разработчик",
         logo__text: "ИВ",
         link1: "Проекты",
         link2: "Обо мне",

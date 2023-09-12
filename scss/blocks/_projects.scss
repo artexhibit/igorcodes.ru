@@ -303,7 +303,16 @@
         }
     }
 
-    &__link {
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+
+        @include esm {
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 4px;
+        }
     }
 
     &__subtitle-container {
@@ -335,18 +344,32 @@
     }
 }
 .link {
+    position: relative;
     display: flex;
     align-items: center;
     text-decoration: none;
 
     @include esm {
         justify-content: center;
+
+        &:last-child img:first-child {
+            width: 15px;
+        }
     }
 
     &:hover {
-        opacity: 0.7;
+        .link__icon {
+            opacity: 0.7;
+        }
+
         .link__arrow {
             transform: translateX(7px);
+        }
+
+        .tooltip {
+            visibility: visible;
+            opacity: 1;
+            top: -45px;
         }
     }
 
@@ -400,4 +423,19 @@
     opacity: 1;
     transform: translateY(0);
     transition: all 1s ease-in-out;
+}
+
+.tooltip {
+    @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-card-secondary));
+    @include createTooltip($bodyTop: -30px, $bodyRight: 5px, $triangleRight: 9px, $triangleBottom: -4px); 
+
+    @include esm {
+        right: -70px;
+    }
+
+    &::before {
+        @include esm {
+            right: 70%;
+        }
+    }
 }

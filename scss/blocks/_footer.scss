@@ -1,6 +1,10 @@
 .footer {
     border-top: 1px solid var(--clr-border);
 
+    @include sm-u {
+        margin-top: 100px;
+    }
+
     &__body {
         @include flexConfig($display: flex, $alignItems: center, $justify: space-between);
 

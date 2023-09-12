@@ -132,7 +132,7 @@ function animateIn(items, cardC, textC, buttonC) {
     });
 }
 
-//animate card collapce of height when expand button pressed again
+//animate card collapse of height when expand button pressed again
 function animateOut(items, cardC, subC) {
     items.forEach((item) => {
         item.animate([{ height: item.offsetHeight + "px" }, { height: cardC.offsetHeight - subC.offsetHeight + 30 + "px" }], { duration: 800, easing: "ease" });

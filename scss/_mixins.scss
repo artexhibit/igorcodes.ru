@@ -12,3 +12,30 @@
     justify-content: $justify;
     flex-grow: $grow;
 }
+
+@mixin createTooltip($bodyTop: initial, $bodyRight: initial, $bodyBottom: initial, $bodyLeft: initial, $triangleTop: initial, $triangleRight: initial, $triangleBottom: initial, $triangleLeft: initial, $bColor: var(--clr-switch-background), $bRadius: 10px, $rotateTriangle: 45deg) {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: $bodyTop;
+    right: $bodyRight;
+    bottom: $bodyBottom;
+    left: bodyLeft;
+    background-color: $bColor;
+    border-radius: $bRadius;
+    padding: 7px 15px;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: $triangleTop;
+        right: $triangleRight;
+        bottom: $triangleBottom;
+        left: triangleLeft;
+        transform: rotate($rotateTriangle);
+        background-color: $bColor;
+        padding: 5px;
+    }
+}

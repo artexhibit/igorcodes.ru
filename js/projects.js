@@ -7,9 +7,16 @@ let expandButtons = document.querySelectorAll(".card__button");
 let cards = document.querySelectorAll(".card");
 let defaultTab = tabs[0];
 let pickedTab = document.querySelector(".active").querySelector("a");
+let projectsMenuLink = document.getElementById("link1");
+let projectsMenuLinkClicked = false;
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", tabClicked);
+});
+
+//if menu nav link "projects" was clicked, then set new cards animation, because built-in scrolling speed too fast
+projectsMenuLink.addEventListener("click", function () {
+    projectsMenuLinkClicked = true;
 });
 
 expandButtons.forEach((button) => {
@@ -196,6 +203,10 @@ function animateSection() {
                     [...projectsCards.children].forEach((card) => {
                         card.classList.add("shownCard");
                         card.classList.remove("hiddenCard");
+
+                        if (projectsMenuLinkClicked) {
+                            card.style.transition = "all 0.5s ease-in-out";
+                        }
                     });
                 } else {
                     entry.target.classList.add("shownNavigation");

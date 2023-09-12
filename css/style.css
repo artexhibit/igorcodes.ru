@@ -87,6 +87,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 89px;
+}
+
 body {
   background: var(--background);
 }

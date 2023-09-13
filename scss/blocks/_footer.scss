@@ -102,7 +102,7 @@
     }
 }
 .quote {
-    @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color));
+    @include fontConfig("SFProDisplayRegular", clamp(0.84rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color), 0.355px);
 }
 .switch {
     position: relative;
@@ -112,11 +112,8 @@
     background-color: var(--clr-switch-background);
 
     &__button {
+        @include flexConfig($display: flex, $dir: column, $justify: center, $alignItems: center);
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         min-width: 65px;
         border: none;
         background-color: transparent;
@@ -182,13 +179,11 @@
 
 .settings {
     &__button {
+        @include flexConfig($display: flex, $justify: center, $alignItems: center);
         position: relative;
-        display: flex;
         height: 35px;
         border-radius: 10px;
         border: none;
-        justify-content: center;
-        align-items: center;
         background-color: rgb(var(--clr-accent-rgb), 0.3);
         overflow: hidden;
         cursor: pointer;

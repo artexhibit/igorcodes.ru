@@ -1,7 +1,9 @@
-@mixin fontConfig($family, $size, $color) {
+@mixin fontConfig($family, $size, $color, $letSpacing: initial, $lineHeight: initial) {
     font-family: $family, Helvetica, Arial, sans-serif;
     font-size: $size;
     color: $color;
+    line-height: $lineHeight;
+    letter-spacing: $letSpacing;
 }
 
 @mixin flexConfig($display: flex, $dir: initial, $alignItems: initial, $alignText: initial, $justify: initial, $grow: initial) {

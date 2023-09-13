@@ -107,7 +107,7 @@
     }
 }
 .headline {
-    @include fontConfig("SFProDisplaySemiBold", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color));
+    @include fontConfig("SFProDisplaySemiBold", clamp(1.87rem, 1.21rem + 4.91vw, 3.56rem), var(--text-color), 0.442px);
 }
 .tab {
     display: flex;
@@ -220,12 +220,11 @@
 
     &__title {
         margin-bottom: 8px;
-        @include fontConfig("SFProDisplaySemiBold", clamp(1.12rem, 0.9rem + 1.18vw, 1.38rem), var(--text-color));
+        @include fontConfig("SFProDisplaySemiBold", clamp(1.12rem, 0.9rem + 1.18vw, 1.38rem), var(--text-color), 0.355px);
     }
 
     &__subtitle {
-        @include fontConfig("SFProDisplayRegular", clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem), var(--clr-card-secondary));
-        line-height: 21px;
+        @include fontConfig("SFProDisplayRegular", clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem), var(--clr-card-secondary), 0.442px, 21px);
     }
 
     &__button-container {
@@ -255,9 +254,7 @@
     }
 
     &__button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexConfig($display: flex, $justify: center, $alignItems: center);
         border: none;
         border-radius: 5px;
         opacity: 1;
@@ -287,10 +284,7 @@
     }
 
     &__bottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        flex-grow: 1;
+        @include flexConfig($display: flex, $dir: column, $justify: flex-end, $grow: 1);
     }
 
     &__tags {
@@ -331,9 +325,7 @@
     align-self: center;
 }
 .tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexConfig($display: flex, $justify: center, $alignItems: center);
     background-color: var(--clr-tag-primary);
     border-radius: 10px;
     margin-right: 5px;

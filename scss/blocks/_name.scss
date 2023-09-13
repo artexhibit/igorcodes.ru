@@ -25,23 +25,14 @@
     }
 
     &__title {
-        @include fontConfig("SFProDisplayBlack", clamp(1.25rem, -0.2rem + 10.67vw, 4.1rem), var(--text-color));
+        @include fontConfig("SFProDisplayBlack", clamp(1.25rem, -0.2rem + 10.67vw, 4.1rem), var(--text-color), 0.355px);
         margin-top: max(15px, 2.3%);
         background: linear-gradient(to right, #9e7d5b, #c3a41a, #8eac50, #94715f);
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-size: 500% auto;
-        animation: textShine 5s ease-in-out infinite alternate;
-
-        @keyframes textShine {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
+        animation: gradientAnimation 5s ease-in-out infinite alternate;
 
         @include landscape {
             @include fontConfig("SFProDisplayBlack", clamp(0.75rem, -0.7rem + 7.71vw, 4.12rem), var(--text-color));
@@ -50,7 +41,7 @@
 
     &__subtitle {
         margin-top: max(10px, 1.15%);
-        @include fontConfig("SFProDisplayRegular", clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem), var(--text-color));
+        @include fontConfig("SFProDisplayRegular", clamp(0.94rem, 0.45rem + 3.55vw, 1.88rem), var(--text-color), 0.285px);
 
         @include esm {
             margin-left: -15px;

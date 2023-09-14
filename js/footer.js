@@ -26,7 +26,10 @@ allSwitchButtons.forEach((button) => {
 
 window.addEventListener("load", function () {
     setupLanguage();
-    configureSlider(pickedTab);
+    
+    if (typeof configureSlider === 'function') {
+        configureSlider(pickedTab);
+    }
     setInitialSwitchValues();
     setupPickedButtons();
 });
@@ -63,7 +66,9 @@ function performActionsWithClickedButton(event) {
     } else {
         setupLanguage();
         setTextForPseudoElement(settingsButton, ["Close"], ["Закрыть"]);
-        configureSlider(pickedTab);
+        if (typeof configureSlider === 'function') {
+            configureSlider(pickedTab);
+        }
         //if language was changed when some projects cards were expanded - recalculate card heights because text height can be different for languages
         setTimeout(() => {
             expandButtons.forEach((button) => {

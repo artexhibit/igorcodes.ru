@@ -948,6 +948,21 @@ body {
   }
 }
 
+.connect {
+  height: calc(100svh - 165px);
+}
+.connect__wrapper {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  text-align: initial;
+  justify-content: center;
+  flex-grow: 1;
+}
+.connect__details {
+  margin-top: 48px;
+}
 .footer {
   border-top: 1px solid var(--clr-border);
 }

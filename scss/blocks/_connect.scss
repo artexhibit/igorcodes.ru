@@ -1,0 +1,28 @@
+.connect {
+    height: calc(100svh - 165px);
+
+    &__body {
+    }
+
+    &__wrapper {
+        padding-top: 10%;
+        @include flexConfig($display: flex, $dir: column, $justify: center, $grow: 1);
+    }
+
+    &__headline {
+    }
+
+    &__details {
+        margin-top: 48px;
+    }
+
+    &__email {
+    }
+
+    &__info {
+    }
+}
+.container {
+}
+.headline {
+}

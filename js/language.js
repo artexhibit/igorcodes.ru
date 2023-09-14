@@ -11,7 +11,11 @@ function setupLanguage() {
 //iterate over object with strings according to picked language and change all site's text
 function switchLang(lang) {
     for (let key in languageContent[lang]) {
-        document.getElementById(key).innerHTML = languageContent[lang][key];
+        let element = document.getElementById(key);
+        
+        if (element) {
+            element.innerHTML = languageContent[lang][key];
+        }
     }
 }
 

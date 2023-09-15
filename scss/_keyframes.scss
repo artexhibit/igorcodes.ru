@@ -124,3 +124,12 @@
         transform: scale(1);
     }
 }
+
+@keyframes textShine {  
+    0% {
+        -webkit-mask-position: 150%;
+    }
+    60%, 100% {
+        -webkit-mask-position: -50%;
+    }
+}

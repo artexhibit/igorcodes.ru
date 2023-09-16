@@ -216,14 +216,17 @@ body {
   padding: 14px 16px;
   border-radius: 12px;
 }
-.menu__link:hover {
+.menu__link:hover:not(.picked) {
   background-color: rgb(var(--clr-accent-rgb), 0.2);
 }
 @media (max-width: 1023.8px) {
-  .menu__link:hover {
+  .menu__link:hover:not(.picked) {
     background-color: transparent;
     color: var(--clr-accent);
   }
+}
+.menu__link:hover.picked {
+  color: rgb(var(--clr-accent-rgb), 0.7);
 }
 
 .socials__list {
@@ -318,6 +321,14 @@ body {
   border-radius: 15%;
   transition: all 0.3s ease-in-out;
   background-color: var(--clr-accent);
+}
+
+.picked {
+  color: var(--clr-accent);
+  text-decoration-color: var(--clr-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .name {
@@ -951,6 +962,11 @@ body {
 .connect {
   height: calc(100svh - 165px);
 }
+@media (orientation: landscape) {
+  .connect {
+    height: 100svh;
+  }
+}
 .connect__wrapper {
   padding-top: 10%;
   display: flex;
@@ -960,7 +976,7 @@ body {
   justify-content: center;
   flex-grow: 1;
 }
-@media (max-width: 319.8px) {
+@media (max-width: 1023.8px) {
   .connect__wrapper {
     align-items: center;
     text-align: center;
@@ -979,7 +995,7 @@ body {
   font-size: clamp(1.31rem, 0.35rem + 5.13vw, 2.81rem);
   color: var(--text-color);
   line-height: initial;
-  letter-spacing: initial;
+  letter-spacing: 0.285px;
   text-decoration: none;
   background: linear-gradient(to right, #9e7d5b, #c3a41a, #8eac50, #94715f);
   background-clip: text;
@@ -989,9 +1005,21 @@ body {
   -webkit-mask-size: 200%;
   animation: textShine 4s linear infinite;
 }
+.connect__email:hover {
+  border-bottom: clamp(0.16rem, 0.1rem + 0.35vw, 0.31rem) solid var(--clr-accent);
+}
+@media (orientation: landscape) {
+  .connect__email {
+    font-family: "SFProDisplayHeavy", Helvetica, Arial, sans-serif;
+    font-size: clamp(0.6rem, -0.3157rem + 4.884vw, 2.81rem);
+    color: var(--text-color);
+    line-height: initial;
+    letter-spacing: 0.285px;
+  }
+}
 .connect__info {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9375rem, 0.617rem + 1.7094vw, 1.4375rem);
+  font-size: clamp(0.94rem, 0.62rem + 1.71vw, 1.44rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
@@ -1002,10 +1030,29 @@ body {
     max-width: 600px;
   }
 }
+@media (orientation: landscape) {
+  .connect__info {
+    font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+    font-size: clamp(0.7rem, 0.39rem + 1.63vw, 1.44rem);
+    color: var(--text-color);
+    line-height: initial;
+    letter-spacing: 0.285px;
+  }
+}
 
 @media (max-width: 319.8px) {
   .connect .container {
     padding: 20px 10px;
+  }
+}
+
+@media (orientation: landscape) {
+  .connect .headline {
+    font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
+    font-size: clamp(0.6rem, -0.63rem + 6.54vw, 3.56rem);
+    color: var(--text-color);
+    line-height: initial;
+    letter-spacing: 0.285px;
   }
 }
 

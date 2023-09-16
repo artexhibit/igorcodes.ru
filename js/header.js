@@ -11,31 +11,27 @@ function itemHoveredIn(event) {
     if (event.target.tagName == "A" && !isHovered) {
         let image = event.target.querySelector("img");
 
-        if (image.alt == "stackOverflow") {
-            image.src = "./assets/images/header/stackOverflowHover.svg";
-        } else if (image.alt == "telegram") {
-            image.src = "./assets/images/header/telegramHover.svg";
-        } else if (image.alt == "envelope") {
-            image.src = "./assets/images/header/envelopeHover.svg";
+        if (image.alt !== "github") {
+            image.src = `./assets/images/header/${image.alt}Hover.svg`;
         }
         isHovered = true;
     }
 }
 
 function itemHoveredOut(event) {
+    let theme = localStorage.getItem("theme");
     let image = event.target.querySelector("img");
     let themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    let ending = themeMediaQuery.matches ? "Light" : "Dark";
+    let ending = "";
 
-    if (image.alt == "stackOverflow") {
-        image.src = `./assets/images/header/stackOverflow${ending}.svg`;
-    } else if (image.alt == "telegram") {
-        image.src = `./assets/images/header/telegram${ending}.svg`;
-    } else if (image.alt == "envelope") {
-        image.src = `./assets/images/header/envelope${ending}.svg`;
+    if (theme === "light") {
+        ending = "Dark";
+    } else if (theme === "dark") {
+        ending = "Light";
     } else {
-        image.src = `./assets/images/header/github${ending}.svg`;
+        ending = themeMediaQuery.matches ? "Light" : "Dark";
     }
+    image.src = `./assets/images/header/${image.alt}${ending}.svg`;
     isHovered = false;
 }
 

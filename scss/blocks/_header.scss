@@ -120,13 +120,16 @@ body {
         padding: 14px 16px;
         border-radius: 12px;
 
-        &:hover {
+        &:hover:not(.picked) {
             background-color: rgb(var(--clr-accent-rgb), 0.2);
 
             @include md-d {
                 background-color: transparent;
                 color: var(--clr-accent);
             }
+        }
+        &:hover.picked  {
+            color: rgb(var(--clr-accent-rgb), 0.7);
         }
     }
 }
@@ -225,4 +228,12 @@ body {
         transition: all 0.3s ease-in-out;
         background-color: var(--clr-accent);
     }
+}
+
+.picked {
+    color: var(--clr-accent);
+    text-decoration-color: var(--clr-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }

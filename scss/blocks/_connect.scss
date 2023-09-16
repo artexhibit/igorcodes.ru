@@ -1,6 +1,10 @@
 .connect {
     height: calc(100svh - 165px);
 
+    @include landscape {
+        height: 100svh;
+    }
+
     &__body {
     }
 
@@ -8,7 +12,7 @@
         padding-top: 10%;
         @include flexConfig($display: flex, $dir: column, $justify: center, $grow: 1);
 
-        @include esm {
+        @include md-d {
             align-items: center;
             text-align: center;
         }
@@ -26,32 +30,49 @@
     }
 
     &__email {
-        @include fontConfig("SFProDisplayHeavy", clamp(1.31rem, 0.35rem + 5.13vw, 2.81rem), var(--text-color));
+        @include fontConfig("SFProDisplayHeavy", clamp(1.31rem, 0.35rem + 5.13vw, 2.81rem), var(--text-color), 0.285px);
         text-decoration: none;
         background: linear-gradient(to right, #9e7d5b, #c3a41a, #8eac50, #94715f);
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        -webkit-mask-image: linear-gradient(75deg, rgba(0, 0, 0, 0.65) 30%, #000 50%, rgba(0, 0, 0, 0.65) 70%);   
+        -webkit-mask-image: linear-gradient(75deg, rgba(0, 0, 0, 0.65) 30%, #000 50%, rgba(0, 0, 0, 0.65) 70%);
         -webkit-mask-size: 200%;
-        animation: textShine 4s linear infinite; 
+        animation: textShine 4s linear infinite;
+
+        &:hover {
+            border-bottom: clamp(0.16rem, 0.1rem + 0.35vw, 0.31rem) solid var(--clr-accent);
+        }
+
+        @include landscape {
+            @include fontConfig("SFProDisplayHeavy", clamp(0.6rem, -0.3157rem + 4.884vw, 2.81rem), var(--text-color), 0.285px);
+        }
     }
 
     &__info {
-        @include fontConfig("SFProDisplayRegular", clamp(0.9375rem, 0.617rem + 1.7094vw, 1.4375rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", clamp(0.94rem, 0.62rem + 1.71vw, 1.44rem), var(--text-color), 0.285px);
         margin-top: 15px;
 
         @include sm-u {
             max-width: 600px;
+        }
+
+        @include landscape {
+            @include fontConfig("SFProDisplayRegular", clamp(0.7rem, 0.39rem + 1.63vw, 1.44rem), var(--text-color), 0.285px);
         }
     }
 }
 .container {
     @at-root .connect & {
         @include esm {
-            padding: 20px 10px; 
+            padding: 20px 10px;
         }
     }
 }
 .headline {
+    @at-root .connect & {
+        @include landscape {
+            @include fontConfig("SFProDisplaySemiBold", clamp(0.6rem, -0.63rem + 6.54vw, 3.56rem), var(--text-color), 0.285px);
+        }
+    }
 }

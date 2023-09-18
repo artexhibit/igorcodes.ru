@@ -1108,6 +1108,9 @@ body {
 .about__image-container:first-of-type {
   margin-right: 32px;
 }
+.about__image-container:first-of-type:hover {
+  animation: shake 0.35s ease;
+}
 .about__image-container:first-of-type img {
   border-radius: 20px;
 }
@@ -1124,6 +1127,8 @@ body {
 }
 .about__image-container:last-of-type {
   margin-left: 32px;
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 @media (max-width: 1023.8px) {
   .about__image-container:last-of-type {
@@ -1131,6 +1136,10 @@ body {
     margin-left: 0px;
     margin-top: 40px;
   }
+}
+.about__image-container:last-of-type:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
 }
 .about__image {
   width: 100%;
@@ -1583,5 +1592,16 @@ body {
   }
   60%, 100% {
     -webkit-mask-position: -50%;
+  }
+}
+@keyframes shake {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2.5deg);
+  }
+  75% {
+    transform: rotate(-2.5deg);
   }
 }

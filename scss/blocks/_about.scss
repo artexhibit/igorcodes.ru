@@ -53,6 +53,10 @@
         &:first-of-type {
             margin-right: 32px;
 
+            &:hover {
+                animation: shake 0.35s ease;
+            }
+
             img {
                 border-radius: 20px;
             }
@@ -69,11 +73,18 @@
 
         &:last-of-type {
             margin-left: 32px;
+            transform: scale(1);
+            transition: all 0.5s ease;
 
             @include md-d {
                 width: 70%;
                 margin-left: 0px;
                 margin-top: 40px;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+                transition: all 0.5s ease;
             }
         }
     }

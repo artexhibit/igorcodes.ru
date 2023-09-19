@@ -1,0 +1,97 @@
+.resume {
+    &__body {
+    }
+
+    &__header {
+        display: flex;
+    }
+
+    &__image-container {
+        width: 20%;
+        height: 100%;
+        aspect-ratio: 1/1;
+        background-color: #e9e9e9;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 17px;
+    }
+
+    &__image {
+        width: 100%;
+        padding-top: 10%;
+    }
+
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 17px;
+        width: 40%;
+    }
+
+    &__title {
+        @include fontConfig("SFProDisplayBold", clamp(0.4rem, -1.51rem + 10.17vw, 5rem), var(--text-color), initial, 95%);
+    }
+
+    &__subtitle-container {
+        display: flex;
+        align-items: center;
+        margin-top: 3%;
+    }
+
+    &__subtitle-icon {
+        width: 4.5%;
+        min-width: 10px;
+        max-width: 23px;
+        margin-right: 2%;
+    }
+
+    &__subtitle {
+        @include fontConfig("SFProDisplayRegular", clamp(0.4rem, -0.11rem + 2.71vw, 1.62rem), var(--text-color), 0.285px);
+        white-space: nowrap;
+    }
+
+    &__contact-container {
+        width: 40%;
+        padding-left: 17px;
+    }
+
+    &__headline {
+    }
+
+    &__headline-icon {
+        width: 20px;
+    }
+
+    &__headline-title {
+    }
+
+    &__contact-links {
+    }
+
+    &__contact-list {
+        display: flex;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    &__item-icon {
+        width: 20px;
+    }
+
+    &__contact-mail {
+    }
+
+    &__contact-icon {
+        width: 20px;
+    }
+
+    &__contact-link {
+    }
+}
+.container {
+}

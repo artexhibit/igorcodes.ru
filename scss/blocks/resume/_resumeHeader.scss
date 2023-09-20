@@ -1,9 +1,11 @@
 .resume {
     &__body {
+        padding-top: 3%;
     }
 
     &__header {
         display: flex;
+        align-items: center;
     }
 
     &__image-container {
@@ -52,45 +54,120 @@
     }
 
     &__contact-container {
+        display: flex;
+        flex-direction: column;
         width: 40%;
-        padding-left: 17px;
+        height: 50%;
+        max-width: 300px;
+        background-color: var(--clr-resume-card-background);
+        border-radius: 15px;
+        margin-left: auto;
+        outline: 1px solid var(--clr-border);
     }
 
     &__headline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 4% 0;
+        border-bottom: 1px solid var(--clr-border);
+
+        @include md-d {
+            margin: 2.5% 0;
+        }
+
+        @include md {
+            margin: 3.5% 0;
+        }
     }
 
     &__headline-icon {
-        width: 20px;
+        width: 7%;
+        min-width: 10px;
+        max-width: 23px;
+        margin: 0 2% 4% 0;
+
+        @include sm-d {
+            margin: 0 2% 2.5% 0;
+        }
+
+        @include md {
+            margin: 0 2% 3.5% 0;
+        }
     }
 
     &__headline-title {
+        @include fontConfig("SFProDisplaySemiBold", clamp(0.4rem, -0.11rem + 2.71vw, 1.62rem), var(--text-color), 0.285px);
+        margin-bottom: 4%;
+
+        @include sm-d {
+            margin-bottom: 2.5%;
+        }
+
+        @include md {
+            margin-bottom: 3.5%;
+        }
     }
 
     &__contact-links {
+        margin: 5% 10px;
+
+        @include sm-d {
+            margin: 1.5% 10px;
+        }
+
+        @include md {
+            margin: 2.5% 10px;
+        }
+        
     }
 
     &__contact-list {
         display: flex;
+        align-items: center;
+        list-style: none;
+        justify-content: space-between;
     }
 
     &__item {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
     }
 
     &__link {
     }
 
     &__item-icon {
-        width: 20px;
+        width: 100%;
+        min-width: 20px;
+        max-width: 40px;
     }
 
     &__contact-mail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5% auto;
+
+        @include sm-d {
+            margin: 1% 10px 2% 10px;
+        }
+
+        @include md {
+            margin: 2% 10px 3% 10px;
+        }
     }
 
     &__contact-icon {
-        width: 20px;
+        margin-right: 4%;
+        width: 8%;
+        height: 10%;
     }
 
     &__contact-link {
+        @include fontConfig("SFProDisplayRegular", clamp(0.4rem, 0.03rem + 1.99vw, 1.3rem), var(--text-color), 0.285px);
+        text-decoration: none;
     }
 }
 .container {

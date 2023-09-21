@@ -6,16 +6,30 @@
     &__header {
         display: flex;
         align-items: center;
+
+        @include sm-d {
+            flex-direction: column;
+        }
     }
 
     &__image-container {
-        width: 20%;
-        height: 100%;
+        width: 22%;
         aspect-ratio: 1/1;
-        background-color: #e9e9e9;
+        background-color: var(--clr-resume-card-background);
+        outline: 2px solid var(--clr-border);
         border-radius: 50%;
         overflow: hidden;
         margin-right: 17px;
+
+        @include sm-d {
+            width: 40%;
+            margin-right: 0;
+            margin-bottom: 17px;
+        }
+
+        @include esm {
+            width: 50%;
+        }
     }
 
     &__image {
@@ -29,10 +43,20 @@
         justify-content: center;
         padding: 0 17px;
         width: 40%;
+
+        @include sm-d {
+            width: 90%;
+            align-items: center;
+            padding: 0;
+        }
     }
 
     &__title {
-        @include fontConfig("SFProDisplayBold", clamp(0.4rem, -1.51rem + 10.17vw, 5rem), var(--text-color), initial, 95%);
+        @include fontConfig("SFProDisplayBold", clamp(1.6rem, 0.19rem + 7.51vw, 5rem), var(--text-color), initial, 95%);
+
+        @include sm-d {
+            white-space: nowrap;
+        }
     }
 
     &__subtitle-container {
@@ -43,13 +67,18 @@
 
     &__subtitle-icon {
         width: 4.5%;
-        min-width: 10px;
         max-width: 23px;
         margin-right: 2%;
+
+        @include sm-d {
+            width: 8%;
+            margin-right: 3%;
+            margin-bottom: 2px;
+        }
     }
 
     &__subtitle {
-        @include fontConfig("SFProDisplayRegular", clamp(0.4rem, -0.11rem + 2.71vw, 1.62rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", clamp(0.8rem, 0.46rem + 1.81vw, 1.62rem), var(--text-color), 0.285px);
         white-space: nowrap;
     }
 
@@ -57,12 +86,19 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        height: 50%;
         max-width: 300px;
         background-color: var(--clr-resume-card-background);
         border-radius: 15px;
         margin-left: auto;
-        outline: 1px solid var(--clr-border);
+
+        @include sm-d {
+            margin: 15px 0 0 0;
+            width: 55%;
+        }
+
+        @include esm {
+            width: 95%;
+        }
     }
 
     &__headline {
@@ -72,10 +108,6 @@
         margin: 4% 0;
         border-bottom: 1px solid var(--clr-border);
 
-        @include md-d {
-            margin: 2.5% 0;
-        }
-
         @include md {
             margin: 3.5% 0;
         }
@@ -83,13 +115,8 @@
 
     &__headline-icon {
         width: 7%;
-        min-width: 10px;
         max-width: 23px;
         margin: 0 2% 4% 0;
-
-        @include sm-d {
-            margin: 0 2% 2.5% 0;
-        }
 
         @include md {
             margin: 0 2% 3.5% 0;
@@ -97,29 +124,30 @@
     }
 
     &__headline-title {
-        @include fontConfig("SFProDisplaySemiBold", clamp(0.4rem, -0.11rem + 2.71vw, 1.62rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplaySemiBold", clamp(0.8rem, 0.46rem + 1.81vw, 1.62rem), var(--text-color), 0.285px);
         margin-bottom: 4%;
-
-        @include sm-d {
-            margin-bottom: 2.5%;
-        }
 
         @include md {
             margin-bottom: 3.5%;
         }
+
+        @include esm {
+            font-size: 0.7rem;
+        }
     }
 
     &__contact-links {
-        margin: 5% 10px;
-
-        @include sm-d {
-            margin: 1.5% 10px;
-        }
+        display: flex;
+        margin: 5.5% 10px;
 
         @include md {
             margin: 2.5% 10px;
         }
-        
+
+        @include sm-d {
+            justify-content: space-around;
+            margin: 1% 10px;
+        }
     }
 
     &__contact-list {
@@ -127,21 +155,43 @@
         align-items: center;
         list-style: none;
         justify-content: space-between;
+
+        @include sm-d {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
     }
 
     &__item {
         &:not(:last-child) {
             margin-right: 8px;
+
+            @include sm-d {
+                margin: 0;
+            }
+        }
+
+        @include sm-d {
+            width: 25%;
         }
     }
 
     &__link {
+        display: flex;
+
+        @include sm-d {
+            justify-content: center;
+        }
     }
 
     &__item-icon {
         width: 100%;
-        min-width: 20px;
         max-width: 40px;
+
+        @include sm-d {
+            width: 65%;
+        }
     }
 
     &__contact-mail {
@@ -151,11 +201,11 @@
         margin: 5% auto;
 
         @include sm-d {
-            margin: 1% 10px 2% 10px;
+            margin: 4% 10px;
         }
 
-        @include md {
-            margin: 2% 10px 3% 10px;
+        @include esm {
+            margin: 5% 10px;
         }
     }
 
@@ -163,11 +213,20 @@
         margin-right: 4%;
         width: 8%;
         height: 10%;
+
+        @include sm-d {
+            width: 7%;
+            margin-top: 2px;
+        }
     }
 
     &__contact-link {
-        @include fontConfig("SFProDisplayRegular", clamp(0.4rem, 0.03rem + 1.99vw, 1.3rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem), var(--text-color), 0.285px);
         text-decoration: none;
+
+        @include esm {
+            font-size: 0.8rem;
+        }
     }
 }
 .container {

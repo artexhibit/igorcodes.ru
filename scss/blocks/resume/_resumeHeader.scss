@@ -164,6 +164,8 @@
     }
 
     &__item {
+        display: flex;
+
         &:not(:last-child) {
             margin-right: 8px;
 
@@ -173,25 +175,30 @@
         }
 
         @include sm-d {
+            justify-content: center;
             width: 25%;
         }
     }
 
     &__link {
         display: flex;
+        border-radius: 50%;
+        transition: transform 0.4s ease;
 
         @include sm-d {
-            justify-content: center;
+            width: 65%;
+        }
+
+        &:hover {
+            outline: 2px solid var(--clr-accent);
+            outline-offset: -1.5px;
+            transform: translateY(-3px);
         }
     }
 
     &__item-icon {
         width: 100%;
         max-width: 40px;
-
-        @include sm-d {
-            width: 65%;
-        }
     }
 
     &__contact-mail {
@@ -210,24 +217,39 @@
     }
 
     &__contact-icon {
-        margin-right: 4%;
+        margin: 2px 4% 0 0;
         width: 8%;
         height: 10%;
 
         @include sm-d {
             width: 7%;
-            margin-top: 2px;
         }
     }
 
     &__contact-link {
         @include fontConfig("SFProDisplayRegular", clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem), var(--text-color), 0.285px);
         text-decoration: none;
+        cursor: pointer;
 
         @include esm {
             font-size: 0.8rem;
         }
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--clr-accent);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+
+            @include esm {
+                text-decoration-thickness: 1px;
+                text-underline-offset: 3px;
+            }
+        }
     }
 }
 .container {
+}
+
+.theme-sensitive {
 }

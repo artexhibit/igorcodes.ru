@@ -1406,6 +1406,9 @@ body {
     gap: 10px;
   }
 }
+.resume__item {
+  display: flex;
+}
 .resume__item:not(:last-child) {
   margin-right: 8px;
 }
@@ -1416,25 +1419,28 @@ body {
 }
 @media (max-width: 767.8px) {
   .resume__item {
+    justify-content: center;
     width: 25%;
   }
 }
 .resume__link {
   display: flex;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
 }
 @media (max-width: 767.8px) {
   .resume__link {
-    justify-content: center;
+    width: 65%;
   }
+}
+.resume__link:hover {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: -1.5px;
+  transform: translateY(-3px);
 }
 .resume__item-icon {
   width: 100%;
   max-width: 40px;
-}
-@media (max-width: 767.8px) {
-  .resume__item-icon {
-    width: 65%;
-  }
 }
 .resume__contact-mail {
   display: flex;
@@ -1453,14 +1459,13 @@ body {
   }
 }
 .resume__contact-icon {
-  margin-right: 4%;
+  margin: 2px 4% 0 0;
   width: 8%;
   height: 10%;
 }
 @media (max-width: 767.8px) {
   .resume__contact-icon {
     width: 7%;
-    margin-top: 2px;
   }
 }
 .resume__contact-link {
@@ -1470,10 +1475,23 @@ body {
   line-height: initial;
   letter-spacing: 0.285px;
   text-decoration: none;
+  cursor: pointer;
 }
 @media (max-width: 319.8px) {
   .resume__contact-link {
     font-size: 0.8rem;
+  }
+}
+.resume__contact-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--clr-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+@media (max-width: 319.8px) {
+  .resume__contact-link:hover {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
 }
 

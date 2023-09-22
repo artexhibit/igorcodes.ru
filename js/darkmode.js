@@ -14,12 +14,15 @@ function setupTheme(event) {
     if (theme === "autoTheme") {
         event.matches ? enableDarkMode() : disableDarkMode();
         setupSocialIcons(event);
+        setupResumeIcons(event);
     } else if (theme === "light") {
         disableDarkMode();
         setupSocialIcons(themeMediaQuery, "Dark");
+        setupResumeIcons(themeMediaQuery, "Dark");
     } else {
         enableDarkMode();
         setupSocialIcons(themeMediaQuery, "Light");
+        setupResumeIcons(themeMediaQuery, "Light");
     }
 }
 
@@ -33,6 +36,17 @@ function setupSocialIcons(event, theme = "") {
 
     icons.forEach((icon) => {
         icon.src = `./assets/images/header/${icon.alt}${ending}.svg`;
+    });
+}
+
+function setupResumeIcons(event, theme = "") {
+    let allIcons = document.querySelectorAll(".theme-sensitive");
+    let ending = "";
+
+    ending = theme === "" ? (event.matches ? "Light" : "Dark") : theme;
+
+    allIcons.forEach((icon) => {
+        icon.src = `./assets/images/resume/${icon.alt}${ending}.svg`;
     });
 }
 

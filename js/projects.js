@@ -26,9 +26,9 @@ expandButtons.forEach((button) => {
 // set default slider width and position on page load
 window.addEventListener("load", function () {
     configureSlider(pickedTab);
-    setupCard();
     addMarginToCardsContainer();
 });
+setupCard();
 
 function tabClicked(event) {
     event.preventDefault();
@@ -108,6 +108,7 @@ function expandButtonClicked(event) {
 
         setTimeout(() => {
             subtitleContainer.style.maskImage = "none";
+            subtitleContainer.style.webkitMaskImage = "none";
         }, 450);
 
         cards.forEach((card) => {
@@ -116,7 +117,6 @@ function expandButtonClicked(event) {
             }
         });
     } else {
-        subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
         subtitleContainer.style.height = "60px";
         buttonContainer.style.height = "70px";
         buttonContainer.style.marginBottom = "40px";
@@ -129,6 +129,11 @@ function expandButtonClicked(event) {
             cardContainer.style.height = cardContainer.offsetHeight + "px";
             card.style.height = card.offsetHeight + 24 + "px";
         }, 790);
+
+        setTimeout(() => {
+            subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
+            subtitleContainer.style.webkitMaskImage = "linear-gradient(180deg, #000 60%, transparent)";
+        }, 200);
     }
 }
 

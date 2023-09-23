@@ -12,7 +12,7 @@ function setupLanguage() {
 function switchLang(lang) {
     for (let key in languageContent[lang]) {
         let element = document.getElementById(key);
-        
+
         if (element) {
             element.innerHTML = languageContent[lang][key];
         }
@@ -26,9 +26,14 @@ function defineLanguageIfAutoPicked() {
     let targetLang;
 
     if (language === "autoLang") {
-        availableLanguages.forEach((item) => {
-            targetLang = navigator.language.includes(item) ? item : "en";
-        });
+        for (let item of availableLanguages) {
+            if (navigator.language.includes(item)) {
+                targetLang = item;
+                break;
+            } else {
+                targetLang = "en";
+            }
+        }
     }
     return targetLang;
 }

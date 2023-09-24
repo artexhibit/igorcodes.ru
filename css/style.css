@@ -810,8 +810,8 @@ body {
 .card__subtitle-container {
   height: 100%;
   overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
   -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
-          mask-image: linear-gradient(180deg, #000 60%, transparent);
   transition: height 3.6s ease-in-out;
 }
 
@@ -1493,6 +1493,25 @@ body {
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
+}
+
+.resume__left-container {
+  width: 30%;
+}
+@media (max-width: 767.8px) {
+  .resume__left-container {
+    width: 100%;
+  }
+}
+.citizen__icon {
+  width: 20px;
+}
+
+.lang__icon {
+  width: 20px;
+}
+.lang__star {
+  width: 20px;
 }
 
 .footer {

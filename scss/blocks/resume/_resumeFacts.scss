@@ -1,0 +1,96 @@
+.resume {
+
+    &__facts {
+    }
+
+    &__left-container {
+        width: 30%;
+
+        @include sm-d {
+            width: 100%;
+        }
+    }
+
+    &__fact-wrapper {
+    }
+
+    &__headline {
+    }
+
+    &__headline-icon {
+    }
+
+    &__headline-title {
+    }
+
+    &__right-container {
+    }
+}
+.fact {
+
+    &__small {
+    }
+
+    &__small-data {
+    }
+
+    &__small-title {
+    }
+
+    &__small-subtitle {
+    }
+}
+.theme-sensitive {
+}
+.schedule {
+
+    &__title {
+    }
+
+    &__subtitle {
+    }
+}
+.age {
+
+    &__title {
+    }
+
+    &__title-big {
+    }
+
+    &__subtitle {
+    }
+}
+.citizen {
+
+    &__wrapper {
+    }
+
+    &__icon {
+        width: 20px;
+    }
+}
+.address {
+
+    &__wrapper {
+    }
+
+    &__circle {
+    }
+}
+.lang {
+
+    &__section {
+    }
+
+    &__wrapper {
+    }
+
+    &__icon {
+        width: 20px;
+    }
+
+    &__star {
+        width: 20px;
+    }
+}

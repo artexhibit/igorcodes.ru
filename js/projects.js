@@ -135,6 +135,10 @@ function expandButtonClicked(event) {
             subtitleContainer.style.webkitMaskImage = "linear-gradient(180deg, #000 60%, transparent)";
         }, 200);
     }
+
+    setTimeout(function () {
+        addMarginToCardsContainer();
+    }, 50);
 }
 
 //animate card new height when expand button pressed

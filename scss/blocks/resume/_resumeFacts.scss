@@ -55,6 +55,10 @@
         border-radius: 15px;
         max-width: 300px;
         width: 100%;
+
+        // @include sm {
+        //     width: 70%;
+        // }
     }
 
     &__small-data {
@@ -66,9 +70,11 @@
     }
 
     &__small-title {
+        @include fontConfig("SFProDisplayBold", clamp(1rem, 0.38rem + 3.31vw, 2.5rem), var(--text-color));
     }
 
     &__small-subtitle {
+        @include fontConfig("SFProDisplayMedium", clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem), var(--clr-resume-grey));
     }
 }
 .theme-sensitive {
@@ -77,10 +83,6 @@
 
     &__title {
         @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
-    }
-
-    &__subtitle {
-        @include fontConfig("SFProDisplayMedium", clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem), var(--clr-resume-grey));
     }
 }
 .age {
@@ -92,27 +94,36 @@
     &__title-big {
         @include fontConfig("SFProDisplayBold", clamp(1.5rem, 0.46rem + 5.52vw, 4rem), var(--text-color));
     }
-
-    &__subtitle {
-        @include fontConfig("SFProDisplayMedium", clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem), var(--clr-resume-grey));
-        margin-bottom: 2%;
-    }
 }
 .citizen {
 
     &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
     }
 
     &__icon {
-        width: 20px;
+        width: clamp(1rem, 0.46rem + 2.87vw, 2.3rem);
+        margin-right: 3%;
     }
 }
 .address {
 
     &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
     }
 
     &__circle {
+        width: clamp(0.45rem, 0.33rem + 0.66vw, 0.75rem);
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: yellow;
+        margin-right: 3%;
     }
 }
 .lang {

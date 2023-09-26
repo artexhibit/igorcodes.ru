@@ -93,7 +93,7 @@
 
         @include sm-d {
             margin: 15px 0 0 0;
-            width: 55%;
+            width: 100%;
         }
 
         @include esm {
@@ -146,7 +146,9 @@
 
         @include sm-d {
             justify-content: space-around;
-            margin: 1% 10px;
+            margin: 1% auto;
+            width: 75%;
+            
         }
     }
 
@@ -191,7 +193,7 @@
 
         &:hover {
             outline: 2px solid var(--clr-accent);
-            outline-offset: -1.5px;
+            outline-offset: -2px;
             transform: translateY(-3px);
         }
     }
@@ -199,6 +201,10 @@
     &__item-icon {
         width: 100%;
         max-width: 40px;
+
+        @include sm-d {
+            margin-right: -10px;
+        }
     }
 
     &__contact-mail {
@@ -208,21 +214,21 @@
         margin: 5% auto;
 
         @include sm-d {
-            margin: 4% 10px;
+            margin: 4% auto;
+            width: 75%;
         }
 
         @include esm {
-            margin: 5% 10px;
+            margin: 5% auto;
         }
     }
 
     &__contact-icon {
         margin: 2px 4% 0 0;
         width: 8%;
-        height: 10%;
 
         @include sm-d {
-            width: 7%;
+            width: 9%;
         }
     }
 

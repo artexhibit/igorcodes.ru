@@ -1332,7 +1332,7 @@ body {
 @media (max-width: 767.8px) {
   .resume__contact-container {
     margin: 15px 0 0 0;
-    width: 55%;
+    width: 100%;
   }
 }
 @media (max-width: 319.8px) {
@@ -1392,7 +1392,8 @@ body {
 @media (max-width: 767.8px) {
   .resume__contact-links {
     justify-content: space-around;
-    margin: 1% 10px;
+    margin: 1% auto;
+    width: 75%;
   }
 }
 .resume__contact-list {
@@ -1437,12 +1438,17 @@ body {
 }
 .resume__link:hover {
   outline: 2px solid var(--clr-accent);
-  outline-offset: -1.5px;
+  outline-offset: -2px;
   transform: translateY(-3px);
 }
 .resume__item-icon {
   width: 100%;
   max-width: 40px;
+}
+@media (max-width: 767.8px) {
+  .resume__item-icon {
+    margin-right: -10px;
+  }
 }
 .resume__contact-mail {
   display: flex;
@@ -1452,22 +1458,22 @@ body {
 }
 @media (max-width: 767.8px) {
   .resume__contact-mail {
-    margin: 4% 10px;
+    margin: 4% auto;
+    width: 75%;
   }
 }
 @media (max-width: 319.8px) {
   .resume__contact-mail {
-    margin: 5% 10px;
+    margin: 5% auto;
   }
 }
 .resume__contact-icon {
   margin: 2px 4% 0 0;
   width: 8%;
-  height: 10%;
 }
 @media (max-width: 767.8px) {
   .resume__contact-icon {
-    width: 7%;
+    width: 9%;
   }
 }
 .resume__contact-link {
@@ -1546,17 +1552,25 @@ body {
   text-align: center;
   margin: 3% 10px 9% 10px;
 }
-.schedule__title {
-  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.9rem, 0.44rem + 2.43vw, 2rem);
+.fact__small-title {
+  font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 0.38rem + 3.31vw, 2.5rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
 }
-.schedule__subtitle {
+.fact__small-subtitle {
   font-family: "SFProDisplayMedium", Helvetica, Arial, sans-serif;
   font-size: clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem);
   color: var(--clr-resume-grey);
+  line-height: initial;
+  letter-spacing: initial;
+}
+
+.schedule__title {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.9rem, 0.44rem + 2.43vw, 2rem);
+  color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
 }
@@ -1575,17 +1589,30 @@ body {
   line-height: initial;
   letter-spacing: initial;
 }
-.age__subtitle {
-  font-family: "SFProDisplayMedium", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem);
-  color: var(--clr-resume-grey);
-  line-height: initial;
-  letter-spacing: initial;
-  margin-bottom: 2%;
+
+.citizen__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.citizen__icon {
+  width: clamp(1rem, 0.46rem + 2.87vw, 2.3rem);
+  margin-right: 3%;
 }
 
-.citizen__icon {
-  width: 20px;
+.address__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.address__circle {
+  width: clamp(0.45rem, 0.33rem + 0.66vw, 0.75rem);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: yellow;
+  margin-right: 3%;
 }
 
 .lang__icon {

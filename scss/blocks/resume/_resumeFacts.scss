@@ -1,5 +1,4 @@
 .resume {
-
     &__facts {
         display: flex;
         margin-top: 3%;
@@ -47,7 +46,6 @@
     }
 }
 .fact {
-
     &__small {
         display: flex;
         flex-direction: column;
@@ -56,9 +54,31 @@
         max-width: 300px;
         width: 100%;
 
-        // @include sm {
-        //     width: 70%;
-        // }
+        @include sm-d {
+            width: 70%;
+        }
+
+        @include esm {
+            width: 100%;
+        }
+
+        &:nth-child(2) {
+            .fact__small-subtitle {
+                margin-bottom: 2%;
+                margin-top: -2%;
+
+                @include sm-d {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            .fact__small-data {
+                margin-top: 2%;
+                gap: 12px;
+            }
+        }
     }
 
     &__small-data {
@@ -80,13 +100,11 @@
 .theme-sensitive {
 }
 .schedule {
-
     &__title {
         @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
     }
 }
 .age {
-
     &__title {
         @include fontConfig("SFProDisplaySemiBold", clamp(1rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
     }
@@ -96,7 +114,6 @@
     }
 }
 .citizen {
-
     &__wrapper {
         display: flex;
         justify-content: center;
@@ -110,7 +127,6 @@
     }
 }
 .address {
-
     &__wrapper {
         display: flex;
         justify-content: center;
@@ -119,26 +135,30 @@
     }
 
     &__circle {
-        width: clamp(0.45rem, 0.33rem + 0.66vw, 0.75rem);
+        width: clamp(0.45rem, 0.33rem + 0.66vw, 0.8rem);
         aspect-ratio: 1/1;
         border-radius: 50%;
-        background-color: yellow;
-        margin-right: 3%;
+        background-color: #ffdd04;
+        margin: 2px 2% 0 0;
     }
 }
 .lang {
-
     &__section {
     }
 
     &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &__icon {
-        width: 20px;
+        width: clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem);
+        margin-right: 3%;
     }
 
     &__star {
-        width: 20px;
+        width: clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem);
+        margin: 3% 1.5px;
     }
 }

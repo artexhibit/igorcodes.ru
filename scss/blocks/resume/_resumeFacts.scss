@@ -12,7 +12,7 @@
     &__left-container {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        width: 50%;
 
         @include sm-d {
             width: 100%;
@@ -20,7 +20,7 @@
         }
     }
 
-    &__fact-wrapper {
+    &__fact-wrapper--left {
         display: flex;
         flex-direction: column;
         margin-right: 15px;
@@ -44,7 +44,11 @@
 
     &__right-container {
     }
+
+    &__fact-wrapper--right {
+    }
 }
+
 .fact {
     &__small {
         display: flex;
@@ -96,9 +100,62 @@
     &__small-subtitle {
         @include fontConfig("SFProDisplayMedium", clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem), var(--clr-resume-grey));
     }
+
+    &__medium {
+    }
+
+    &__medium-data {
+    }
+
+    &__medium-normal--text {
+    }
+
+    &__medium-section {
+    }
+
+    &__medium-title {
+    }
+
+    &__medium-description {
+    }
+
+    &__medium-grey--text {
+    }
+
+    &__medium-entry--wrapper {
+    }
+
+    &__medium-entry {
+    }
+
+    &__medium-description--icon {
+    }
+
+    &__medium-small-text {
+    }
+
+    &__medium-descriptions {
+    }
+
+    &__medium-description--wrapper {
+    }
+
+    &__medium-link {
+    }
+
+    &__medium-link--icon {
+    }
+
+    &__medium-bold--text {
+    }
 }
+
 .theme-sensitive {
 }
+
+.bold {
+}
+
 .schedule {
     &__title {
         @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.44rem + 2.43vw, 2rem), var(--text-color));

@@ -1526,7 +1526,7 @@ body {
 .resume__left-container {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 50%;
 }
 @media (max-width: 767.8px) {
   .resume__left-container {
@@ -1534,7 +1534,7 @@ body {
     align-items: center;
   }
 }
-.resume__fact-wrapper {
+.resume__fact-wrapper--left {
   display: flex;
   flex-direction: column;
   margin-right: 15px;
@@ -1542,7 +1542,7 @@ body {
   gap: 20px;
 }
 @media (max-width: 767.8px) {
-  .resume__fact-wrapper {
+  .resume__fact-wrapper--left {
     margin-right: 0;
     align-items: center;
   }
@@ -1599,7 +1599,6 @@ body {
   line-height: initial;
   letter-spacing: initial;
 }
-
 .schedule__title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.9rem, 0.44rem + 2.43vw, 2rem);

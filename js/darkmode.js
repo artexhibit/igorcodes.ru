@@ -26,7 +26,7 @@ function setupTheme(event) {
     }
 }
 
-//change social icons style displayed in header section 
+//change social icons style displayed in header section
 function setupSocialIcons(event, theme = "") {
     let allSocials = document.querySelector(".socials__list");
     let icons = allSocials.querySelectorAll("img");
@@ -46,7 +46,13 @@ function setupResumeIcons(event, theme = "") {
     ending = theme === "" ? (event.matches ? "Light" : "Dark") : theme;
 
     allIcons.forEach((icon) => {
-        icon.src = `./assets/images/resume/${icon.alt}${ending}.svg`;
+        if (icon.src.includes("header")) {
+            icon.src = `./assets/images/resume/header/${icon.alt}${ending}.svg`;
+        } else if (icon.src.includes("factsLeft")) {
+            icon.src = `./assets/images/resume/factsLeft/${icon.alt}${ending}.svg`;
+        } else {
+            icon.src = `./assets/images/resume/factsRight/${icon.alt}${ending}.svg`;
+        }
     });
 }
 

@@ -12,7 +12,7 @@
     &__left-container {
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 35%;
 
         @include sm-d {
             width: 100%;
@@ -43,9 +43,41 @@
     }
 
     &__right-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include sm-d {
+            align-items: center;
+            margin-top: 20px;
+        }
     }
 
     &__fact-wrapper--right {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        width: 100%;
+        gap: 20px;
+
+        @include sm-d {
+            margin-left: 0;
+            align-items: center;
+        }
+
+        .resume__headline-title,
+        .resume__headline-icon {
+            @include md-u {
+                margin-top: 0.4%;
+                margin-bottom: 1.1%;
+            }
+        }
+
+        .resume__headline {
+            @include md-u {
+                margin: 1.2% 0;
+            }
+        }
     }
 }
 
@@ -55,12 +87,8 @@
         flex-direction: column;
         background-color: var(--clr-resume-card-background);
         border-radius: 15px;
-        max-width: 300px;
+        max-width: 400px;
         width: 100%;
-
-        @include sm-d {
-            width: 70%;
-        }
 
         @include esm {
             width: 100%;
@@ -102,12 +130,39 @@
     }
 
     &__medium {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--clr-resume-card-background);
+        border-radius: 15px;
+        width: 100%;
+
+        @include sm-d {
+            max-width: 400px;
+        }
     }
 
     &__medium-data {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5% 3% 2.5% 3%;
+
+        @include sm-d {
+            margin: 0px 15px 15px 15px;
+            text-align: left;
+        }
+
+        @include esm {
+            margin-top: 5px
+        }
     }
 
     &__medium-normal--text {
+        @include fontConfig("SFProDisplayRegular", 1.2rem, var(--text-color), initial, 1.4rem);
+
+        @include esm {
+            line-height: initial;
+            font-size: 0.85rem;
+        }
     }
 
     &__medium-section {
@@ -129,6 +184,7 @@
     }
 
     &__medium-description--icon {
+        width: 10px;
     }
 
     &__medium-small-text {
@@ -144,6 +200,7 @@
     }
 
     &__medium-link--icon {
+        width: 10px;
     }
 
     &__medium-bold--text {
@@ -159,6 +216,7 @@
 .schedule {
     &__title {
         @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
+        white-space: nowrap;
     }
 }
 .age {

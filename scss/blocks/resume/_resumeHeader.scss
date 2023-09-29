@@ -101,11 +101,8 @@
 
         @include sm-d {
             margin: 15px 0 0 0;
-            width: 70%;
-        }
-
-        @include esm {
-            width: 95%;
+            width: 100%;
+            max-width: 400px;
         }
     }
 
@@ -124,10 +121,14 @@
     &__headline-icon {
         width: 7%;
         max-width: 23px;
-        margin: 0 2% 4% 0;
+        margin: 0 6px 4% 0;
 
         @include md {
-            margin: 0 2% 3.5% 0;
+            margin: 0 6px 3.5% 0;
+        }
+
+        @include esm {
+            margin: 0 3.5px 4% 0;
         }
     }
 

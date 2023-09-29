@@ -1342,12 +1342,8 @@ body {
 @media (max-width: 767.8px) {
   .resume__contact-container {
     margin: 15px 0 0 0;
-    width: 70%;
-  }
-}
-@media (max-width: 319.8px) {
-  .resume__contact-container {
-    width: 95%;
+    width: 100%;
+    max-width: 400px;
   }
 }
 .resume__headline {
@@ -1365,11 +1361,16 @@ body {
 .resume__headline-icon {
   width: 7%;
   max-width: 23px;
-  margin: 0 2% 4% 0;
+  margin: 0 6px 4% 0;
 }
 @media (max-width: 1023.8px) and (min-width: 768px) {
   .resume__headline-icon {
-    margin: 0 2% 3.5% 0;
+    margin: 0 6px 3.5% 0;
+  }
+}
+@media (max-width: 319.8px) {
+  .resume__headline-icon {
+    margin: 0 3.5px 4% 0;
   }
 }
 .resume__headline-title {
@@ -1526,7 +1527,7 @@ body {
 .resume__left-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 35%;
 }
 @media (max-width: 767.8px) {
   .resume__left-container {
@@ -1547,18 +1548,50 @@ body {
     align-items: center;
   }
 }
+.resume__right-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (max-width: 767.8px) {
+  .resume__right-container {
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+.resume__fact-wrapper--right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 100%;
+  gap: 20px;
+}
+@media (max-width: 767.8px) {
+  .resume__fact-wrapper--right {
+    margin-left: 0;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .resume__fact-wrapper--right .resume__headline-title,
+  .resume__fact-wrapper--right .resume__headline-icon {
+    margin-top: 0.4%;
+    margin-bottom: 1.1%;
+  }
+}
+@media (min-width: 768px) {
+  .resume__fact-wrapper--right .resume__headline {
+    margin: 1.2% 0;
+  }
+}
+
 .fact__small {
   display: flex;
   flex-direction: column;
   background-color: var(--clr-resume-card-background);
   border-radius: 15px;
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
-}
-@media (max-width: 767.8px) {
-  .fact__small {
-    width: 70%;
-  }
 }
 @media (max-width: 319.8px) {
   .fact__small {
@@ -1599,12 +1632,60 @@ body {
   line-height: initial;
   letter-spacing: initial;
 }
+.fact__medium {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-resume-card-background);
+  border-radius: 15px;
+  width: 100%;
+}
+@media (max-width: 767.8px) {
+  .fact__medium {
+    max-width: 400px;
+  }
+}
+.fact__medium-data {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5% 3% 2.5% 3%;
+}
+@media (max-width: 767.8px) {
+  .fact__medium-data {
+    margin: 0px 15px 15px 15px;
+    text-align: left;
+  }
+}
+@media (max-width: 319.8px) {
+  .fact__medium-data {
+    margin-top: 5px;
+  }
+}
+.fact__medium-normal--text {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.4rem;
+  letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .fact__medium-normal--text {
+    line-height: initial;
+    font-size: 0.85rem;
+  }
+}
+.fact__medium-description--icon {
+  width: 10px;
+}
+.fact__medium-link--icon {
+  width: 10px;
+}
 .schedule__title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: clamp(0.9rem, 0.44rem + 2.43vw, 2rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
+  white-space: nowrap;
 }
 
 .age__title {

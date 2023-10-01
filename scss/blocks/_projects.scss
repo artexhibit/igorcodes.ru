@@ -196,7 +196,6 @@
         }
 
         @include esm {
-            text-align: center;
             padding: 12px 10px;
         }
     }
@@ -220,11 +219,22 @@
 
     &__title {
         margin-bottom: 8px;
-        @include fontConfig("SFProDisplaySemiBold", clamp(1.12rem, 0.9rem + 1.18vw, 1.38rem), var(--text-color), 0.355px);
+        @include fontConfig("SFProDisplaySemiBold", 1.4rem, var(--text-color), 0.355px);
+        align-self: center;
+        text-align: center;
+
+        @include esm {
+            font-size: 1.1rem;
+        }
     }
 
     &__subtitle {
-        @include fontConfig("SFProDisplayRegular", clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem), var(--clr-card-secondary), 0.442px, 21px);
+        @include fontConfig("SFProDisplayRegular", 1.1rem, var(--clr-card-secondary), 0.442px, 22px);
+
+        @include esm {
+            font-size: 0.85rem;
+            line-height: 21px;
+        }
     }
 
     &__button-container {
@@ -257,18 +267,19 @@
         @include flexConfig($display: flex, $justify: center, $alignItems: center);
         border: none;
         border-radius: 5px;
+        outline: 1px solid var(--clr-accent);
         opacity: 1;
         background-color: var(--clr-button-primary);
         cursor: pointer;
-
-        &:hover {
-            outline: 1px solid var(--clr-accent);
-        }
     }
 
     &__button-title {
         margin: 5px 5px 5px 10px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-button-secondary));
+        @include fontConfig("SFProDisplayRegular", 1rem, var(--clr-button-secondary));
+
+        @include esm {
+            font-size: 0.75rem;
+        }
     }
 
     &__button-icon {
@@ -315,6 +326,7 @@
         mask-image: linear-gradient(180deg, #000 60%, transparent);
         -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
         transition: height 3.6s ease-in-out;
+        padding-left: 5px;
     }
 }
 .swift {
@@ -333,7 +345,11 @@
 
     &__title {
         padding: 3.5px 13px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-tag-secondary));
+        @include fontConfig("SFProDisplayRegular", 1rem, var(--clr-tag-secondary));
+
+        @include esm {
+            font-size: 0.75rem;
+        }
     }
 }
 .link {
@@ -378,7 +394,11 @@
 
     &__title {
         margin-right: 7px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem), var(--clr-card-link));
+        @include fontConfig("SFProDisplayRegular", 1rem, var(--clr-card-link));
+
+        @include esm {
+            font-size: 0.75rem;
+        }
     }
 
     &__arrow {

@@ -14,14 +14,14 @@
     }
 
     &__headline-small {
-        @include fontConfig("SFProDisplaySemiBold", clamp(1.25rem, 1.15rem + 0.55vw, 1.5rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplaySemiBold", 1.4rem, var(--text-color), 0.285px);
         margin: 24px 0;
     }
 
     &__headline-big {
-        @include fontConfig("SFProDisplaySemiBold", clamp(1.47rem, 0.45rem + 5.94vw, 4.25rem), var(--text-color), 0.285px);
-        white-space: nowrap;
+        @include fontConfig("SFProDisplayBold", clamp(1.8rem, 0.78rem + 5.41vw, 4.25rem), var(--text-color), 0.285px);
         margin-bottom: 24px;
+        text-align: center;
     }
 
     &__section {
@@ -69,6 +69,10 @@
                 width: 60%;
                 margin-right: 0px;
             }
+
+            @include esm {
+                width: 80%;
+            }
         }
 
         &:last-of-type {
@@ -77,9 +81,17 @@
             transition: all 0.5s ease;
 
             @include md-d {
-                width: 70%;
-                margin-left: 0px;
-                margin-top: 40px;
+                width: 50%;
+                margin: 20px 0;
+            }
+
+            @include sm-d {
+                width: 60%;
+            }
+
+            @include esm {
+                width: 80%;
+                margin: 25px 0 0 0;
             }
 
             &:hover {
@@ -102,14 +114,9 @@
             margin-left: 32px;
 
             @include sm-d {
-                width: 70%;
+                width: 80%;
                 margin-left: 0px;
                 margin-top: 32px;
-                text-align: center;
-            }
-
-            @include esm {
-                width: 90%;
             }
         }
 
@@ -117,15 +124,14 @@
             margin-right: 32px;
 
             @include md-d {
-                width: 70%;
+                width: 80%;
                 margin-right: 0px;
-                margin-top: 15px;
-                text-align: center;
+                margin-top: 20px;
             }
+        }
 
-            @include esm {
-                width: 90%;
-            }
+        @include esm {
+            padding-left: 5px;
         }
     }
 
@@ -135,9 +141,10 @@
     }
 
     &__text {
-        @include fontConfig("SFProDisplayRegular", clamp(0.87rem, 0.8rem + 0.41vw, 1.06rem), var(--text-color), 0.285px, 24px);
+        @include fontConfig("SFProDisplayRegular", 1.1rem, var(--text-color), 0.285px, 23px);
 
-        @include sm-d {
+        @include esm {
+            font-size: 0.87rem;
             line-height: 18px;
         }
     }
@@ -164,7 +171,7 @@
 }
 .headline {
     @at-root .about & {
-        @include fontConfig("SFProDisplaySemiBold", clamp(1.25rem, 0.5249rem + 3.8674vw, 2.5rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplaySemiBold", clamp(1.25rem, 0.52rem + 3.87vw, 2.5rem), var(--text-color), 0.285px);
         margin-bottom: 15px;
     }
 }

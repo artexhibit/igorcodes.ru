@@ -15,6 +15,13 @@
     }
 
     &__quote {
+        display: flex;
+        text-align: center;
+        margin-right: 15px;
+
+        @include esm {
+            margin: 0 5px;
+        }
     }
 
     &__switches {
@@ -102,7 +109,11 @@
     }
 }
 .quote {
-    @include fontConfig("SFProDisplayRegular", clamp(0.84rem, 0.13rem + 2.8vw, 1.25rem), var(--text-color), 0.355px);
+    @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.04rem + 0.33vw, 1.25rem), var(--text-color), 0.355px);
+
+    @include esm {
+        font-size: 0.84rem;
+    }
 }
 .switch {
     position: relative;
@@ -162,7 +173,7 @@
 
     &__option {
         margin: 0 10px 8px 10px;
-        @include fontConfig("SFProDisplayRegular", clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem), var(--text-color));
+        @include fontConfig("SFProDisplayRegular", clamp(0.62rem, 0.57rem + 0.29vw, 0.69rem), var(--text-color));
     }
 
     &__slider {
@@ -190,11 +201,15 @@
 
         &::after {
             position: absolute;
-            @include fontConfig("SFProDisplayRegular", 0.8rem, var(--text-color));
+            @include fontConfig("SFProDisplayRegular", 19px, var(--text-color));
             content: attr(data-content);
-            left: 35px;
-            bottom: -17px;
+            left: 43px;
+            bottom: -20px;
             transition: all 0.5s;
+
+            @include esm {
+                font-size: 0.8rem;
+            }
         }
 
         &:hover {
@@ -203,7 +218,11 @@
 
         &.clicked {
             &::after {
-                bottom: 10px;
+                bottom: 6px;
+
+                @include esm {
+                    bottom: 10px;
+                }
             }
 
             .settings__button-title {
@@ -213,22 +232,26 @@
     }
 
     &__button-icon {
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
         margin: 0 8px;
     }
 
     &__button-icon--close {
         position: absolute;
         left: 10px;
-        width: 12px;
-        height: 12px;
+        width: 15px;
+        height: 15px;
         opacity: 0;
     }
 
     &__button-title {
-        @include fontConfig("SFProDisplayRegular", 0.8rem, var(--text-color));
+        @include fontConfig("SFProDisplayRegular", 19px, var(--text-color));
         margin-right: 8px;
         transition: transform 0.4s;
+
+        @include esm {
+            font-size: 0.8rem;
+        }
     }
 }

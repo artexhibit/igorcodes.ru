@@ -212,12 +212,12 @@ body {
 }
 .menu__link {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 19px;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
   text-decoration: none;
-  padding: 14px 16px;
+  padding: 12px 16px;
   border-radius: 12px;
 }
 .menu__link:hover:not(.picked) {
@@ -292,7 +292,7 @@ body {
 }
 .hamburger__title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 19px;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
@@ -332,7 +332,7 @@ body {
   text-decoration-color: var(--clr-accent);
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-underline-offset: 6px;
 }
 
 .name {
@@ -354,7 +354,7 @@ body {
 }
 .name__image {
   padding: 5px;
-  width: 85%;
+  width: 73%;
   max-width: 330px;
   border-radius: 50%;
   border: 3px solid var(--clr-accent);
@@ -688,7 +688,6 @@ body {
 }
 @media (max-width: 319.8px) {
   .card__content {
-    text-align: center;
     padding: 12px 10px;
   }
 }
@@ -711,17 +710,30 @@ body {
 .card__title {
   margin-bottom: 8px;
   font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.12rem, 0.9rem + 1.18vw, 1.38rem);
+  font-size: 1.4rem;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.355px;
+  align-self: center;
+  text-align: center;
+}
+@media (max-width: 319.8px) {
+  .card__title {
+    font-size: 1.1rem;
+  }
 }
 .card__subtitle {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.81rem, 0.7rem + 0.59vw, 0.94rem);
+  font-size: 1.1rem;
   color: var(--clr-card-secondary);
-  line-height: 21px;
+  line-height: 22px;
   letter-spacing: 0.442px;
+}
+@media (max-width: 319.8px) {
+  .card__subtitle {
+    font-size: 0.85rem;
+    line-height: 21px;
+  }
 }
 .card__button-container {
   position: relative;
@@ -754,20 +766,23 @@ body {
   flex-grow: initial;
   border: none;
   border-radius: 5px;
+  outline: 1px solid var(--clr-accent);
   opacity: 1;
   background-color: var(--clr-button-primary);
   cursor: pointer;
 }
-.card__button:hover {
-  outline: 1px solid var(--clr-accent);
-}
 .card__button-title {
   margin: 5px 5px 5px 10px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem);
+  font-size: 1rem;
   color: var(--clr-button-secondary);
   line-height: initial;
   letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .card__button-title {
+    font-size: 0.75rem;
+  }
 }
 .card__button-icon {
   margin-left: 5px;
@@ -815,6 +830,7 @@ body {
   mask-image: linear-gradient(180deg, #000 60%, transparent);
   -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
   transition: height 3.6s ease-in-out;
+  padding-left: 5px;
 }
 
 .short {
@@ -839,10 +855,15 @@ body {
 .tag__title {
   padding: 3.5px 13px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem);
+  font-size: 1rem;
   color: var(--clr-tag-secondary);
   line-height: initial;
   letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .tag__title {
+    font-size: 0.75rem;
+  }
 }
 
 .link {
@@ -883,10 +904,15 @@ body {
 .link__title {
   margin-right: 7px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.75rem, 0.58rem + 0.88vw, 0.94rem);
+  font-size: 1rem;
   color: var(--clr-card-link);
   line-height: initial;
   letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .link__title {
+    font-size: 0.75rem;
+  }
 }
 .link__arrow {
   width: 20px;
@@ -964,7 +990,7 @@ body {
 }
 
 .connect {
-  height: calc(100svh - 165px);
+  height: calc(100svh - 100px);
 }
 @media (orientation: landscape) {
   .connect {
@@ -980,13 +1006,7 @@ body {
   justify-content: center;
   flex-grow: 1;
 }
-@media (max-width: 1023.8px) {
-  .connect__wrapper {
-    align-items: center;
-    text-align: center;
-  }
-}
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .connect__wrapper {
     padding-left: 15%;
   }
@@ -996,7 +1016,7 @@ body {
 }
 .connect__email {
   font-family: "SFProDisplayHeavy", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.31rem, 0.35rem + 5.13vw, 2.81rem);
+  font-size: clamp(1.3rem, 0.35rem + 5.13vw, 2.81rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
@@ -1023,15 +1043,22 @@ body {
 }
 .connect__info {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.94rem, 0.62rem + 1.71vw, 1.44rem);
+  font-size: clamp(1.1rem, 0.96rem + 0.75vw, 1.44rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
   margin-top: 15px;
+  text-align: left;
 }
 @media (min-width: 640px) {
   .connect__info {
     max-width: 600px;
+    padding-left: 5px;
+  }
+}
+@media (max-width: 767.8px) {
+  .connect__info {
+    max-width: 500px;
   }
 }
 @media (orientation: landscape) {
@@ -1046,7 +1073,7 @@ body {
 
 @media (max-width: 319.8px) {
   .connect .container {
-    padding: 20px 10px;
+    padding: 20px;
   }
 }
 
@@ -1069,20 +1096,20 @@ body {
 }
 .about__headline-small {
   font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.25rem, 1.15rem + 0.55vw, 1.5rem);
+  font-size: 1.4rem;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
   margin: 24px 0;
 }
 .about__headline-big {
-  font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.47rem, 0.45rem + 5.94vw, 4.25rem);
+  font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.8rem, 0.78rem + 5.41vw, 4.25rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
-  white-space: nowrap;
   margin-bottom: 24px;
+  text-align: center;
 }
 .about__section {
   display: flex;
@@ -1129,6 +1156,11 @@ body {
     margin-right: 0px;
   }
 }
+@media (max-width: 319.8px) {
+  .about__image-container:first-of-type {
+    width: 80%;
+  }
+}
 .about__image-container:last-of-type {
   margin-left: 32px;
   transform: scale(1);
@@ -1136,9 +1168,19 @@ body {
 }
 @media (max-width: 1023.8px) {
   .about__image-container:last-of-type {
-    width: 70%;
-    margin-left: 0px;
-    margin-top: 40px;
+    width: 50%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 767.8px) {
+  .about__image-container:last-of-type {
+    width: 60%;
+  }
+}
+@media (max-width: 319.8px) {
+  .about__image-container:last-of-type {
+    width: 80%;
+    margin: 25px 0 0 0;
   }
 }
 .about__image-container:last-of-type:hover {
@@ -1158,15 +1200,9 @@ body {
 }
 @media (max-width: 767.8px) {
   .about__text-container:last-of-type {
-    width: 70%;
+    width: 80%;
     margin-left: 0px;
     margin-top: 32px;
-    text-align: center;
-  }
-}
-@media (max-width: 319.8px) {
-  .about__text-container:last-of-type {
-    width: 90%;
   }
 }
 .about__text-container:first-of-type {
@@ -1174,15 +1210,14 @@ body {
 }
 @media (max-width: 1023.8px) {
   .about__text-container:first-of-type {
-    width: 70%;
+    width: 80%;
     margin-right: 0px;
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 20px;
   }
 }
 @media (max-width: 319.8px) {
-  .about__text-container:first-of-type {
-    width: 90%;
+  .about__text-container {
+    padding-left: 5px;
   }
 }
 .about__headline-wrapper {
@@ -1191,13 +1226,14 @@ body {
 }
 .about__text {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.87rem, 0.8rem + 0.41vw, 1.06rem);
+  font-size: 1.1rem;
   color: var(--text-color);
-  line-height: 24px;
+  line-height: 23px;
   letter-spacing: 0.285px;
 }
-@media (max-width: 767.8px) {
+@media (max-width: 319.8px) {
   .about__text {
+    font-size: 0.87rem;
     line-height: 18px;
   }
 }
@@ -1225,7 +1261,7 @@ body {
 
 .about .headline {
   font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
-  font-size: clamp(1.25rem, 0.5249rem + 3.8674vw, 2.5rem);
+  font-size: clamp(1.25rem, 0.52rem + 3.87vw, 2.5rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.285px;
@@ -1764,6 +1800,16 @@ body {
     gap: 10px;
   }
 }
+.footer__quote {
+  display: flex;
+  text-align: center;
+  margin-right: 15px;
+}
+@media (max-width: 319.8px) {
+  .footer__quote {
+    margin: 0 5px;
+  }
+}
 .footer__switches {
   display: flex;
   border-radius: 10px;
@@ -1853,10 +1899,15 @@ body {
 
 .quote {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.84rem, 0.13rem + 2.8vw, 1.25rem);
+  font-size: clamp(1.1rem, 1.04rem + 0.33vw, 1.25rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: 0.355px;
+}
+@media (max-width: 319.8px) {
+  .quote {
+    font-size: 0.84rem;
+  }
 }
 
 .switch {
@@ -1915,7 +1966,7 @@ body {
 .switch__option {
   margin: 0 10px 8px 10px;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: clamp(0.625rem, 0.5699rem + 0.2941vw, 0.6875rem);
+  font-size: clamp(0.62rem, 0.57rem + 0.29vw, 0.69rem);
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
@@ -1949,44 +2000,59 @@ body {
 .settings__button::after {
   position: absolute;
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 19px;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
   content: attr(data-content);
-  left: 35px;
-  bottom: -17px;
+  left: 43px;
+  bottom: -20px;
   transition: all 0.5s;
+}
+@media (max-width: 319.8px) {
+  .settings__button::after {
+    font-size: 0.8rem;
+  }
 }
 .settings__button:hover {
   outline: 1px solid var(--clr-accent);
 }
 .settings__button.clicked::after {
-  bottom: 10px;
+  bottom: 6px;
+}
+@media (max-width: 319.8px) {
+  .settings__button.clicked::after {
+    bottom: 10px;
+  }
 }
 .settings__button.clicked .settings__button-title {
   transform: translateX(130%);
 }
 .settings__button-icon {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   margin: 0 8px;
 }
 .settings__button-icon--close {
   position: absolute;
   left: 10px;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   opacity: 0;
 }
 .settings__button-title {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 19px;
   color: var(--text-color);
   line-height: initial;
   letter-spacing: initial;
   margin-right: 8px;
   transition: transform 0.4s;
+}
+@media (max-width: 319.8px) {
+  .settings__button-title {
+    font-size: 0.8rem;
+  }
 }
 
 @keyframes gradientAnimation {

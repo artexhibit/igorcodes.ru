@@ -75,6 +75,7 @@ window.addEventListener("resize", function () {
             slider.style.transition = "transform 0.35s ease, width 0.3s ease";
         }, 10);
     }
+    expandButtonClicked();
 });
 
 //when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
@@ -119,7 +120,7 @@ function expandButtonClicked(event) {
     } else {
         subtitleContainer.style.height = "60px";
         buttonContainer.style.height = "70px";
-        buttonContainer.style.marginBottom = "40px";
+        buttonContainer.style.marginBottom = "30px";
         card.classList.remove("expanded");
 
         animateOut([cardContainer, card], cardContainer, subtitleContainer);
@@ -128,7 +129,7 @@ function expandButtonClicked(event) {
         setTimeout(() => {
             cardContainer.style.height = cardContainer.offsetHeight + "px";
             card.style.height = card.offsetHeight + 24 + "px";
-        }, 790);
+        }, 750);
 
         setTimeout(() => {
             subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";

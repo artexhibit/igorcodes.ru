@@ -122,11 +122,19 @@
     }
 
     &__small-title {
-        @include fontConfig("SFProDisplayBold", clamp(1rem, 0.38rem + 3.31vw, 2.5rem), var(--text-color));
+        @include fontConfig("SFProDisplayBold", clamp(2rem, 1.79rem + 1.1vw, 2.5rem), var(--text-color));
+
+        @include esm {
+            font-size: 1.3rem;
+        }
     }
 
     &__small-subtitle {
-        @include fontConfig("SFProDisplayMedium", clamp(0.6rem, 0.39rem + 1.1vw, 1.1rem), var(--clr-resume-grey));
+        @include fontConfig("SFProDisplayMedium", 1.1rem, var(--clr-resume-grey));
+
+        @include esm {
+            font-size: 0.7rem;
+        }
     }
 
     &__medium {
@@ -152,7 +160,7 @@
         }
 
         @include esm {
-            margin-top: 5px
+            margin-top: 5px;
         }
     }
 
@@ -215,17 +223,29 @@
 
 .schedule {
     &__title {
-        @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
+        @include fontConfig("SFProDisplayRegular", clamp(1.5rem, 1.29rem + 1.1vw, 2rem), var(--text-color));
         white-space: nowrap;
+
+        @include esm {
+            font-size: 1rem;
+        }
     }
 }
 .age {
     &__title {
-        @include fontConfig("SFProDisplaySemiBold", clamp(1rem, 0.44rem + 2.43vw, 2rem), var(--text-color));
+        @include fontConfig("SFProDisplaySemiBold", clamp(1.5rem, 1.29rem + 1.1vw, 2rem), var(--text-color));
+
+        @include esm {
+            font-size: 1rem;
+        }
     }
 
     &__title-big {
-        @include fontConfig("SFProDisplayBold", clamp(1.5rem, 0.46rem + 5.52vw, 4rem), var(--text-color));
+        @include fontConfig("SFProDisplayBold", clamp(3.3rem, 3.01rem + 1.55vw, 4rem), var(--text-color));
+
+        @include esm {
+            font-size: 2rem;
+        }
     }
 }
 .citizen {

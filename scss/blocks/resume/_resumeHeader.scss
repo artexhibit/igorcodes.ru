@@ -60,10 +60,14 @@
     }
 
     &__title {
-        @include fontConfig("SFProDisplayBold", clamp(1.6rem, 0.19rem + 7.51vw, 5rem), var(--text-color), initial, 95%);
+        @include fontConfig("SFProDisplayBold", clamp(2rem, 0.76rem + 6.63vw, 5rem), var(--text-color), initial, 95%);
 
         @include sm-d {
             white-space: nowrap;
+        }
+
+        @include esm {
+            font-size: 1.6rem;
         }
     }
 
@@ -74,20 +78,23 @@
     }
 
     &__subtitle-icon {
-        width: 4.5%;
-        max-width: 23px;
-        margin-right: 2%;
+        width: 17px;
+        margin: 0 1.5% 1px 1%;
 
         @include sm-d {
-            width: 8%;
+            width: 9%;
+            max-width: 23px;
             margin-right: 3%;
-            margin-bottom: 2px;
         }
     }
 
     &__subtitle {
-        @include fontConfig("SFProDisplayRegular", clamp(0.8rem, 0.46rem + 1.81vw, 1.62rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", clamp(1.4rem, 1.3rem + 0.55vw, 1.65rem), var(--text-color), 0.285px);
         white-space: nowrap;
+
+        @include esm {
+            font-size: 0.8rem;
+        }
     }
 
     &__contact-container {
@@ -119,8 +126,9 @@
     }
 
     &__headline-icon {
-        width: 7%;
-        max-width: 23px;
+        width: 6.5%; 
+        min-width: 13.5px;
+        max-width: 20px; 
         margin: 0 6px 4% 0;
 
         @include md {
@@ -133,7 +141,7 @@
     }
 
     &__headline-title {
-        @include fontConfig("SFProDisplaySemiBold", clamp(0.8rem, 0.46rem + 1.81vw, 1.62rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplaySemiBold", 1.6rem, var(--text-color), 0.285px);
         margin-bottom: 4%;
 
         @include md {
@@ -141,7 +149,7 @@
         }
 
         @include esm {
-            font-size: 0.7rem;
+            font-size: 1.1rem;
         }
     }
 
@@ -168,9 +176,12 @@
         justify-content: space-between;
 
         @include sm-d {
+            gap: 10px;
+        }
+
+        @include esm {
             flex-wrap: wrap;
             justify-content: space-evenly;
-            gap: 10px;
         }
     }
 
@@ -185,10 +196,10 @@
             }
         }
 
-        @include sm-d {
+        @include esm {
             justify-content: center;
             width: 25%;
-        }
+        } 
     }
 
     &__link {
@@ -196,9 +207,9 @@
         border-radius: 50%;
         transition: transform 0.4s ease;
 
-        @include sm-d {
-            width: 65%;
-        }
+        @include esm {
+            width: 80%; 
+        } 
 
         &:hover {
             outline: 2px solid var(--clr-accent);
@@ -213,6 +224,7 @@
 
         @include sm-d {
             margin-right: -10px;
+            max-width: 50px; 
         }
     }
 
@@ -238,16 +250,19 @@
 
         @include sm-d {
             width: 9%;
+            min-width: 11px;
+            max-width: 18px;
+            margin: 2px 3% 0 0;
         }
     }
 
     &__contact-link {
-        @include fontConfig("SFProDisplayRegular", clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", 1.3rem, var(--text-color), 0.285px);
         text-decoration: none;
         cursor: pointer;
 
         @include esm {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         &:hover {

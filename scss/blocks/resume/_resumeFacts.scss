@@ -165,7 +165,7 @@
     }
 
     &__medium-normal--text {
-        @include fontConfig("SFProDisplayRegular", 1.2rem, var(--text-color), initial, 1.4rem);
+        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--text-color), initial, 1.4rem);
 
         @include esm {
             line-height: initial;
@@ -174,21 +174,45 @@
     }
 
     &__medium-section {
+        display: flex;
+        margin-left: 15%;
+        gap: 15px;
+
+        @include sm-d {
+            margin-left: 5%;
+        }
     }
 
     &__medium-title {
+        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--clr-resume-grey));
+        width: 40%;
+
+        @include esm {
+            font-size: 0.85rem;
+        }
     }
 
     &__medium-description {
+        width: 100%;
     }
 
     &__medium-grey--text {
+        @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.86rem + 0.22vw, 1rem), var(--clr-resume-grey));
+
+        @include esm {
+            font-size: 0.7rem;
+        }
     }
 
     &__medium-entry--wrapper {
+        width: 100%;
     }
 
     &__medium-entry {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
     }
 
     &__medium-description--icon {
@@ -199,6 +223,7 @@
     }
 
     &__medium-descriptions {
+        width: 60%;
     }
 
     &__medium-description--wrapper {
@@ -257,8 +282,19 @@
     }
 
     &__icon {
-        width: clamp(1rem, 0.46rem + 2.87vw, 2.3rem);
+        width: 14%; 
+        max-width: 30px;
         margin-right: 3%;
+
+        @include sm-d {
+            width: 10%;
+            max-width: 27px;
+        }
+
+        @include esm {
+            width: 14%;
+            max-width: 17px; 
+        }
     }
 }
 .address {
@@ -270,11 +306,16 @@
     }
 
     &__circle {
-        width: clamp(0.45rem, 0.33rem + 0.66vw, 0.8rem);
+        width: 5%;
+        max-width: 10px;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        background-color: #ffdd04;
-        margin: 2px 2% 0 0;
+        background-color: var(--clr-resume-yellow);
+        margin: 3px 2% 0 0;
+
+        @include esm {
+            margin: 1.5px 3% 0 0;  
+        }
     }
 }
 .lang {
@@ -285,15 +326,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 1%;
     }
 
     &__icon {
-        width: clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem);
+        width: 15%;
+        max-width: 20px;
         margin-right: 3%;
+
+        @include esm {
+            width: 10%;
+        }
     }
 
     &__star {
-        width: clamp(0.85rem, 0.66rem + 0.99vw, 1.3rem);
+        width: 15%;
+        max-width: 20px;
         margin: 3% 1.5px;
+
+        @include esm {
+            width: 10%;
+        }
     }
 }

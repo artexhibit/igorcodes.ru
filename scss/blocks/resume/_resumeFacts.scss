@@ -25,7 +25,7 @@
         flex-direction: column;
         margin-right: 15px;
         width: 100%;
-        gap: 20px;
+        gap: 27px;
 
         @include sm-d {
             margin-right: 0;
@@ -147,15 +147,40 @@
         @include sm-d {
             max-width: 400px;
         }
+
+        &:first-of-type {
+            .fact__medium-data--wrapper {
+                margin: 1.5% 3% 2.5% 3%;
+                width: 95%;
+
+                @include sm-d {
+                    margin: 0px auto 15px auto;
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    &__medium-data--wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 80%;
+        margin: 1.5% auto 2.5% auto;
+
+
+        @include sm-d {
+            width: 90%;
+            margin: 1.5% auto 5% auto;
+            gap: 20px;
+        }
     }
 
     &__medium-data {
         display: flex;
         flex-direction: column;
-        margin: 1.5% 3% 2.5% 3%;
 
         @include sm-d {
-            margin: 0px 15px 15px 15px;
             text-align: left;
         }
 
@@ -175,11 +200,17 @@
 
     &__medium-section {
         display: flex;
-        margin-left: 15%;
-        gap: 15px;
+        gap: 35px;
 
         @include sm-d {
+            flex-direction: column;
             margin-left: 5%;
+            gap: 15px;
+        }
+
+        @include esm {
+            margin-left: 3%;
+            gap: 10px;
         }
     }
 
@@ -189,6 +220,10 @@
 
         @include esm {
             font-size: 0.85rem;
+        }
+
+        @include sm-d {
+            width: 100%;
         }
     }
 
@@ -216,27 +251,55 @@
     }
 
     &__medium-description--icon {
-        width: 10px;
+        width: 12px;
+
+        @include esm {
+            width: 7px;
+        }
     }
 
     &__medium-small-text {
+        @include fontConfig("SFProDisplayRegular", clamp(1rem, 0.96rem + 0.22vw, 1.1rem), var(--text-color));
+
+        @include esm {
+            font-size: 0.8rem;
+        }
     }
 
     &__medium-descriptions {
         width: 60%;
+
+        @include sm-d {
+            width: 100%;
+        }
     }
 
     &__medium-description--wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 8px;
     }
 
     &__medium-link {
+        margin-left: 5px;
     }
 
     &__medium-link--icon {
-        width: 10px;
+        width: 13px;
+
+        &:hover {
+            animation: pulse 0.9s ease;
+        }
+
+        @include esm {
+            width: 9px;
+        }
     }
 
     &__medium-bold--text {
+        @include fontConfig("SFProDisplayBold", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--text-color));
+        margin-top: 13px;
     }
 }
 
@@ -244,6 +307,19 @@
 }
 
 .bold {
+    font-family: "SFProDisplaySemiBold";
+}
+
+.dot {
+    width: 8px;
+    
+    @include esm {
+        width: 4px;
+    }
+}
+
+.topMargin {
+    margin-top: 9px;
 }
 
 .schedule {
@@ -282,7 +358,7 @@
     }
 
     &__icon {
-        width: 14%; 
+        width: 14%;
         max-width: 30px;
         margin-right: 3%;
 
@@ -293,7 +369,7 @@
 
         @include esm {
             width: 14%;
-            max-width: 17px; 
+            max-width: 17px;
         }
     }
 }
@@ -314,7 +390,7 @@
         margin: 3px 2% 0 0;
 
         @include esm {
-            margin: 1.5px 3% 0 0;  
+            margin: 1.5px 3% 0 0;
         }
     }
 }

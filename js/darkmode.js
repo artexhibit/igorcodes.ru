@@ -50,8 +50,10 @@ function setupResumeIcons(event, theme = "") {
             icon.src = `./assets/images/resume/header/${icon.alt}${ending}.svg`;
         } else if (icon.src.includes("factsLeft")) {
             icon.src = `./assets/images/resume/factsLeft/${icon.alt}${ending}.svg`;
-        } else {
+        } else if (icon.src.includes("factsRight")) {
             icon.src = `./assets/images/resume/factsRight/${icon.alt}${ending}.svg`;
+        } else {
+            icon.src = `./assets/images/resume/factsBig/${icon.alt}${ending}.svg`;
         }
     });
 }

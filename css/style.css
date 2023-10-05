@@ -1596,7 +1596,7 @@ body {
   flex-direction: column;
   margin-right: 15px;
   width: 100%;
-  gap: 27px;
+  gap: 20px;
 }
 @media (max-width: 767.8px) {
   .resume__fact-wrapper--left {
@@ -1618,13 +1618,13 @@ body {
 .resume__fact-wrapper--right {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  padding-left: 20px;
   width: 100%;
   gap: 20px;
 }
 @media (max-width: 767.8px) {
   .resume__fact-wrapper--right {
-    margin-left: 0;
+    padding-left: 0;
     align-items: center;
   }
 }
@@ -1672,7 +1672,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 3% 10px 9% 10px;
+  margin: 4.6% 10px 10.5% 10px;
 }
 .fact__small-title {
   font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
@@ -2004,6 +2004,65 @@ body {
   }
 }
 
+.resume__big-facts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+.resume__big-facts-container .resume__headline {
+  margin: 1% 0;
+}
+
+.resume__big-facts-container .resume__headline-icon {
+  margin: 0 6px 1% 0;
+}
+
+.resume__big-facts-container .resume__headline-title {
+  margin-bottom: 1%;
+}
+
+.fact__big {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-resume-card-background);
+  border-radius: 15px;
+  width: 100%;
+}
+.fact__big-data--wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.fact__big-courses-types {
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+.fact__big-courses-type {
+  font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.9rem, 0.86rem + 0.22vw, 1rem);
+  color: var(--text-color);
+  line-height: initial;
+  letter-spacing: initial;
+  width: 25%;
+  margin: 0 5px;
+}
+.fact__big-course {
+  display: flex;
+}
+.fact__big-name--wrapper {
+  display: flex;
+}
+.fact__big-name--icon {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1/1;
+}
+.fact__big-course--icon {
+  width: 25px;
+}
 .footer {
   border-top: 1px solid var(--clr-border);
 }

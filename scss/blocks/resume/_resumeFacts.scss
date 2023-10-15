@@ -1,35 +1,68 @@
 .resume {
-    &__facts {
+    &__small-facts {
         display: flex;
         margin-top: 3%;
 
         @include sm-d {
-            margin-top: 13%;
+            margin-top: 15px;
             flex-direction: column;
         }
     }
 
-    &__left-container {
+    &__small-facts--container {
         display: flex;
         flex-direction: column;
-        width: 35%;
-
-        @include sm-d {
-            width: 100%;
-            align-items: center;
-        }
+        gap: 15px;
+        width: 100%;
     }
 
-    &__fact-wrapper--left {
+    &__small-facts--row {
         display: flex;
-        flex-direction: column;
-        margin-right: 15px;
         width: 100%;
-        gap: 20px;
+        gap: 15px;
 
         @include sm-d {
             margin-right: 0;
             align-items: center;
+            flex-direction: column;
+        }
+
+        &:last-child {
+            .fact__small:last-of-type {
+                max-width: 800px;
+
+                @include sm-d {
+                    max-width: 390px;
+                    max-height: 400px;
+                }
+
+                @include esm {
+                    height: 230px;
+                }
+
+
+                .fact__small-data {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    @include sm-d {
+                        flex-direction: column;
+                    }
+                }
+
+                .resume__headline {
+                    padding: 2%;
+
+                    @include md {
+                        padding: 2.8%;
+                    }
+
+                    @include esm {
+                        padding: 4% 0;
+                    }
+                }
+            }
         }
     }
 
@@ -45,6 +78,7 @@
     &__right-container {
         display: flex;
         flex-direction: column;
+        margin-top: 15px;
         width: 100%;
 
         @include sm-d {
@@ -87,28 +121,23 @@
         flex-direction: column;
         background-color: var(--clr-resume-card-background);
         border-radius: 15px;
-        max-width: 400px;
+        max-width: 390px;
+        max-height: 200px;
         width: 100%;
+        height: 100%;
 
         @include esm {
             width: 100%;
+            height: 125px;
         }
 
         &:nth-child(2) {
             .fact__small-subtitle {
-                margin-bottom: 2%;
                 margin-top: -2%;
 
                 @include sm-d {
                     margin-top: 0;
                 }
-            }
-        }
-
-        &:nth-child(5) {
-            .fact__small-data {
-                margin-top: 2%;
-                gap: 12px;
             }
         }
     }
@@ -117,8 +146,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
-        margin: 4.6% 10px 10.5% 10px;
+        padding: 2% 10px;
+        height: 100%;
+
+        @include sm-d {
+            padding: 4% 10px;
+            flex-grow: 1;
+        }
     }
 
     &__small-title {
@@ -131,6 +167,7 @@
 
     &__small-subtitle {
         @include fontConfig("SFProDisplayMedium", 1.1rem, var(--clr-resume-grey));
+        padding-bottom: 4%;
 
         @include esm {
             font-size: 0.7rem;
@@ -167,7 +204,6 @@
         gap: 30px;
         width: 80%;
         margin: 1.5% auto 2.5% auto;
-
 
         @include sm-d {
             width: 90%;
@@ -312,7 +348,7 @@
 
 .dot {
     width: 8px;
-    
+
     @include esm {
         width: 4px;
     }
@@ -329,6 +365,10 @@
 
         @include esm {
             font-size: 1rem;
+        }
+
+        @include md-d {
+            padding-top: 3%;
         }
     }
 }
@@ -387,15 +427,16 @@
         aspect-ratio: 1/1;
         border-radius: 50%;
         background-color: var(--clr-resume-yellow);
-        margin: 3px 2% 0 0;
+        margin: 3px 2% 4% 0;
 
         @include esm {
-            margin: 1.5px 3% 0 0;
+            margin: 1.5px 3% 4% 0;
         }
     }
 }
 .lang {
     &__section {
+        width: 229px;
     }
 
     &__wrapper {

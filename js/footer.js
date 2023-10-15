@@ -31,6 +31,7 @@ window.addEventListener("load", function () {
         configureSlider(pickedTab);
     }
     setInitialSwitchValues();
+    setupTheme(themeMediaQuery);
     setupPickedButtons();
 });
 

@@ -19,7 +19,7 @@ function setupTheme(event) {
         disableDarkMode();
         setupSocialIcons(themeMediaQuery, "Dark");
         setupResumeIcons(themeMediaQuery, "Dark");
-    } else {
+    } else if (theme === "dark") {
         enableDarkMode();
         setupSocialIcons(themeMediaQuery, "Light");
         setupResumeIcons(themeMediaQuery, "Light");

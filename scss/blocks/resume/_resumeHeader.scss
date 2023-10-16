@@ -100,7 +100,7 @@
         display: flex;
         flex-direction: column;
         width: 40%;
-        max-width: 350px;
+        max-width: 390px;
         background-color: var(--clr-resume-card-background);
         border-radius: 15px;
         margin-left: auto;
@@ -108,7 +108,6 @@
         @include sm-d {
             margin: 25px 0 0 0;
             width: 100%;
-            max-width: 400px;
         }
     }
 
@@ -120,9 +119,9 @@
     }
 
     &__headline-icon {
-        width: 6.5%; 
+        width: 6.5%;
         min-width: 13.5px;
-        max-width: 20px; 
+        max-width: 20px;
         margin-right: 6px;
     }
 
@@ -159,6 +158,7 @@
         @include esm {
             flex-wrap: wrap;
             justify-content: space-evenly;
+            width: 80%;
         }
     }
 
@@ -176,7 +176,7 @@
         @include esm {
             justify-content: center;
             width: 25%;
-        } 
+        }
     }
 
     &__link {
@@ -185,8 +185,8 @@
         transition: transform 0.4s ease;
 
         @include esm {
-            width: 80%; 
-        } 
+            width: 80%;
+        }
 
         &:hover {
             outline: 2px solid var(--clr-accent);
@@ -200,23 +200,39 @@
         max-width: 45px;
 
         @include esm {
-            max-width: 30px; 
+            max-width: 30px;
         }
     }
 
-    &__contact-mail {
+    &__contact-details {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 5% auto;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 auto 5% auto;
 
         @include sm-d {
-            margin: 4% auto;
-            width: 75%;
+            margin: 8% auto 5% auto;
         }
 
         @include esm {
-            margin: 5% auto;
+            margin: 10% 0 7% 0;
+        }
+    }
+
+    &__contact-detail {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin: 0 auto;
+        width: 77%;
+
+        @include md {
+            width: 90%;
+        }
+
+        @include sm-d {
+            width: 75%;
+            justify-content: center;
         }
     }
 
@@ -225,10 +241,13 @@
         width: 8%;
 
         @include sm-d {
-            width: 9%;
-            min-width: 11px;
+            width: 100%;
             max-width: 18px;
             margin: 2px 3% 0 0;
+        }
+
+        @include esm {
+            max-width: 11px;
         }
     }
 

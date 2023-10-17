@@ -1,41 +1,9 @@
-.resume {
-    &__big-facts-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    &__headline {
-        @at-root .resume__big-facts-container & {
-            margin: 1% 0;
-        }
-    }
-
-    &__headline-icon {
-        @at-root .resume__big-facts-container & {
-            margin: 0 6px 1% 0;
-        }
-    }
-
-    &__headline-title {
-        @at-root .resume__big-facts-container & {
-            margin-bottom: 1%;
-        }
-    }
-}
 .fact {
     &__big {
-        display: flex;
-        flex-direction: column;
-        background-color: var(--clr-resume-card-background);
-        border-radius: 15px;
-        width: 100%;
+
     }
 
     &__big-data--wrapper {
-        width: 90%;
-        margin: 0 auto;
     }
 
     &__big-data {
@@ -51,7 +19,6 @@
         @include fontConfig("SFProDisplayBold", clamp(0.9rem, 0.86rem + 0.22vw, 1rem), var(--text-color));
         width: 25%;
         margin: 0 5px;
-        
     }
 
     &__big-course {

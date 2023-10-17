@@ -1,0 +1,168 @@
+.resume {
+    &__big-facts-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    &__headline {
+        @at-root .resume__big-facts-container & {
+            margin: 1% 0;
+        }
+    }
+
+    &__headline-icon {
+        @at-root .resume__big-facts-container & {
+            margin: 0 6px 1% 0;
+        }
+    }
+
+    &__headline-title {
+        @at-root .resume__big-facts-container & {
+            margin-bottom: 1%;
+        }
+    }
+}
+.fact {
+    &__big {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--clr-resume-card-background);
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    &__big-data--wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__big-data {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__expiriense-section {
+        display: flex;
+        gap: 35px;
+
+        @include sm-d {
+            flex-direction: column;
+            margin-left: 5%;
+            gap: 15px;
+        }
+
+        @include esm {
+            margin-left: 3%;
+            gap: 10px;
+        }
+    }
+
+    &__big-title {
+        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--clr-resume-grey));
+        width: 40%;
+
+        @include esm {
+            font-size: 0.85rem;
+        }
+
+        @include sm-d {
+            width: 100%;
+        }
+    }
+
+    &__expiriense-descriptions {
+        width: 60%;
+
+        @include sm-d {
+            width: 100%;
+        }
+    }
+
+    &__expiriense-description {
+        width: 100%;
+    }
+
+    &__big-normal--text {
+        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--text-color), initial, 1.4rem);
+
+        @include esm {
+            line-height: initial;
+            font-size: 0.85rem;
+        }
+    }
+
+    &__big-grey--text {
+        @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.86rem + 0.22vw, 1rem), var(--clr-resume-grey));
+
+        @include esm {
+            font-size: 0.7rem;
+        }
+    }
+
+    &__expiriense-entry--wrapper {
+        width: 100%;
+    }
+
+    &__expiriense-entry {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    &__expiriense-description--icon {
+        width: 12px;
+
+        @include esm {
+            width: 7px;
+        }
+    }
+
+    &__big-small-text {
+        @include fontConfig("SFProDisplayRegular", clamp(1rem, 0.96rem + 0.22vw, 1.1rem), var(--text-color));
+
+        @include esm {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__big-section {
+        display: flex;
+    }
+
+    &__expiriense-description--wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    &__expiriense-link {
+        margin-left: 5px;
+    }
+
+    &__expiriense-link--icon {
+        width: 13px;
+
+        &:hover {
+            animation: pulse 0.9s ease;
+        }
+
+        @include esm {
+            width: 9px;
+        }
+    }
+
+    &__big-bold--text {
+        @include fontConfig("SFProDisplayBold", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--text-color));
+        margin-top: 13px;
+    }
+}
+.theme-sensitive {
+}
+.dot {
+}
+.bold {
+}

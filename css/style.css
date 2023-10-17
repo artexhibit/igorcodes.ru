@@ -2093,6 +2093,142 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+.fact__big-data {
+  display: flex;
+  flex-direction: column;
+}
+.fact__expiriense-section {
+  display: flex;
+  gap: 35px;
+}
+@media (max-width: 767.8px) {
+  .fact__expiriense-section {
+    flex-direction: column;
+    margin-left: 5%;
+    gap: 15px;
+  }
+}
+@media (max-width: 319.8px) {
+  .fact__expiriense-section {
+    margin-left: 3%;
+    gap: 10px;
+  }
+}
+.fact__big-title {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem);
+  color: var(--clr-resume-grey);
+  line-height: initial;
+  letter-spacing: initial;
+  width: 40%;
+}
+@media (max-width: 319.8px) {
+  .fact__big-title {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 767.8px) {
+  .fact__big-title {
+    width: 100%;
+  }
+}
+.fact__expiriense-descriptions {
+  width: 60%;
+}
+@media (max-width: 767.8px) {
+  .fact__expiriense-descriptions {
+    width: 100%;
+  }
+}
+.fact__expiriense-description {
+  width: 100%;
+}
+.fact__big-normal--text {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem);
+  color: var(--text-color);
+  line-height: 1.4rem;
+  letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .fact__big-normal--text {
+    line-height: initial;
+    font-size: 0.85rem;
+  }
+}
+.fact__big-grey--text {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(0.9rem, 0.86rem + 0.22vw, 1rem);
+  color: var(--clr-resume-grey);
+  line-height: initial;
+  letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .fact__big-grey--text {
+    font-size: 0.7rem;
+  }
+}
+.fact__expiriense-entry--wrapper {
+  width: 100%;
+}
+.fact__expiriense-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.fact__expiriense-description--icon {
+  width: 12px;
+}
+@media (max-width: 319.8px) {
+  .fact__expiriense-description--icon {
+    width: 7px;
+  }
+}
+.fact__big-small-text {
+  font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 0.96rem + 0.22vw, 1.1rem);
+  color: var(--text-color);
+  line-height: initial;
+  letter-spacing: initial;
+}
+@media (max-width: 319.8px) {
+  .fact__big-small-text {
+    font-size: 0.8rem;
+  }
+}
+.fact__big-section {
+  display: flex;
+}
+.fact__expiriense-description--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+}
+.fact__expiriense-link {
+  margin-left: 5px;
+}
+.fact__expiriense-link--icon {
+  width: 13px;
+}
+.fact__expiriense-link--icon:hover {
+  animation: pulse 0.9s ease;
+}
+@media (max-width: 319.8px) {
+  .fact__expiriense-link--icon {
+    width: 9px;
+  }
+}
+.fact__big-bold--text {
+  font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem);
+  color: var(--text-color);
+  line-height: initial;
+  letter-spacing: initial;
+  margin-top: 13px;
+}
+
 .fact__big-courses-types {
   display: flex;
   width: 100%;

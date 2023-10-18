@@ -1,0 +1,91 @@
+.fact {
+
+    &__big {
+    }
+
+    &__big-data--wrapper {
+    }
+
+    &__big-data {
+    }
+
+    &__education-section {
+        display: flex;
+        gap: 35px;
+
+        @include lg-u {
+            margin-left: 10%;
+        }
+
+        @include sm-d {
+            flex-direction: column;
+            margin-left: 5%;
+            gap: 15px;
+        }
+
+        @include esm {
+            margin-left: 3%;
+            gap: 10px;
+        }
+    }
+
+    &__education-descriptions {
+        width: 60%;
+
+        @include sm-d {
+            width: 100%;
+        }
+    }
+
+    &__education-description {
+        width: 100%;
+    }
+
+    &__education-description--wrapper {
+        width: 100%;
+    }
+
+    &__education-link {
+        margin-left: 5px;
+    }
+
+    &__education-link--icon {
+        width: 13px;
+
+        &:hover {
+            animation: pulse 0.9s ease;
+        }
+
+        @include esm {
+            width: 9px;
+        }
+    }
+
+    &__big-normal--text {
+    }
+
+    &__big-small-text {
+    }
+
+    &__big-title {
+    }
+}
+.resume {
+
+    &__headline {
+    }
+
+    &__headline-icon {
+    }
+
+    &__headline-title {
+    }
+}
+.theme-sensitive {
+}
+.bold {
+    font-family: "SFProDisplaySemiBold";
+}
+.topMargin {
+    margin-top: 9px;
+}

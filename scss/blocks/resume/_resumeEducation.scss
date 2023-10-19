@@ -1,6 +1,19 @@
 .fact {
-
     &__big {
+        &:nth-child(3) {
+            .resume__headline {
+                .resume__headline-title {
+                    @include sm-d {
+                        width: 70%;
+                        text-align: center;
+                    }
+
+                    @include esm {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
     }
 
     &__big-data--wrapper {
@@ -49,18 +62,6 @@
         margin-left: 5px;
     }
 
-    &__education-link--icon {
-        width: 13px;
-
-        &:hover {
-            animation: pulse 0.9s ease;
-        }
-
-        @include esm {
-            width: 9px;
-        }
-    }
-
     &__big-normal--text {
     }
 
@@ -71,7 +72,6 @@
     }
 }
 .resume {
-
     &__headline {
     }
 
@@ -88,4 +88,6 @@
 }
 .topMargin {
     margin-top: 9px;
+}
+.link__icon {
 }

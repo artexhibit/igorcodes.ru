@@ -1,6 +1,5 @@
 .fact {
     &__big {
-
     }
 
     &__big-data--wrapper {
@@ -9,59 +8,189 @@
     &__big-data {
     }
 
+    &__big-cources {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 3%;
+        gap: 30px;
+    }
+
     &__big-courses-types {
         display: flex;
         width: 100%;
         text-align: center;
+
+        @include sm-d {
+            display: none;
+        }
     }
 
     &__big-courses-type {
-        @include fontConfig("SFProDisplayBold", clamp(0.9rem, 0.86rem + 0.22vw, 1rem), var(--text-color));
-        width: 25%;
+        @include fontConfig("SFProDisplayBold", clamp(0.9rem, 0.78rem + 0.66vw, 1.2rem), var(--text-color));
         margin: 0 5px;
+
+        &:nth-child(1) {
+            width: 20%;
+        }
+        &:nth-child(2) {
+            width: 40%;
+            padding-left: 6%;
+        }
+        &:nth-child(3) {
+            width: 20%;
+        }
+        &:nth-child(4) {
+            width: 20%;
+        }
     }
 
     &__big-course {
         display: flex;
+        width: 100%;
+
+        @include sm-d {
+            flex-direction: column;
+            gap: 10px;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid white;
+            
+                .fact__big-course--certificate {
+                    margin-bottom: 10%;
+                }
+            }
+        }
     }
 
     &__big-course--date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+
+        @include sm-d {
+            width: 100%;
+        }
     }
 
     &__big-normal--text {
     }
 
-    &__big-name--wrapper {
+    &__big-course--wrapper {
         display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 40%;
+        margin: 0 10px;
+
+        @include sm-d {
+            flex-direction: column;
+            margin: 0;
+            width: 100%;
+            gap: 10px;
+        }
     }
 
-    &__big-name--icon {
+    &__big-course--icon {
         object-fit: cover;
         border-radius: 50%;
         width: 40px;
         aspect-ratio: 1/1;
     }
 
-    &__big-name--title {
-    }
+    &__big-course--title {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0 5px;
 
-    &__big-semibold--text {
+        @include sm-d {
+            flex-grow: 0;
+            margin: 0;
+        }
     }
 
     &__big-course--type {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        gap: 2px;
+
+        @include sm-d {
+            width: 100%;
+        }
     }
 
     &__big-course--certificate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+
+        @include sm-d {
+            width: 100%;
+        }
     }
 
     &__big-course--icon {
-        width: 25px;
+        width: 50px;
+        margin-right: 10px;
+        filter: grayscale(100%);
+        
+        @include sm-d {
+            margin: 0;
+        }
     }
 
-    &__big-small--text {
+    &__big-certificate--icon {
+        width: 30px;
+
+        &:hover {
+            transform: scale(0.8);
+            transition: transform .5s ease;
+        }
+
+        &:not(:hover) {
+            transform: scale(1);
+            transition: transform .5s ease;
+        }
+    }
+
+    &__big-course--link {
+        @include fontConfig("SFProDisplayRegular", 0.9rem, var(--clr-resume-grey));
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--clr-accent);
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 4px;
+
+            @include esm {
+                text-decoration-thickness: 1px;
+                text-underline-offset: 3px;
+            }
+        }
     }
 }
 .theme-sensitive {
 }
 .grey {
+    color: var(--clr-resume-grey);
+}
+
+.link__icon {
+    @at-root .fact__big-cources & {
+        width: 10px;
+
+        @include sm-d {
+            margin: 0;
+        }
+    }
 }

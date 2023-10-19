@@ -191,18 +191,6 @@
         }
     }
 
-    &__expiriense-link--icon {
-        width: 13px;
-
-        &:hover {
-            animation: pulse 0.9s ease;
-        }
-
-        @include esm {
-            width: 9px;
-        }
-    }
-
     &__big-bold--text {
         @include fontConfig("SFProDisplayBold", clamp(1.1rem, 1.06rem + 0.22vw, 1.2rem), var(--text-color));
         margin-top: 13px;
@@ -223,4 +211,16 @@
 
 .breakWord {
     word-break: break-all;
+}
+
+.link__icon {
+    width: 13px;
+
+    &:hover {
+        animation: pulse 0.9s ease;
+    }
+
+    @include esm {
+        width: 9px;
+    }
 }

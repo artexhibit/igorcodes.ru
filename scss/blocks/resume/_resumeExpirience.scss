@@ -123,10 +123,10 @@
     }
 
     &__big-grey--text {
-        @include fontConfig("SFProDisplayRegular", clamp(0.9rem, 0.82rem + 0.44vw, 1.1rem), var(--clr-resume-grey));
+        @include fontConfig("SFProDisplayRegular", clamp(1rem, 0.96rem + 0.22vw, 1.1rem), var(--clr-resume-grey));
 
         @include esm {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
     }
 

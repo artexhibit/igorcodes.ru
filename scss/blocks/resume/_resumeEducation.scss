@@ -1,6 +1,6 @@
 .fact {
     &__big {
-        &:nth-child(3) {
+        &:nth-child(3), &:nth-child(4) { 
             .resume__headline {
                 .resume__headline-title {
                     @include sm-d {

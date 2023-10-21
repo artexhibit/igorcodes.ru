@@ -2343,6 +2343,7 @@ body {
 }
 .fact__big-stack--item {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
@@ -2353,6 +2354,17 @@ body {
 .fact__big-stack--item:hover {
   box-shadow: 0 4px 8px 0 rgb(55, 55, 55);
   transform: translateY(-3px);
+}
+.fact__big-stack--item.isTopSkill::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  right: -7px;
+  background-image: url(/assets/images/resume/factsBig/thumbsUp.svg);
+  background-size: 23px 23px;
+  width: 23px;
+  height: 23px;
+  transform: rotate(-20deg);
 }
 .fact__big-item--wrapper {
   display: flex;

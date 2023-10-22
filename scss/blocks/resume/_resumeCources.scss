@@ -143,6 +143,12 @@
         filter: grayscale(100%);
         
         @include sm-d {
+            width: 80px; 
+            margin: 0;
+        }
+
+        @include esm {
+            width: 50px;
             margin: 0;
         }
     }
@@ -162,9 +168,13 @@
     }
 
     &__big-course--link {
-        @include fontConfig("SFProDisplayRegular", 0.9rem, var(--clr-resume-grey));
+        @include fontConfig("SFProDisplayRegular", 1.2rem, var(--clr-resume-grey));
         text-decoration: none;
         cursor: pointer;
+
+        @include esm {
+            font-size: 0.7rem;
+        }
 
         &:hover {
             text-decoration: underline;

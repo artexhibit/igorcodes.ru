@@ -114,7 +114,7 @@
     }
 
     &__big-normal--text {
-        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 1.02rem + 0.44vw, 1.3rem), var(--text-color), initial, 1.6rem);
+        @include fontConfig("SFProDisplayRegular", 1.3rem, var(--text-color), initial, 1.6rem);  
 
         @include esm {
             line-height: initial;

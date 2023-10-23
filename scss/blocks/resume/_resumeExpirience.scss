@@ -33,12 +33,24 @@
     &__big {
         display: flex;
         flex-direction: column;
-        background-color: var(--clr-resume-card-background);
+        background-color: var(--clr-resume-section-background);
         border-radius: 15px;
         width: 100%;
 
         @include sm-d {
             max-width: 400px;
+        }
+
+        &:nth-child(5) {
+            .fact__big-data--wrapper, .fact__big-bold--text {
+                margin-top: 0;
+            }
+
+            .fact__big-bold--text {
+                @include sm-d {
+                    align-self: center;
+                }
+            }
         }
     }
 
@@ -182,7 +194,7 @@
             text-decoration: underline;
             text-decoration-color: var(--clr-accent);
             text-decoration-thickness: 1.5px;
-            text-underline-offset: 6px;
+            text-underline-offset: 4px;
 
             @include esm {
                 text-decoration-thickness: 1px;

@@ -15,7 +15,7 @@
     &__image-container {
         width: 22%;
         aspect-ratio: 1/1;
-        background-color: var(--clr-resume-card-background);
+        background-color: var(--clr-resume-section-background);
         outline: 2px solid var(--clr-border);
         border-radius: 50%;
         overflow: hidden;
@@ -101,7 +101,7 @@
         flex-direction: column;
         width: 40%;
         max-width: 390px;
-        background-color: var(--clr-resume-card-background);
+        background-color: var(--clr-resume-section-background);
         border-radius: 15px;
         margin-left: auto;
 

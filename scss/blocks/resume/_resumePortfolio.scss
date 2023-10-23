@@ -17,7 +17,7 @@
     &__expiriense-description--icon {
     }
 
-    &__big-small-text {
+    &__big-small--text {
     }
 
     &__expiriense-link {
@@ -218,12 +218,17 @@
         background-color: var(--clr-resume-card-background);
         border-radius: 15px;
         min-height: 291px;
+        width: 33.333%;
         box-shadow: none;
         transition: box-shadow 0.5s ease, transform 0.4s ease;
 
         &:hover {
             box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
             transform: translateY(-4px);
+        }
+
+        @include sm-d {
+            width: 100%;
         }
     }
 
@@ -240,7 +245,7 @@
     }
 
     &__card-headline--title {
-        @include fontConfig("SFProDisplaySemiBold", 1.3rem, var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplaySemiBold", 1.4rem, var(--text-color), 0.285px);
 
         @include esm {
             font-size: 0.8rem;

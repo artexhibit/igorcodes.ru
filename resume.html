@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script defer src="./js/languageContent.js"></script>
         <script src="./js/language.js"></script>
+        <script defer src="./js/captcha.js"></script>
         <script defer src="./js/darkmode.js"></script>
         <script defer src="./js/header.js"></script>
         <script defer src="./js/footer.js"></script>
@@ -284,7 +285,9 @@
                                                     <div class="fact__expiriense-entry">
                                                         <img class="fact__expiriense-description--icon theme-sensitive" src="./assets/images/resume/factsRight/targetLight.svg" alt="target" />
                                                         <p class="fact__big-small--text">
-                                                            Посмотреть код на GitHub:<a class="fact__expiriense-link" href="https://github.com/artexhibit" target="_blank"><span class="breakWord">github.com/artexhibit</span>
+                                                            Посмотреть код на GitHub:
+                                                            <a class="fact__expiriense-link" href="https://github.com/artexhibit" target="_blank">
+                                                                <span class="breakWord">github.com/artexhibit</span>
                                                                 <img class="link__icon theme-sensitive" src="./assets/images/resume/header/linkLight.svg" alt="link" />
                                                             </a>
                                                         </p>
@@ -748,7 +751,9 @@
                                                 </div>
                                                 <div class="project__card-container--bottom">
                                                     <p class="fact__big-small--text">
-                                                        Посмотреть код на GitHub:<a class="fact__expiriense-link" href="https://github.com/artexhibit/CustomNumpad" target="_blank"><span class="breakWord">github.com/artexhibit/CustomNumpad</span>
+                                                        Посмотреть код на GitHub:
+                                                        <a class="fact__expiriense-link" href="https://github.com/artexhibit/CustomNumpad" target="_blank">
+                                                            <span class="breakWord">github.com/artexhibit/CustomNumpad</span>
                                                             <img class="link__icon theme-sensitive" src="./assets/images/resume/header/linkLight.svg" alt="link" />
                                                         </a>
                                                     </p>
@@ -771,7 +776,9 @@
                                                 </div>
                                                 <div class="project__card-container--bottom">
                                                     <p class="fact__big-small--text">
-                                                        Посмотреть код на GitHub:<a class="fact__expiriense-link" href="https://github.com/artexhibit/CustomPopup" target="_blank"><span class="breakWord">github.com/artexhibit/CustomPopup</span>
+                                                        Посмотреть код на GitHub:
+                                                        <a class="fact__expiriense-link" href="https://github.com/artexhibit/CustomPopup" target="_blank">
+                                                            <span class="breakWord">github.com/artexhibit/CustomPopup</span>
                                                             <img class="link__icon theme-sensitive" src="./assets/images/resume/header/linkLight.svg" alt="link" />
                                                         </a>
                                                     </p>
@@ -856,7 +863,9 @@
                                             </div>
                                             <div class="project__card-data--container">
                                                 <p class="fact__big-normal--text">
-                                                    С нуля придумал и реализовал на HTML, CSS и JS свой сайт-портфолио, который доступен по адресу<a class="fact__expiriense-link" href="https://igorcodes.ru" target="_blank"><span class="fact__big-normal--text breakWord">igorcodes.ru</span>
+                                                    С нуля придумал и реализовал на HTML, CSS и JS свой сайт-портфолио, который доступен по адресу
+                                                    <a class="fact__expiriense-link" href="https://igorcodes.ru" target="_blank">
+                                                        <span class="fact__big-normal--text breakWord">igorcodes.ru</span>
                                                         <img class="link__icon theme-sensitive" src="./assets/images/resume/header/linkLight.svg" alt="link" />
                                                     </a>
 
@@ -884,7 +893,11 @@
                                         Хочу развиваться, как iOS-разработчик, поскольку считаю, что успехов легче добиться в деле, которое по душе. Готов к выполнению тестовых заданий. Предпочитаемый формат работы - офис.
                                         <br />
                                         <br />
-                                        Всегда на связи в Telegram (<a class="fact__expiriense-link" href="https://t.me/artexhib1t" target="_blank"><span class="fact__big-normal--text breakWord">@artexhib1t</span></a> ) или по почте (<a class="fact__expiriense-link" href="mailto:ceo@igorcodes.ru" target="_blank"><span class="fact__big-normal--text breakWord">ceo@igorcodes.ru</span></a> ).
+                                        Всегда на связи в Telegram
+                                        <a class="fact__expiriense-link" href="https://t.me/artexhib1t" target="_blank"><span class="fact__big-normal--text">@artexhib1t</span></a>
+                                        или по почте
+                                        <a class="fact__expiriense-link" href="mailto:ceo@igorcodes.ru" target="_blank"><span class="fact__big-normal--text breakWord">ceo@igorcodes.ru</span></a>
+                                        .
                                     </p>
                                 </div>
                             </div>
@@ -948,5 +961,31 @@
                 </div>
             </div>
         </footer>
+        <div class="resume__downloader">
+            <div class="resume__dowloader-button--container">
+                <div class="resume__dowloader-text-wrapper">
+                    <p class="resume__downloader-text">Скачайте версию резюме в pdf</p>
+                </div>
+                <div class="resume__dowloader-button-wrapper">
+                    <button class="resume__downloader-button">
+                        <p class="resume__downloader-button--text">Загрузить</p>
+                    </button>
+                </div>
+            </div>
+            <div class="resume__dowloader-captcha--container">
+                <div class="captcha__view-wrapper">
+                    <button class="captcha__button-refresh">
+                        <img class="captcha__button-refresh--image" src="./assets/images/resume/captcha/refresh.svg" alt="refresh" />
+                    </button>
+                    <input class="captcha__view" type="text" value="5  c  X  D  j" disabled />
+                </div>
+                <div class="captcha__input-wrapper">
+                    <input class="captcha__input" type="text" placeholder="Введите капчу" />
+                </div>
+            </div>
+            <button class="resume__downloader-close">
+                <img class="resume__downloader-close--icon" src="./assets/images/resume/captcha/closeIcon.svg" alt="close" />
+            </button>
+        </div>
     </body>
 </html>

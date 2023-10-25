@@ -2841,7 +2841,7 @@ body {
   top: -11px;
   width: 25px;
   height: 25px;
-  border: 1px solid wheat;
+  border: 1px solid var(--clr-accent);
   cursor: pointer;
 }
 .resume__downloader-close--icon {
@@ -2852,7 +2852,7 @@ body {
 
 .captcha__view-wrapper {
   display: flex;
-  width: 50%;
+  width: 69%;
   gap: 5px;
   margin-top: 20px;
 }
@@ -2874,7 +2874,7 @@ body {
   pointer-events: none;
   font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
   font-size: 2rem;
-  color: #9e7d5b;
+  color: var(--clr-accent);
   line-height: initial;
   letter-spacing: initial;
 }
@@ -2886,7 +2886,7 @@ body {
 }
 @media (max-width: 319.8px) {
   .captcha__view {
-    width: 51%;
+    width: 62%;
     font-size: 1rem;
   }
 }
@@ -2933,14 +2933,21 @@ body {
 }
 .captcha__input {
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid var(--clr-accent);
   border-radius: 5px;
   padding: 7px;
+  outline: none;
   font-family: "SFProDisplayBold", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  color: lightgrey;
+  color: var(--clr-accent);
   line-height: initial;
   letter-spacing: initial;
+}
+.captcha__input::-moz-placeholder {
+  color: var(--clr-accent);
+}
+.captcha__input::placeholder {
+  color: var(--clr-accent);
 }
 @media (max-width: 767.8px) {
   .captcha__input {

@@ -2741,7 +2741,7 @@ body {
   padding: 20px;
   align-items: center;
   position: fixed;
-  bottom: 30px;
+  bottom: -200px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -2751,6 +2751,12 @@ body {
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
   box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
+  transition: bottom 0.3s ease;
+  z-index: 99;
+}
+.resume__downloader.show {
+  bottom: 30px;
+  transition: bottom 1s ease;
 }
 @media (max-width: 319.8px) {
   .resume__downloader {
@@ -2788,6 +2794,11 @@ body {
   line-height: initial;
   letter-spacing: initial;
 }
+@media (max-width: 767.8px) {
+  .resume__downloader-text {
+    font-size: 0.9rem;
+  }
+}
 .resume__dowloader-button-wrapper {
   display: flex;
   justify-content: end;
@@ -2806,6 +2817,14 @@ body {
   background-color: var(--clr-accent);
   cursor: pointer;
 }
+.resume__downloader-button:hover {
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+.resume__downloader-button:not(:hover) {
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
 .resume__downloader-button--text {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -2819,7 +2838,7 @@ body {
   visibility: hidden;
   gap: 10px;
   max-height: 0;
-  transition: max-height 1s ease-in;
+  transition: max-height 1s ease;
   overflow: hidden;
 }
 @media (max-width: 767.8px) {
@@ -2831,7 +2850,7 @@ body {
 .resume__dowloader-captcha--container.show {
   visibility: visible;
   max-height: 400px;
-  transition: max-height 1s ease-in;
+  transition: max-height 1s ease;
 }
 .resume__downloader-close {
   position: absolute;
@@ -2844,10 +2863,36 @@ body {
   border: 1px solid var(--clr-accent);
   cursor: pointer;
 }
+.resume__downloader-close:hover {
+  transform: scale(0.85);
+  transition: transform 0.2s ease;
+}
+.resume__downloader-close:not(:hover) {
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
 .resume__downloader-close--icon {
   width: 100%;
   height: 100%;
   max-width: 20px;
+}
+.resume__downloader-error--text {
+  font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: red;
+  line-height: initial;
+  letter-spacing: initial;
+  display: flex;
+  align-self: flex-start;
+  text-align: center;
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease, visibility 0.1s ease;
+}
+.resume__downloader-error--text.show {
+  visibility: visible;
+  max-height: 40px;
+  transition: max-height 0.5s ease, visibility 0.1s ease;
 }
 
 .captcha__view-wrapper {
@@ -2880,7 +2925,7 @@ body {
 }
 @media (max-width: 767.8px) {
   .captcha__view {
-    width: 64%;
+    width: 68%;
     text-align: center;
   }
 }

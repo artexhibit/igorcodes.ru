@@ -6,7 +6,7 @@
         padding: 20px;
         align-items: center;
         position: fixed;
-        bottom: 30px;
+        bottom: -200px;
         left: 50%;
         transform: translateX(-50%);
         width: 80%;
@@ -16,6 +16,13 @@
         -webkit-backdrop-filter: blur(30px);
         backdrop-filter: blur(30px);
         box-shadow: 0 11px 11px 0 var(--clr-card-shadow-hover);
+        transition: bottom .3s ease;
+        z-index: 99;
+
+        &.show {
+            bottom: 30px;
+            transition: bottom 1s ease;
+        }
 
         @include esm {
             border-radius: 15px;
@@ -48,6 +55,10 @@
 
     &__downloader-text {
         @include fontConfig("SFProDisplayRegular", 1rem, var(--text-color));
+
+        @include sm-d {
+            font-size: 0.9rem;
+        }
     }
 
     &__dowloader-button-wrapper {
@@ -67,6 +78,16 @@
         border-radius: 5px;
         background-color: var(--clr-accent);
         cursor: pointer;
+
+        &:hover {
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        &:not(:hover) {
+            transform: scale(1);
+            transition: transform 0.2s ease;
+        }
     }
 
     &__downloader-button--text {
@@ -78,19 +99,19 @@
         display: flex;
         visibility: hidden;
         gap: 10px;
-        max-height: 0; 
-        transition: max-height 1s ease-in; 
-        overflow: hidden; 
-        
+        max-height: 0;
+        transition: max-height 1s ease;
+        overflow: hidden;
+
         @include sm-d {
             flex-direction: column;
-            align-items: center; 
+            align-items: center;
         }
 
         &.show {
-            visibility: visible; 
+            visibility: visible;
             max-height: 400px;
-            transition: max-height 1s ease-in; 
+            transition: max-height 1s ease;
         }
     }
 
@@ -101,15 +122,41 @@
         right: -5px;
         top: -11px;
         width: 25px;
-        height: 25px; 
+        height: 25px;
         border: 1px solid var(--clr-accent);
         cursor: pointer;
+
+        &:hover {
+            transform: scale(0.85);
+            transition: transform 0.2s ease;
+        }
+
+        &:not(:hover) {
+            transform: scale(1);
+            transition: transform 0.2s ease;
+        }
     }
 
     &__downloader-close--icon {
         width: 100%;
         height: 100%;
-        max-width: 20px; 
+        max-width: 20px;
+    }
+
+    &__downloader-error--text {
+        @include fontConfig("SFProDisplaySemiBold", 0.8rem, red);
+        display: flex;
+        align-self: flex-start;
+        text-align: center;
+        visibility: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease, visibility 0.1s ease;
+
+        &.show {
+            visibility: visible;
+            max-height: 40px;
+            transition: max-height 0.5s ease, visibility 0.1s ease;
+        }
     }
 }
 
@@ -137,12 +184,12 @@
         @include fontConfig("SFProDisplayBold", 2rem, var(--clr-accent));
 
         @include sm-d {
-            width: 64%;
+            width: 68%;
             text-align: center;
         }
 
         @include esm {
-            width: 62%; 
+            width: 62%;
             font-size: 1rem;
         }
     }

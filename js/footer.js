@@ -66,7 +66,10 @@ function performActionsWithClickedButton(event) {
         setupTheme(themeMediaQuery);
     } else {
         setupLanguage();
-        setTextForPseudoElement(settingsButton, ["Close"], ["Закрыть"]);
+        setTextForElement(settingsButton, "data-content", ["Close"], ["Закрыть"]);
+        setupTheme(themeMediaQuery);
+        configureCaptchaText();
+
         if (typeof configureSlider === "function") {
             configureSlider(pickedTab);
         }
@@ -132,7 +135,7 @@ function closeSettings() {
 //perform icons animation and title changing on button click
 function configureSettingsButton() {
     settingsButton.classList.toggle("clicked");
-    setTextForPseudoElement(settingsButton, ["Close"], ["Закрыть"]);
+    setTextForElement(settingsButton, "data-content", ["Close"], ["Закрыть"]);
 
     if (settingsButton.classList.contains("clicked")) {
         settingsButtonMainIcon.style.animation = "hideIcon 0.3s ease-in-out forwards";

@@ -1,7 +1,7 @@
 const captcha = document.querySelector(".resume__downloader");
 const captchaButton = document.querySelector(".captcha__button-refresh");
 const downloadButton = document.querySelector(".resume__downloader-button");
-const captchaContainer = document.querySelector(".resume__dowloader-captcha--container");
+const captchaContainer = document.querySelector(".resume__downloader-captcha--container");
 const captchaView = document.querySelector(".captcha__view");
 const refreshButton = document.querySelector("captcha__button-refresh");
 const captchaInput = document.querySelector(".captcha__input");
@@ -19,7 +19,7 @@ window.addEventListener("scroll", showCaptcha);
 
 function refreshButtonClicked() {
     captchaButton.classList.add("clicked");
-    generateCaptcha(); 
+    generateCaptcha();
 
     setTimeout(function () {
         captchaButton.classList.remove("clicked");
@@ -32,8 +32,8 @@ function closeButtonClicked() {
 }
 
 function downloadButtonClicked() {
-    if (this.firstElementChild.innerHTML == "Загрузить") {
-        downloadButton.firstElementChild.innerHTML = "Отправить";
+    if (downloadButton.firstElementChild.innerHTML == "Загрузить" || downloadButton.firstElementChild.innerHTML == "Download") {
+        setTextForElement(downloadButton.firstElementChild, "innerHTML", ["Send"], ["Отправить"]);
         captchaContainer.classList.add("show");
     } else {
         validateCaptcha();
@@ -104,7 +104,7 @@ function showCaptcha() {
         if (currentHeight > targetHeight) {
             captcha.classList.add("show");
         } else {
-            closeCaptcha(); 
+            closeCaptcha();
         }
     }
 }
@@ -116,5 +116,12 @@ function restoreCaptchaInitialState() {
     captchaInput.value = "";
     captchaInputIsBlurred();
     generateCaptcha();
+}
+
+//If language switch was made when captcha was shown - we correctly change a button title
+function configureCaptchaText() {
+    if (captchaContainer.classList.contains("show")) {
+        setTextForElement(downloadButton.firstElementChild, "innerHTML", ["Send"], ["Отправить"]);
+    }
 }
 generateCaptcha();

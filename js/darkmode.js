@@ -29,14 +29,17 @@ function setupTheme(event) {
 //change social icons style displayed in header section
 function setupSocialIcons(event, theme = "") {
     let allSocials = document.querySelector(".socials__list");
-    let icons = allSocials.querySelectorAll("img");
     let ending = "";
 
-    ending = theme === "" ? (event.matches ? "Light" : "Dark") : theme;
+    if (allSocials) {
+        const icons = allSocials.querySelectorAll("img");
 
-    icons.forEach((icon) => {
-        icon.src = `./assets/images/header/${icon.alt}${ending}.svg`;
-    });
+        ending = theme === "" ? (event.matches ? "Light" : "Dark") : theme;
+
+        icons.forEach((icon) => {
+            icon.src = `./assets/images/header/${icon.alt}${ending}.svg`;
+        });
+    }
 }
 
 function setupResumeIcons(event, theme = "") {

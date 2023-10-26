@@ -55,15 +55,29 @@ function changeHamburgerTitle() {
     }, 150);
 }
 
-function showMenu() {
+function handleMenu() {
     hamburgerBarsContainer.classList.toggle("active");
-    navMenu.classList.toggle("active");
+    navMenu.style.display = "flex";
+
+    setTimeout(() => {
+        navMenu.classList.toggle("active");
+
+        if (!navMenu.classList.contains("active")) {
+            setTimeout(() => {
+                navMenu.style.display = "none";
+            }, 100)
+        }
+    }, 1)
     changeHamburgerTitle();
 }
 
 function closeMenu() {
     hamburgerBarsContainer.classList.toggle("active");
     navMenu.classList.remove("active");
+
+    setTimeout(() => {
+        navMenu.style.display = "none";
+    }, 100)
     changeHamburgerTitle();
 }
 
@@ -76,7 +90,7 @@ function clickOutsideMenu(event) {
             closeMenu();
         }
     } else {
-        showMenu();
+        handleMenu();
     }
 }
 

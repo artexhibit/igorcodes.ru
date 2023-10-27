@@ -36,7 +36,7 @@ body {
         max-width: 845px;
 
         @include md-d {
-            display: none; 
+            display: none;
             flex-direction: column;
             align-items: center;
             position: fixed;
@@ -129,7 +129,7 @@ body {
                 color: var(--clr-accent);
             }
         }
-        &:hover.picked  {
+        &:hover.picked {
             color: rgb(var(--clr-accent-rgb), 0.7);
         }
     }
@@ -177,8 +177,13 @@ body {
     }
 
     &__image {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
+
+        @include esm {
+            width: 25px;
+            height: 25px;
+        }
     }
 }
 .hamburger {

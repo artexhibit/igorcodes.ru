@@ -295,8 +295,14 @@ body {
   height: 100%;
 }
 .socials__image {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 319.8px) {
+  .socials__image {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .hamburger {
@@ -823,6 +829,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 15px;
+  row-gap: 5px;
 }
 @media (max-width: 319.8px) {
   .card__tags {
@@ -897,7 +904,7 @@ body {
     width: 15px;
   }
 }
-.link:hover .link__icon {
+.link:hover .link__icon-blue {
   opacity: 0.7;
 }
 .link:hover .link__arrow {
@@ -908,12 +915,12 @@ body {
   opacity: 1;
   top: -45px;
 }
-.link__icon {
+.link__icon-blue {
   width: 18px;
   margin-right: 10px;
 }
 @media (max-width: 319.8px) {
-  .link__icon {
+  .link__icon-blue {
     width: 14px;
     margin-right: 5px;
   }
@@ -928,7 +935,7 @@ body {
 }
 @media (max-width: 319.8px) {
   .link__title {
-    font-size: 0.75rem;
+    font-size: 0.88rem;
   }
 }
 .link__arrow {

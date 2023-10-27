@@ -80,66 +80,68 @@ window.addEventListener("resize", function () {
 
 //when expand button clicked we achange it's text, animate chevron and set a card containers a new height to display a long subtitle text. Change everything back if expand button pressed again
 function expandButtonClicked(event) {
-    let pressedButton = event.currentTarget;
-    let subtitleContainer = pressedButton.parentElement.parentElement.firstElementChild;
-    let buttonContainer = pressedButton.parentElement.parentElement.firstElementChild.parentElement;
-    let buttonWrapper = pressedButton.parentElement;
-    let pressedButtonChevron = pressedButton.querySelector("img");
-    let textContent = pressedButton.parentElement.parentElement.firstElementChild.querySelector("p");
-    let cardContainer = buttonContainer.parentElement;
-    let card = cardContainer.parentElement;
+    if (event && event.currentTarget) {
+        let pressedButton = event.currentTarget;
+        let subtitleContainer = pressedButton.parentElement.parentElement.firstElementChild;
+        let buttonContainer = pressedButton.parentElement.parentElement.firstElementChild.parentElement;
+        let buttonWrapper = pressedButton.parentElement;
+        let pressedButtonChevron = pressedButton.querySelector("img");
+        let textContent = pressedButton.parentElement.parentElement.firstElementChild.querySelector("p");
+        let cardContainer = buttonContainer.parentElement;
+        let card = cardContainer.parentElement;
 
-    buttonWrapper.classList.toggle("opened");
-    pressedButtonChevron.classList.toggle("opened");
-    setTextFor(pressedButton.querySelector("p"), buttonWrapper, "opened", ["Hide", "Expand"], ["Свернуть", "Раскрыть"]);
+        buttonWrapper.classList.toggle("opened");
+        pressedButtonChevron.classList.toggle("opened");
+        setTextFor(pressedButton.querySelector("p"), buttonWrapper, "opened", ["Hide", "Expand"], ["Свернуть", "Раскрыть"]);
 
-    if (buttonWrapper.classList.contains("opened")) {
-        subtitleContainer.style.height = `${textContent.offsetHeight}px`;
-        buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
-        buttonContainer.style.marginBottom = "60px";
-        card.classList.add("expanded");
+        if (buttonWrapper.classList.contains("opened")) {
+            subtitleContainer.style.height = `${textContent.offsetHeight}px`;
+            buttonContainer.style.height = `calc(${textContent.offsetHeight}px + 10px)`;
+            buttonContainer.style.marginBottom = "60px";
+            card.classList.add("expanded");
 
-        animateIn([cardContainer, card], cardContainer, textContent, buttonContainer);
-        animateMarginFor(card);
+            animateIn([cardContainer, card], cardContainer, textContent, buttonContainer);
+            animateMarginFor(card);
 
-        setTimeout(() => {
-            cardContainer.style.height = cardContainer.offsetHeight + "px";
-            card.style.height = card.offsetHeight + 24 + "px";
-        }, 750);
+            setTimeout(() => {
+                cardContainer.style.height = cardContainer.offsetHeight + "px";
+                card.style.height = card.offsetHeight + 24 + "px";
+            }, 750);
 
-        setTimeout(() => {
-            subtitleContainer.style.maskImage = "none";
-            subtitleContainer.style.webkitMaskImage = "none";
-        }, 450);
+            setTimeout(() => {
+                subtitleContainer.style.maskImage = "none";
+                subtitleContainer.style.webkitMaskImage = "none";
+            }, 450);
 
-        cards.forEach((card) => {
-            if (!card.classList.contains("animateOut") && !card.classList.contains("expanded")) {
-                card.style.height = card.offsetHeight + "px";
-            }
-        });
-    } else {
-        subtitleContainer.style.height = "60px";
-        buttonContainer.style.height = "70px";
-        buttonContainer.style.marginBottom = "30px";
-        card.classList.remove("expanded");
+            cards.forEach((card) => {
+                if (!card.classList.contains("animateOut") && !card.classList.contains("expanded")) {
+                    card.style.height = card.offsetHeight + "px";
+                }
+            });
+        } else {
+            subtitleContainer.style.height = "60px";
+            buttonContainer.style.height = "70px";
+            buttonContainer.style.marginBottom = "30px";
+            card.classList.remove("expanded");
 
-        animateOut([cardContainer, card], cardContainer, subtitleContainer);
-        animateMarginFor(card);
+            animateOut([cardContainer, card], cardContainer, subtitleContainer);
+            animateMarginFor(card);
 
-        setTimeout(() => {
-            cardContainer.style.height = cardContainer.offsetHeight + "px";
-            card.style.height = card.offsetHeight + 24 + "px";
-        }, 750);
+            setTimeout(() => {
+                cardContainer.style.height = cardContainer.offsetHeight + "px";
+                card.style.height = card.offsetHeight + 24 + "px";
+            }, 750);
 
-        setTimeout(() => {
-            subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
-            subtitleContainer.style.webkitMaskImage = "linear-gradient(180deg, #000 60%, transparent)";
-        }, 200);
+            setTimeout(() => {
+                subtitleContainer.style.maskImage = "linear-gradient(180deg, #000 60%, transparent)";
+                subtitleContainer.style.webkitMaskImage = "linear-gradient(180deg, #000 60%, transparent)";
+            }, 200);
+        }
+
+        setTimeout(function () {
+            addMarginToCardsContainer();
+        }, 50);
     }
-
-    setTimeout(function () {
-        addMarginToCardsContainer();
-    }, 50);
 }
 
 //animate card new height when expand button pressed

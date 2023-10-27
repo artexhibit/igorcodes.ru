@@ -1,11 +1,21 @@
 //change header social icon color on hover
-let socialItems = document.querySelectorAll(".socials__item");
+const socialItems = document.querySelectorAll(".socials__item");
+const hamburger = document.querySelector(".hamburger");
+const hamburgerTitle = document.querySelector(".hamburger__title");
+const hamburgerBarsContainer = document.querySelector(".hamburger__bars-container");
+const navMenu = document.querySelector(".header__nav-container");
+const menuLinks = document.querySelectorAll(".menu__link");
+const mediaQuery = window.matchMedia("(min-width: 1024px)");
 let isHovered = false;
 
 socialItems.forEach((item) => {
     item.addEventListener("mouseover", itemHoveredIn);
     item.addEventListener("mouseleave", itemHoveredOut);
 });
+menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+});
+mediaQuery.addEventListener("change", toggleNavMenu);
 
 function itemHoveredIn(event) {
     if (event.target.tagName == "A" && !isHovered) {
@@ -19,9 +29,9 @@ function itemHoveredIn(event) {
 }
 
 function itemHoveredOut(event) {
-    let theme = localStorage.getItem("theme");
-    let image = event.target.querySelector("img");
-    let themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const theme = localStorage.getItem("theme");
+    const image = event.target.querySelector("img");
+    const themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     let ending = "";
 
     if (theme === "light") {
@@ -36,16 +46,6 @@ function itemHoveredOut(event) {
 }
 
 //show menu and animate hamburger icon
-let hamburger = document.querySelector(".hamburger");
-let hamburgerTitle = document.querySelector(".hamburger__title");
-let hamburgerBarsContainer = document.querySelector(".hamburger__bars-container");
-let navMenu = document.querySelector(".header__nav-container");
-let menuLinks = document.querySelectorAll(".menu__link");
-
-menuLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-});
-
 function changeHamburgerTitle() {
     hamburgerTitle.classList.toggle("fade-out");
 
@@ -65,19 +65,21 @@ function handleMenu() {
         if (!navMenu.classList.contains("active")) {
             setTimeout(() => {
                 navMenu.style.display = "none";
-            }, 100)
+            }, 100);
         }
-    }, 1)
+    }, 1);
     changeHamburgerTitle();
 }
 
 function closeMenu() {
-    hamburgerBarsContainer.classList.toggle("active");
+    hamburgerBarsContainer.classList.remove("active");
     navMenu.classList.remove("active");
 
-    setTimeout(() => {
-        navMenu.style.display = "none";
-    }, 100)
+    if (!mediaQuery.matches) {
+        setTimeout(() => {
+            navMenu.style.display = "none";
+        }, 100); 
+    }
     changeHamburgerTitle();
 }
 
@@ -96,4 +98,9 @@ function clickOutsideMenu(event) {
 
 function humburgerClicked(event) {
     return [...event.target.classList].shift().includes("hamburger");
+}
+
+//hide or show navigation menu with links depending on screen size
+function toggleNavMenu() {
+    navMenu.style.display = mediaQuery.matches ? "flex" : "none";
 }

@@ -139,7 +139,6 @@ let languageContent = {
         downloader__title: "Download the pdf version of my CV",
         dowloader__text1: "Download",
         dowloader__text2: "The values ​​do not match!",
-        dowloader__text3: "Enter the captcha",
     },
     ru: {
         title: "Игорь Волков - iOS-разработчик",
@@ -223,8 +222,8 @@ let languageContent = {
         expiriense__text3: `Завершил два лучших курса по iOS-разработке, изучил основные компоненты и фреймворки: <span class="bold">Storyboards, XIB, UIKit, SwiftUI</span>
         на основе более <span class="bold">20</span>
         учебных проектов;`,
-        expiriense__text4: `Написал с нуля приложение на <span class="bold">Swift (UIKit)</span>, используя шаблон <span class="bold">MVC</span>, которое получает данные из <span class="bold">JSON (URLSession)</span>, хранит в памяти (<span class="bold">CoreData</span>), отображает (<span class="bold"><span class="breakWord">NSFetchedResultsController</span>, GCD
-        </span>);`,
+        expiriense__text4: `Написал с нуля приложение на <span class="bold">Swift (UIKit)</span>, используя шаблон <span class="bold">MVC</span>, которое получает данные из <span class="bold">JSON (URLSession)</span>, хранит в памяти (<span class="bold">CoreData</span>), отображает (<span class="bold"><span class="breakWord">NSFetchedResultsController</span>, GCD);
+        </span>`,
         expiriense__text5: `Увеличил эффективность работы коллег примерно на 10 минут в день за счёт экономии времени на поиск данных по курсам валют. Выложил приложение в <span class="bold">AppStore</span>;`,
         expiriense__text6: `Посмотреть код на GitHub:<a class="fact__expiriense-link" href="https://github.com/artexhibit" target="_blank"><span class="breakWord">github.com/artexhibit</span> <img class="link__icon theme-sensitive" src="./assets/images/resume/header/linkLight.svg" alt="link" /></a>`,
         expiriense__title2: "ноябрь 2019 - н.в.",
@@ -284,6 +283,5 @@ let languageContent = {
         downloader__title: "Скачайте версию резюме в pdf",
         dowloader__text1: "Загрузить",
         dowloader__text2: "Значения не совпадают!",
-        dowloader__text3: "Введите капчу!",
     },
 };

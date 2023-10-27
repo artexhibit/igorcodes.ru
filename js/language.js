@@ -53,5 +53,5 @@ function setTextForElement(element, attribute, engWords, rusWords) {
     let activeLang = defineLanguageIfAutoPicked();
     let title = language === "en" || activeLang === "en" ? engWords[0] : rusWords[0];
 
-    attribute === "data-content" ? (element.setAttribute(attribute, title)) : (element[attribute] = title)
+    attribute === "data-content" || attribute === "placeholder" ? element.setAttribute(attribute, title) : (element[attribute] = title);
 }

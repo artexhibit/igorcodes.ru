@@ -103,6 +103,7 @@ function showCaptcha() {
     if (!captchaWasShown) {
         if (currentHeight > targetHeight) {
             captcha.classList.add("show");
+            setTextForElement(captchaInput, "placeholder", ["Enter the captcha"], ["Введите капчу"]);
         } else {
             closeCaptcha();
         }
@@ -112,16 +113,17 @@ function showCaptcha() {
 //restore all captcha view state if user close it or successfully dowloaded CV
 function restoreCaptchaInitialState() {
     captchaContainer.classList.remove("show");
-    downloadButton.firstElementChild.innerHTML = "Загрузить";
+    setTextForElement(downloadButton.firstElementChild, "innerHTML", ["Download"], ["Загрузить"]);
     captchaInput.value = "";
     captchaInputIsBlurred();
     generateCaptcha();
 }
 
-//If language switch was made when captcha was shown - we correctly change a button title
+//If language switch was made when captcha was shown - we change a button title accordingly
 function configureCaptchaText() {
     if (captchaContainer.classList.contains("show")) {
         setTextForElement(downloadButton.firstElementChild, "innerHTML", ["Send"], ["Отправить"]);
     }
 }
+setTextForElement(captchaInput, "placeholder", ["Enter the captcha"], ["Введите капчу"]);
 generateCaptcha();

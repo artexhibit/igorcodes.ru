@@ -67,8 +67,15 @@ function performActionsWithClickedButton(event) {
     } else {
         setupLanguage();
         setTextForElement(settingsButton, "data-content", ["Close"], ["Закрыть"]);
-        setupTheme(themeMediaQuery);
-        configureCaptchaText();
+
+        if (typeof captchaInput !== "undefined") {
+            setTextForElement(captchaInput, "placeholder", ["Enter the captcha"], ["Введите капчу"]);
+        }
+        setupTheme(themeMediaQuery); 
+
+        if (typeof configureCaptchaText === "function") {
+            configureCaptchaText();
+        } 
 
         if (typeof configureSlider === "function") {
             configureSlider(pickedTab);

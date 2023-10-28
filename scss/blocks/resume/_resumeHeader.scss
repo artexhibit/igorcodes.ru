@@ -45,9 +45,7 @@
     }
 
     &__text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flexConfig($display: flex, $dir: column, $justify: center);
         padding: 0 17px;
         width: 40%;
 
@@ -146,10 +144,8 @@
     }
 
     &__contact-list {
-        display: flex;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: space-between);
         list-style: none;
-        justify-content: space-between;
 
         @include sm-d {
             gap: 10px;
@@ -221,9 +217,7 @@
     }
 
     &__contact-detail {
-        display: flex;
-        align-items: center;
-        justify-content: left;
+        @include flexConfig($display: flex, $alignItems: center, $justify: left);
         margin: 0 auto;
         width: 77%;
 

@@ -45,7 +45,7 @@
     }
 
     &__info {
-        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 0.96rem + 0.75vw, 1.44rem), var(--text-color), 0.285px);
+        @include fontConfig("SFProDisplayRegular", clamp(1.1rem, 0.96rem + 0.75vw, 1.44rem), var(--text-color), 0.285px, 30px);
         margin-top: 15px;
         text-align: left;
 
@@ -59,7 +59,7 @@
         }
 
         @include landscape {
-            @include fontConfig("SFProDisplayRegular", clamp(0.7rem, 0.39rem + 1.63vw, 1.44rem), var(--text-color), 0.285px);
+            @include fontConfig("SFProDisplayRegular", clamp(0.7rem, 0.39rem + 1.63vw, 1.44rem), var(--text-color), 0.285px, 30px);
         }
     }
 }

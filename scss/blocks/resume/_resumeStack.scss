@@ -27,10 +27,8 @@
     }
 
     &__big-stack--item {
-        display: flex;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         position: relative;
-        justify-content: center;
-        align-items: center;
         border-radius: 15px;
         outline: 1px solid var(--clr-resume-outline);
         box-shadow: 0 2px 4px 0 rgb(74, 74, 74);
@@ -73,9 +71,7 @@
     }
 
     &__big-stack--note {
-        display: flex;
-        justify-content: end;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: end);
         margin: 20px 3% 0 0;
         gap: 5px;
     }

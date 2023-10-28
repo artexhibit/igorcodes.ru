@@ -6,10 +6,7 @@
     }
 
     &__headline-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flexConfig($display: flex, $dir: column, $alignItems: center, $justify: center); 
         margin: 7% 0 15% 0;
     }
 
@@ -18,7 +15,7 @@
         margin: 24px 0;
     }
 
-    &__headline-big {
+    &__headline-big { 
         @include fontConfig("SFProDisplayBold", clamp(1.8rem, 0.78rem + 5.41vw, 4.25rem), var(--text-color), 0.285px);
         margin-bottom: 24px;
         text-align: center;
@@ -141,11 +138,11 @@
     }
 
     &__text {
-        @include fontConfig("SFProDisplayRegular", 1.1rem, var(--text-color), 0.285px, 23px);
+        @include fontConfig("SFProDisplayRegular", 1.1rem, var(--text-color), 0.285px, 28px);
 
         @include esm {
             font-size: 0.87rem;
-            line-height: 18px;
+            line-height: 21px;
         }
     }
 

@@ -6,13 +6,14 @@
     letter-spacing: $letSpacing;
 }
 
-@mixin flexConfig($display: flex, $dir: initial, $alignItems: initial, $alignText: initial, $justify: initial, $grow: initial) {
+@mixin flexConfig($display: flex, $dir: initial, $alignItems: initial, $alignText: initial, $justify: initial, $grow: initial, $wrap: initial) {
     display: $display;
     flex-direction: $dir;
     align-items: $alignItems;
     text-align: $alignText;
     justify-content: $justify;
     flex-grow: $grow;
+    flex-wrap: $wrap;
 }
 
 @mixin createTooltip($bodyTop: initial, $bodyRight: initial, $bodyBottom: initial, $bodyLeft: initial, $triangleTop: initial, $triangleRight: initial, $triangleBottom: initial, $triangleLeft: initial, $bColor: var(--clr-switch-background), $bRadius: 10px, $rotateTriangle: 45deg) {

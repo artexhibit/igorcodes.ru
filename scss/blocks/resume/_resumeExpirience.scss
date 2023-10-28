@@ -1,8 +1,6 @@
 .resume {
     &__big-facts-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexConfig($display: flex, $dir: column, $alignItems: center);
         gap: 20px;
         margin-top: 20px;
     }
@@ -174,9 +172,7 @@
     }
 
     &__expiriense-description--wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        @include flexConfig($display: flex, $alignItems: flex-start, $wrap: wrap);
         gap: 8px;
     }
 

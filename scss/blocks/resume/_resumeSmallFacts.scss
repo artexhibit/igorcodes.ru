@@ -69,9 +69,7 @@
                 }
 
                 .fact__small-data {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-around;
+                    @include flexConfig($display: flex, $dir: row, $justify: space-around);
                     padding: 1% 10px;
 
                     @include sm-d {
@@ -121,11 +119,8 @@
     }
 
     &__small-data {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        @include flexConfig($display: flex, $dir: column, $alignItems: center, $justify: center, $alignText: center);
+
         padding: 2% 10px;
         margin-bottom: 4%;
         height: 100%;
@@ -138,6 +133,7 @@
 
     &__small-title {
         @include fontConfig("SFProDisplayBold", clamp(2rem, 1.79rem + 1.1vw, 2.5rem), var(--text-color));
+        text-align: center;
 
         @include esm {
             font-size: 1.3rem;
@@ -146,6 +142,7 @@
 
     &__small-subtitle {
         @include fontConfig("SFProDisplayMedium", 1.1rem, var(--clr-resume-grey));
+        text-align: center;
 
         @include esm {
             font-size: 0.85rem;
@@ -187,9 +184,7 @@
 }
 .citizen {
     &__wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         width: 90%;
     }
 
@@ -213,9 +208,7 @@
 }
 .address {
     &__wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         width: 90%;
     }
 
@@ -236,13 +229,12 @@
 }
 .lang {
     &__section {
+        align-self: center;
         width: 229px;
     }
 
     &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         margin-top: 1%;
     }
 

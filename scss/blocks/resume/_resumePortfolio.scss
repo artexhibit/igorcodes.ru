@@ -83,9 +83,7 @@
     }
 
     &__project-info--wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexConfig($display: flex, $dir: column, $alignItems: center);
 
         @include md-d {
             justify-content: center;
@@ -117,9 +115,7 @@
     }
 
     &__project-rate--container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         gap: 7px;
         margin: 5px 0;
     }
@@ -182,10 +178,7 @@
     }
 
     &__project-comments--wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: end;
+        @include flexConfig($display: flex, $dir: column, $alignItems: end, $justify: end);
         overflow: hidden;
         gap: 15px;
         width: 20%;
@@ -233,9 +226,7 @@
     }
 
     &__card-headline {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexConfig($display: flex, $alignItems: center, $justify: center);
         border-bottom: 1px solid var(--clr-border);
         height: 50px;
 
@@ -253,10 +244,7 @@
     }
 
     &__card-data--container {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: flex-start;
+        @include flexConfig($display: flex, $dir: column, $grow: 1, $justify: flex-start);
         margin: 15px;
         gap: 20px;
 
@@ -266,23 +254,17 @@
     }
 
     &__card-container--top {
-        display: flex;
-        align-items: flex-start;
-        flex-grow: 1;
+        @include flexConfig($display: flex, $alignItems: flex-start, $grow: 1);
         height: 45%;
     }
 
     &__card-container--middle {
-        display: flex;
-        align-items: flex-start;
-        flex-grow: 1;
+        @include flexConfig($display: flex, $alignItems: flex-start, $grow: 1);
         height: 25%;
     }
 
     &__card-container--bottom {
-        display: flex;
-        align-items: flex-start;
-        flex-grow: 1;
+        @include flexConfig($display: flex, $alignItems: flex-start, $grow: 1);
         height: 30%;
     }
 }

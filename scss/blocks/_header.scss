@@ -237,9 +237,6 @@ body {
 }
 
 .picked {
+    @include textDecorationConfig($thick: 2px, $offset: 6px);
     color: var(--clr-accent);
-    text-decoration-color: var(--clr-accent);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
 }

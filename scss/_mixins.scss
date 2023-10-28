@@ -6,6 +6,13 @@
     letter-spacing: $letSpacing;
 }
 
+@mixin textDecorationConfig($type: underline, $color: var(--clr-accent), $thick, $offset) {
+    text-decoration: $type;
+    text-decoration-color: $color;
+    text-decoration-thickness: $thick;
+    text-underline-offset: $offset;
+}
+
 @mixin flexConfig($display: flex, $dir: initial, $alignItems: initial, $alignText: initial, $justify: initial, $grow: initial, $wrap: initial) {
     display: $display;
     flex-direction: $dir;

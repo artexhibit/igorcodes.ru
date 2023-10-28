@@ -10,9 +10,8 @@
 
 .banner-image {
     background-image: url(../img/1.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-   
     height: 100%;
 }
 
@@ -72,6 +71,7 @@
 .banner-info-margin {
     margin-top: 14rem;
     margin-left: 2.5rem;
+    margin-bottom: 4rem;
 }
 
 .banner-buttons-container {

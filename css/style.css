@@ -50,6 +50,8 @@
   --clr-card-shadow-hover: rgba(0, 0, 0, .16);
   --clr-button-primary: #F1F1F5;
   --clr-button-secondary: #525255;
+  --clr-downloader-button-text: white;
+  --clr-downloader-error-text: red;
   --clr-switch-background: #F5F7FA;
   --clr-resume-section-background: #e9e9e9;
   --clr-resume-card-background: #dddcdc;
@@ -85,6 +87,8 @@
   --clr-card-shadow-hover: rgb(99 102 241 / .2);
   --clr-button-primary: #1C1C1D;
   --clr-button-secondary: #99989F;
+  --clr-downloader-button-text: white;
+  --clr-downloader-error-text: red;
   --clr-switch-background: #281f01;
   --clr-resume-section-background: #191919;
   --clr-resume-card-background: #272727;
@@ -353,11 +357,11 @@ body {
 }
 
 .picked {
-  color: var(--clr-accent);
-  text-decoration-color: var(--clr-accent);
   text-decoration: underline;
+  text-decoration-color: var(--clr-accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 6px;
+  color: var(--clr-accent);
 }
 
 .name {
@@ -479,18 +483,6 @@ body {
   min-height: 70px;
   animation: move 2.5s infinite;
   animation-delay: 0s;
-}
-@keyframes move {
-  0%, 40%, 100% {
-    padding-bottom: 0;
-    transform: scale(1);
-    opacity: 1;
-  }
-  56%, 86% {
-    padding-bottom: 15px;
-    transform: scale(0.9);
-    opacity: 0.5;
-  }
 }
 
 .arrow {
@@ -1070,7 +1062,9 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-mask-image: linear-gradient(75deg, rgba(0, 0, 0, 0.65) 30%, #000 50%, rgba(0, 0, 0, 0.65) 70%);
+  mask-image: linear-gradient(75deg, rgba(0, 0, 0, 0.65) 30%, #000 50%, rgba(0, 0, 0, 0.65) 70%);
   -webkit-mask-size: 200%;
+  mask-size: 200%;
   animation: textShine 4s linear infinite;
 }
 .connect__email:hover {
@@ -1616,6 +1610,8 @@ body {
 }
 @media (max-width: 319.8px) {
   .resume__contact-link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--clr-accent);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
@@ -2126,6 +2122,8 @@ body {
 }
 @media (max-width: 319.8px) {
   .fact__expiriense-link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--clr-accent);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
@@ -2423,6 +2421,8 @@ body {
 }
 @media (max-width: 319.8px) {
   .fact__big-course--link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--clr-accent);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
@@ -2968,7 +2968,7 @@ body {
 .resume__downloader-button--text {
   font-family: "SFProDisplayRegular", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  color: white;
+  color: var(--clr-downloader-button-text);
   line-height: initial;
   letter-spacing: initial;
   margin: 5px 8px;
@@ -3019,7 +3019,7 @@ body {
 .resume__downloader-error--text {
   font-family: "SFProDisplaySemiBold", Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
-  color: red;
+  color: var(--clr-downloader-error-text);
   line-height: initial;
   letter-spacing: initial;
   display: flex;
@@ -3557,5 +3557,17 @@ body {
   }
   75% {
     transform: rotate(-2.5deg);
+  }
+}
+@keyframes move {
+  0%, 40%, 100% {
+    padding-bottom: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  56%, 86% {
+    padding-bottom: 15px;
+    transform: scale(0.9);
+    opacity: 0.5;
   }
 }

@@ -85,7 +85,7 @@
     }
 
     &__downloader-button--text {
-        @include fontConfig("SFProDisplayRegular", 1rem, white);
+        @include fontConfig("SFProDisplayRegular", 1rem, var(--clr-downloader-button-text)); 
         margin: 5px 8px;
     }
 
@@ -138,7 +138,7 @@
     }
 
     &__downloader-error--text {
-        @include fontConfig("SFProDisplaySemiBold", 0.8rem, red);
+        @include fontConfig("SFProDisplaySemiBold", 0.8rem, var(--clr-downloader-error-text));
         display: flex;
         align-self: flex-start;
         text-align: center;

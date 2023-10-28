@@ -256,14 +256,10 @@
         }
 
         &:hover {
-            text-decoration: underline;
-            text-decoration-color: var(--clr-accent);
-            text-decoration-thickness: 2px;
-            text-underline-offset: 6px;
+            @include textDecorationConfig($thick: 2px, $offset: 6px);
 
             @include esm {
-                text-decoration-thickness: 1px;
-                text-underline-offset: 3px;
+                @include textDecorationConfig($thick: 1px, $offset: 3px);
             }
         }
     }

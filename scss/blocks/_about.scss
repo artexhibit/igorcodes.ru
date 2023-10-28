@@ -148,10 +148,7 @@
 
     &__link {
         @include fontConfig("SFProDisplayBold", clamp(0.87rem, 0.8rem + 0.41vw, 1.06rem), var(--text-color), 0.285px);
-        text-decoration: underline;
-        text-decoration-color: var(--clr-accent);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
+        @include textDecorationConfig($thick: 2px, $offset: 3px);
         cursor: pointer;
 
         &:hover {

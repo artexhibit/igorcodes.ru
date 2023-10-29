@@ -58,6 +58,7 @@
 
         @include sm-d {
             max-width: 500px;
+            line-height: 25px;
         }
 
         @include landscape {

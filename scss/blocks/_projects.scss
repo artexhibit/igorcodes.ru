@@ -97,6 +97,7 @@
     &__cards {
         display: flex;
         flex-wrap: wrap;
+        overflow: hidden; 
     }
 }
 .container {

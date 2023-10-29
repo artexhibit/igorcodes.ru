@@ -25,12 +25,11 @@ allSwitchButtons.forEach((button) => {
 });
 
 window.addEventListener("load", function () {
-    setupLanguage();
-
     if (typeof configureSlider === "function") {
         configureSlider(pickedTab);
     }
     setInitialSwitchValues();
+    setupLanguage();
     setupTheme(themeMediaQuery);
     setupPickedButtons();
 });

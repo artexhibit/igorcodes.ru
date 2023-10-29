@@ -396,7 +396,7 @@ body {
 }
 @media (max-width: 319.8px) {
   .name__image {
-    width: 90%;
+    width: 70%;
   }
 }
 .name__title {
@@ -424,7 +424,7 @@ body {
 }
 @media (max-width: 319.8px) {
   .name__title {
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     white-space: nowrap;
   }
 }
@@ -614,6 +614,7 @@ body {
 .projects__cards {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 @media (max-width: 767.8px) {
@@ -1097,6 +1098,7 @@ body {
 @media (max-width: 767.8px) {
   .connect__info {
     max-width: 500px;
+    line-height: 25px;
   }
 }
 @media (orientation: landscape) {

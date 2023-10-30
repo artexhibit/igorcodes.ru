@@ -2,7 +2,7 @@
 <img width="800" src="https://raw.githubusercontent.com/artexhibit/igorcodes.ru/master/assets/docs/Demo.png">
 </p>
 
-<span style="float:right;">[🇬🇧 Английская версия](README.md)</span>
+<span style="float:right;">[🇬🇧 Английская версия](../README.md)</span>
 
 ## О проекте
 

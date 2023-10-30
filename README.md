@@ -2,7 +2,7 @@
 <img width="800" src="https://raw.githubusercontent.com/artexhibit/igorcodes.ru/master/assets/docs/Demo.png">
 </p>
 
-<span style="float:right;">[🇷🇺 Russian Version](README-RUS.md)</span>
+<span style="float:right;">[🇷🇺 Russian Version](README/README-RUS.md)</span>
 
 ## About
 

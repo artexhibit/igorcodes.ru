@@ -3151,9 +3151,6 @@ body {
   }
 }
 
-.resume__front {
-  display: none;
-}
 .main__project-container--front {
   display: flex;
   align-items: center;
@@ -3171,6 +3168,10 @@ body {
 }
 .resume__front .project__card-container--middle {
   height: 80%;
+}
+
+#hidden {
+  display: none;
 }
 
 .footer {

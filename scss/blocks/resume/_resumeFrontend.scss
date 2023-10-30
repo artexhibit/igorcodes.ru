@@ -1,7 +1,6 @@
 .resume {
 
     &__front {
-        display: none;
     }
 
     &__body {
@@ -351,4 +350,8 @@
 
     &__card-headline--image {
     }
+}
+
+#hidden {
+    display: none;
 }

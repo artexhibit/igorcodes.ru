@@ -15,6 +15,11 @@ downloadButton.addEventListener("click", downloadButtonClicked);
 closeButton.addEventListener("click", closeButtonClicked);
 captchaInput.addEventListener("focus", captchaInputIsFocused);
 captchaInput.addEventListener("blur", captchaInputIsBlurred);
+captchaInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        downloadButtonClicked();
+    }
+});
 window.addEventListener("scroll", showCaptcha);
 
 function refreshButtonClicked() {
@@ -51,6 +56,8 @@ function captchaInputIsBlurred() {
 
 //checking if entered value by user is equal to the shown value
 function validateCaptcha() {
+    const secretValues = ["SWIFT", "FRONT"];
+
     captchaValue = captchaValue
         .split("")
         .filter((char) => char !== " ")
@@ -58,6 +65,10 @@ function validateCaptcha() {
 
     if (captchaInput.value === captchaValue) {
         openCV();
+        captchaWasShown = true;
+        closeCaptcha();
+    } else if (secretValues.includes(captchaInput.value)) {
+        setActiveResume(captchaInput.value);
         captchaWasShown = true;
         closeCaptcha();
     } else {
@@ -76,7 +87,8 @@ function showErrorMessage() {
 
 //show user CV to download
 function openCV() {
-    let path = "./assets/docs/CV.pdf";
+    const swiftResume = document.querySelector(".resume");
+    const path = swiftResume.id === "" ?  "./assets/docs/CV.pdf" : "./assets/docs/CVFront.pdf";
     window.open(path, "_blank");
 }
 

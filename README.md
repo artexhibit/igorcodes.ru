@@ -1,8 +1,6 @@
-<p align="center">
-<img width="800" src="https://raw.githubusercontent.com/artexhibit/igorcodes.ru/master/assets/docs/Demo.png">
-</p>
+<img width="900" src="https://raw.githubusercontent.com/artexhibit/igorcodes.ru/master/assets/docs/Demo.png">
 
-<span style="float:right;">[🇷🇺 Russian Version](README/README-RUS.md)</span>
+[🇷🇺 Russian Version](README/README-RUS.md)
 
 ## About
 

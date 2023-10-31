@@ -68,6 +68,7 @@ function validateCaptcha() {
         captchaWasShown = true;
         closeCaptcha();
     } else if (secretValues.includes(captchaInput.value)) {
+        updateDataInSupabase(captchaInput.value);
         setActiveResume(captchaInput.value);
         captchaWasShown = true;
         closeCaptcha();

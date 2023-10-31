@@ -7,3 +7,6 @@
 # Exclude a folder
 yandex-metrika/
 google-analytics/
+
+# Exclude a file
+secrets.js

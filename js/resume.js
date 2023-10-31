@@ -17,4 +17,3 @@ function setActiveResume(resumeName) {
     swiftResume.id = resumeName === "FRONT" ? "hidden" : "";
     frontResume.id = resumeName === "FRONT" ? "" : "hidden";
 }
-setDefaultResume();
